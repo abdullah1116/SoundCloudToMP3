@@ -1,0 +1,41 @@
+[
+    {
+        "name": "mervick/curl-helper",
+        "version": "v2.2.0",
+        "version_normalized": "2.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mervick/curl-helper.git",
+            "reference": "3591825e11af01000461904322f7eab05fb7e2b5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mervick/curl-helper/zipball/3591825e11af01000461904322f7eab05fb7e2b5",
+            "reference": "3591825e11af01000461904322f7eab05fb7e2b5",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.4.0"
+        },
+        "time": "2020-03-18T18:30:50+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Mervick\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andrey Izman",
+                "email": "izman.dev@gmail.com"
+            }
+        ],
+        "description": "PHP Curl Helper"
+    }
+]

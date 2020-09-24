@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/sc.js"></script>
+    <link rel="stylesheet" href="./Css/bootstrap.css">
+    <link rel="stylesheet" href="./Css/index.css">
+</head>
+
+<body style="overflow: overlay;">
+
+    <!-- navebar -->
+    <nav class="navbar navbar-dark font-weight-bold shadow defColor">
+        <a class="navbar-brand" href="#">Get Soundcloud now</a>
+    </nav>
+
+    <!-- Search bar -->
+    <div class="p-2 my-4 Row shadow bg-dark searchCont col-sm-8 w-100  ">
+        <div class="input-group input-group-sm glowThis">
+            <input type="text" class="form-control" placeholder="Search..." id="SearchInput">
+            <div class="input-group-append">
+                <span class="input-group-text font-weight-bold defColor px-3 " id="SearchBtn"
+                    onclick="get.it(this)">Search</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="Row w-100">
+        <div class="input-group input-group-sm bg-dark shadow viewSelecCont">
+            <img src="./assets/list.svg" viewType="list" class="viewSelectImg" style="margin-right: -5px;">
+            <img src="./assets/grid.svg" viewType="grid" class="viewSelectImg viewSelectImg-selected">
+
+        </div>
+    </div>
+
+
+    <div class=" p-1 col-lg-4 d-flex bg-dark shadow menu" id="">
+        <audio controls id="audioControls" style="width: 100%;">
+            <source src="horse.ogg" type="audio/ogg">
+            <source src="horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="dowload">
+
+        </div>
+
+    </div>
+
+    <!-- tracks Container -->
+    <div class="my-5 container" id="Container">
+
+    </div>
+
+
+</body>
+
+<script src="./js/index.js"></script>
+
+</html>

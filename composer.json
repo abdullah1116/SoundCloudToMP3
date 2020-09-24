@@ -1,0 +1,5 @@
+{
+    "require": {
+        "mervick/curl-helper": "^2.2"
+    }
+}
