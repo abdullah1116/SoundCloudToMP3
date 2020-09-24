@@ -1,55 +1,12 @@
 HTMLDATA = {};
 isGridView = true;
-// Player = new Audio;
-// Player2 = new Audio;
-
-
-// SC.initialize({ client_id: "86b6a66bb2d863f5d64dd8a91cd8de94" });
-
-// // find all sounds of buskers licensed under 'creative commons share alike'
-// const get = {
-//     it: (e) => { // e = event          
-//         if ($("#SearchInput").val() != "") {
-//             get.track($("#SearchInput").val())
-//             $(".glowThis").addClass("glow");
-//         }
-
-//     },
-//     track: (text) => {
-//         var fn = (data) => {
-//             HTMLDATA.tracks = data;
-//             get.playlists($("#SearchInput").val())
-//         }
-
-//         get.sendReq("/tracks", text, fn);
-//     },
-//     playlists: (text, fn) => {
-//         var fn = (data) => {
-//             HTMLDATA.playlists = data;
-//             RenderContainer()
-//             $(".glowThis").removeClass("glow");
-//         }
-
-//         get.sendReq("/playlists", text, fn);
-//     },
-//     sendReq: (type, text, fn) => {
-//         SC.get(type, { q: text }).then(function (res) {
-//             fn(res)
-//         });
-//     },
-
-
-// }
 
 function searchHandler(e) {
 
     if ($("#SearchInput").val() != "") {
-
-
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         xhr.responseType = 'json';
-
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 if (this.response.error) {
@@ -132,8 +89,8 @@ function RenderContainer() {
         })
 
         HTMLDATA.playlists.map((d, i) => {
-            if (d.tracks.length != 0) {
 
+            if (d.tracks.length != 0) {
                 $("#Container").append(
                     `<div class="m-3 p-2 item shadow border rounded">                
                     <div class="imgCont">
@@ -149,7 +106,9 @@ function RenderContainer() {
                 </div>`)
             }
         })
+
     } else {
+
         HTMLDATA.tracks.map((d, i) => {
             $("#Container").append(
                 `<div class="mx-3 my-1 p-2 itemList Row  w-100 shadow border rounded ">
@@ -176,9 +135,9 @@ function RenderContainer() {
                         </div>
                     </div>`)
         })
+
         HTMLDATA.playlists.map((d, i) => {
             if (d.tracks.length != 0) {
-
                 $("#Container").append(
                     `
                         <div class="mx-3 my-1 p-2 playlistItemList w-100 shadow border rounded ">
@@ -205,13 +164,11 @@ function RenderContainer() {
 function getBtnHandler(e, downlaod) {
     if ($(e).parent().attr("type") == "track") {
         let item = HTMLDATA.tracks[$(e).parent().attr("index")]
-
         get(item.id, item.title, downlaod)
     } else if ($(e).parent().attr("type") == "playlistTrack") {
         let item = HTMLDATA.playlists[$(e).parent().attr("listIndex")].tracks[$(e).parent().attr("index")]
         get(item.id, item.title, downlaod)
     }
-
     function get(id, fileName, downlaod) {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -232,7 +189,6 @@ function getBtnHandler(e, downlaod) {
                     downXhr.onprogress = (event) => {
                         console.log((event.loaded / event.total * 100 | 0));
                     }
-
                     downXhr.onload = function (e) {
                         if (this.status == 200) {
                             var blob = this.response;
@@ -245,101 +201,17 @@ function getBtnHandler(e, downlaod) {
                             a.click();
                         }
                     }
-
                 } else {
-
                     var x = document.getElementById("audioControls");
                     x.src = this.response;
                     x.play();
                 }
-
             }
         });
         xhr.open("GET", `sc.php?type=audio&id=${id}`);
         xhr.send();
-
-
-
-
-
-
-
-
-
-
-
-
-        // console.log(id + ";" + fileName + ";" + stream_url + "; downloading ;")
-
-
-        // let link = `http://api.soundcloud.com/tracks/${id}/stream?client_id=86b6a66bb2d863f5d64dd8a91cd8de94`
-        // let xhr = new XMLHttpRequest();
-        // xhr.overrideMimeType('application/octet-stream');
-        // xhr.responseType = 'blob';
-        // xhr.open('GET', link);
-        // xhr.send();
-        // xhr.onprogress = (event) => {
-        //     // event.loaded returns how many bytes are downloaded
-        //     // event.total returns the total number of bytes
-        //     // event.total is only available if server sends `Content-Length` header
-        //     // var pre;
-        //     // if (pre != (event.loaded / event.total * 100 | 0)) {
-        //     console.log((event.loaded / event.total * 100 | 0));
-        //     //     pre != (event.loaded / event.total * 100 | 0)
-        //     // }
-        // }
-
-        // xhr.onload = function (e) {
-        //     if (this.status == 200) {
-        //         var blob = this.response;
-        //         var a = document.createElement("a");
-        //         var blobUrl = window.URL.createObjectURL(new Blob([blob], { type: blob.type }));
-        //         document.body.appendChild(a);
-        //         a.style = "display: none";
-        //         a.href = blobUrl;
-        //         a.download = fileName + ".mp3";
-        //         a.click();
-        //     }
-        // }
     }
 }
-
-// function PlayBtnHandler(e) {
-//     if ($(e).parent().attr("type") == "track") {
-//         let item = HTMLDATA.tracks[$(e).parent().attr("index")]
-
-//         play(item.id)
-//     } else if ($(e).parent().attr("type") == "playlistTrack") {
-//         let item = HTMLDATA.playlists[$(e).parent().attr("listIndex")].tracks[$(e).parent().attr("index")]
-//         play(item.id)
-//     }
-
-//     function play(id) {
-//         console.log(id + "; playing ;")
-
-//         // let link = `http://api.soundcloud.com/tracks/${id}/${isDownloadAble ? "download" : "stream"}?client_id=86b6a66bb2d863f5d64dd8a91cd8de94`
-
-//         var xhr = new XMLHttpRequest();
-//         xhr.withCredentials = true;
-//         // xhr.responseType = 'json';
-
-//         xhr.addEventListener("readystatechange", function () {
-//             if (this.readyState === 4 && this.response != "") {
-//                 var x = document.getElementById("audioControls");
-//                 x.src = this.response;
-//                 x.play();
-//             }
-//         });
-
-//         //sc.php?type=play&id=125791855
-//         xhr.open("GET", `sc.php?type=audio&id=${id}`);
-
-//         xhr.send();
-//         // x.pause();
-//         // Player.src = link;
-//         // Player.play();
-//     }
-// }
 
 document.getElementById("SearchInput").addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
