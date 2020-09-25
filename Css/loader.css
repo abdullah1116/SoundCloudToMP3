@@ -1,0 +1,45 @@
+/* loader */
+
+@keyframes float {
+    to {
+        transform: translateY(0.75em);
+    }
+}
+
+.loaderBody {
+    padding-top: 1em;
+    color: #ccc;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    z-index: 10;
+}
+
+.loaderHide {
+    display: none;
+}
+
+.dot {
+    background: #F50;
+}
+
+.dot, .dot:after {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    animation: a 1.5s calc(((var(--i) + var(--o, 0))/var(--n) - 1)*1.5s) infinite;
+}
+
+.dot:after {
+    --o: 1;
+    background: #ffffff;
+    content: "";
+}
+
+@keyframes a {
+    0%, 50% {
+        transform: scale(0);
+    }
+}

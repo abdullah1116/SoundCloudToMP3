@@ -3,13 +3,17 @@ HTMLDATA = {
         id: "",
         src: "",
         state: false,
-    }
+    },
+    searched: ""
 };
 
 isGridView = true;
 
 function searchHandler(e) {
-    if ($("#SearchInput").val() != "") {
+    if ($("#SearchInput").val() != "" && HTMLDATA.searched != $("#SearchInput").val()) {
+
+        HTMLDATA.searched = $("#SearchInput").val();
+
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         xhr.responseType = 'json';
@@ -20,6 +24,8 @@ function searchHandler(e) {
                 HTMLDATA = { ...HTMLDATA, ...this.response.content }
                 RenderContainer()
                 $(".glowThis").removeClass("glow");
+                $(".loaderBody").addClass("loaderHide");
+
             } else {
                 console.error("error: Please try again");
                 return;
@@ -28,6 +34,9 @@ function searchHandler(e) {
         xhr.open("GET", `sc.php?type=search&search=${$("#SearchInput").val()}`);
         xhr.send();
         $(".glowThis").addClass("glow");
+        $(".loaderBody").removeClass("loaderHide");
+    } else {
+        HTMLDATA.searched = "";
     }
 }
 
