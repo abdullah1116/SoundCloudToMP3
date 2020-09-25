@@ -36,6 +36,18 @@ img {
     z-index: 10;
 }
 
+.btn-group {
+    border-color: #f50;
+    border-radius: 10px;
+}
+
+.btn-playing {
+    background-image: none !important;
+    background-color: #343a40;
+    box-shadow: 0px 0px 3px 1px #f50;
+    transition: box-shadow .05s;
+}
+
 .form-control:focus {
     border-color: #f50;
     box-shadow: 0px 0px 1px 2px #ff550099;
@@ -90,6 +102,7 @@ img {
     padding: 5px;
     background-image: linear-gradient(#cc4705, #d67442);
     border: solid 1px #f50;
+    transition: all .05s;
 }
 
 #container {
@@ -128,17 +141,7 @@ img {
     height: 30px;
     width: 30px;
     padding: 9px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border: 0;
-}
-
-.playBtn {
-    height: 30px;
-    width: 30px;
-    padding: 9px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px !important;
     border: 0;
 }
 
@@ -214,7 +217,6 @@ img {
     justify-content: flex-end;
 }
 
-
 .playlistItemList {
     width: -webkit-fill-available;
     flex-direction: row;
@@ -222,9 +224,10 @@ img {
     display: inline-flex;
 }
 
-.playlistItemListInner{
+.playlistItemListInner {
     width: 200px;
 }
+
 .playlistContList {
     /* position: absolute; */
     height: 275;
@@ -233,6 +236,7 @@ img {
     border: solid #f50 1px !important;
     overflow: auto;
 }
+
 .playlistDownBtncont {
     margin: 5;
     position: absolute;
@@ -240,27 +244,13 @@ img {
     right: 0;
 }
 
-
 .playlistDownBtn {
     height: 30px;
     padding: 3px;
     padding-right: 7px;
     padding-left: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px !important;
     border: 0;
-    border-right: #343a40 1px solid;
-}
-
-.playlistPlayBtn {
-    height: 30px;
-    padding: 3px;
-    padding-right: 10px;
-    padding-left: 7px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border: 0;
-    border-left: #343a40 1px solid;
 }
 
 .playlistDownBtnImg {
@@ -294,12 +284,12 @@ img {
 
 @keyframes glowAni {
     0% {
-        box-shadow: 0 0 #00000000
+        box-shadow: 0 0 #d2602755, inset 0 0 0px 2px #d26027
     }
     50% {
-        box-shadow: 0 0 0px 8.5px #d26027, inset 0 0 0px 1px #d26027;
+        box-shadow: 0 0 0px 8.5px #d26027, inset 0 0 0px 2px #d26027;
     }
     70% {
-        box-shadow: 0 0 #00000000
+        box-shadow: 0 0 #d2602755, inset 0 0 0px 2px #d26027
     }
 }

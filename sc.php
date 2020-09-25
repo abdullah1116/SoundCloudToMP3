@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\map;
+
 require_once('vendor/autoload.php');
 require_once('./api.php');
 
@@ -34,8 +37,8 @@ function getSearch()
     $urlPlaylists = $urlPlaylists . '&q=' . $_GET['search'];
 
     sendResponse([
-        'tracks' => itemsMapper(callAPI($urlTracks)),
-        'playlists' => json_decode(callAPI($urlPlaylists)),
+        'tracks' => tracksMapper(callAPI($urlTracks)),
+        'playlists' => playlistMapper(callAPI($urlPlaylists)),
     ]);
 }
 
@@ -50,17 +53,33 @@ function getAudio()
 }
 
 
-function itemsMapper($items)
+function tracksMapper($items)
 {
     return array_map(function ($row) {
         return $my_style = [
             'id' => $row['id'],
             'title' => $row['title'],
             'image' => !empty($row['artwork_url'])
-                ? $row['artwork_url'] //first
+                ? $row['artwork_url']
                 : $row['user']['avatar_url'],
             // 'stream_url' => $row['stream_url'] ?? null,
             'user' => $row['user']['username'],
+        ];
+    }, $input_array = json_decode($items, true));
+}
+
+function playlistMapper($items)
+{
+    return array_map(function ($row) {
+        return $my_style = [
+            'id' => $row['id'],
+            'title' => $row['title'],
+            'image' => !empty($row['artwork_url'])
+                ? $row['artwork_url']
+                : $row['user']['avatar_url'],
+            // 'stream_url' => $row['stream_url'] ?? null,
+            'user' => $row['user']['username'],
+            'tracks' => tracksMapper(json_encode($row['tracks'])),
         ];
     }, $input_array = json_decode($items, true));
 }
