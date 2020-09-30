@@ -19,6 +19,9 @@ switch ($type) {
     case 'audio':
         getAudio();
         break;
+    case 'link':
+
+        break;
 
     default:
         sendError('Something went wrong...');
