@@ -43,7 +43,7 @@ img {
 
 .btn-playing {
     background-image: none !important;
-    background-color: #343a40;
+    background-color: #343a40 !important;
     box-shadow: 0px 0px 3px 1px #f50;
     transition: box-shadow .05s;
 }
@@ -66,8 +66,11 @@ img {
 }
 
 .defColor {
-    background-image: linear-gradient(#cc4705, #d67442);
+    /* background-image: linear-gradient(#cc4705, #d67442);
+    color: white; */
+    background-image: linear-gradient(#ff5500db, #ff5500a6);
     color: white;
+    backdrop-filter: blur(8px);
 }
 
 .searchCont {
@@ -86,9 +89,17 @@ img {
 }
 
 .viewSelecCont {
-    margin-left: 10%;
     width: auto;
     border-radius: 10px;
+    align-items: center;
+}
+
+.CopybtnCont {
+    width: auto;
+    border-radius: 10px;
+    color: white;
+    align-items: center;
+    padding-left: 10px;
 }
 
 .viewSelectImg {
@@ -105,10 +116,24 @@ img {
     transition: all .05s;
 }
 
+.Copybtn {
+    height: 35;
+    align-items: center;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.viewBtnCont {
+    display: flex;
+    justify-content: space-between;
 }
 
 .item {
@@ -143,6 +168,7 @@ img {
     padding: 9px;
     border-radius: 10px !important;
     border: 0;
+    background: transparent;
 }
 
 .downBtnCont {
@@ -210,11 +236,14 @@ img {
 }
 
 .listDownBtncont {
-    width: 100%;
+    width: auto;
+    margin-right: 0;
+    margin-left: auto;
     text-align: end;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    border-radius: 5px;
 }
 
 .playlistItemList {
@@ -242,6 +271,7 @@ img {
     position: absolute;
     border-radius: 10px;
     right: 0;
+    background: transparent;
 }
 
 .playlistDownBtn {
@@ -251,6 +281,7 @@ img {
     padding-left: 10px;
     border-radius: 10px !important;
     border: 0;
+    background: transparent;
 }
 
 .playlistDownBtnImg {
@@ -265,6 +296,7 @@ img {
     height: 18px;
     width: 20px;
     padding: 3px;
+    background: transparent;
 }
 
 .glow {

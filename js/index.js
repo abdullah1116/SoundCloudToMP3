@@ -4,15 +4,44 @@ HTMLDATA = {
         src: "",
         state: false,
     },
-    searched: ""
+    searched: { artist: undefined }
 };
 
 isGridView = true;
 
-function searchHandler(e) {
-    if ($("#SearchInput").val() != "" && HTMLDATA.searched != $("#SearchInput").val()) {
 
-        HTMLDATA.searched = $("#SearchInput").val();
+$(() => {
+    let para = new URL(window.location.href).searchParams.get('search');
+    console.log(para);
+    if (para != null) {
+        document.getElementById("SearchInput").value = para;
+        searchHandler();
+    }
+
+}
+)
+
+
+// function copyHandler() {
+
+//     const el = document.createElement('textarea');
+//     el.value = window.location.origin + window.location.pathname + "?search=" + $("#SearchInput").val()
+//     document.body.appendChild(el);
+//     el.select();
+//     document.execCommand('copy');
+//     document.body.removeChild(el);
+
+// }
+
+function searchHandler() {
+    var searchText = $("#SearchInput").val()
+
+
+
+    if (searchText != undefined && searchText != "" && HTMLDATA.searched.title != searchText) {
+
+        HTMLDATA.searched.title = searchText;
+        HTMLDATA.searched.link = (/soundcloud.com\//.test(searchText) ? `sc.php?type=link&link=${searchText}` : `sc.php?type=search&search=${searchText}`)
 
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -21,8 +50,10 @@ function searchHandler(e) {
             if (this.readyState === 4 && this.response != null && !this.response.error) {
 
                 console.log("xhr done");
-                HTMLDATA = { ...HTMLDATA, ...this.response.content }
-                RenderContainer()
+                HTMLDATA.tracks = [];
+                HTMLDATA.playlists = [];
+                HTMLDATA = { ...HTMLDATA, ...this.response.content };
+                RenderContainer();
                 $(".glowThis").removeClass("glow");
                 $(".loaderBody").addClass("loaderHide");
 
@@ -31,33 +62,27 @@ function searchHandler(e) {
                 return;
             }
         });
-        xhr.open("GET", `sc.php?type=search&search=${$("#SearchInput").val()}`);
+        xhr.open("GET", HTMLDATA.searched.link);
         xhr.send();
         $(".glowThis").addClass("glow");
         $(".loaderBody").removeClass("loaderHide");
     } else {
-        HTMLDATA.searched = "";
+        HTMLDATA.searched.title = "";
     }
 }
-
 
 function getBtnHandler(e, downlaod) {
 
 
     if ($(e).parent().attr("type") == "track") {
-        var item = HTMLDATA.tracks[$(e).parent().attr("index")]
+        var item = HTMLDATA.tracks[$(e).parent().attr("index")];
     } else if ($(e).parent().attr("type") == "playlistTrack") {
-        var item = HTMLDATA.playlists[$(e).parent().attr("listIndex")].tracks[$(e).parent().attr("index")]
+        var item = HTMLDATA.playlists[$(e).parent().attr("listIndex")].tracks[$(e).parent().attr("index")];
     }
 
     if (downlaod) {
         get(item.id, item.title, downlaod);
     } else {
-
-
-
-
-
         if (HTMLDATA.playing.id == item.id) {
 
             var player = document.getElementById("audioControls");
@@ -148,16 +173,16 @@ function RenderContainer() {
             list += `<div class="listItem  border rounded">
                         <img  src="${d.image}" class="ListSoundImg border rounded" alt="Image Not Found">
                         <p class="playlistTrackTitle">${d.title}</p>
-                        <a type="playlistTrack" class="btn-group listDownBtncont" listIndex="${listIndex}" index="${i}" class="btn-group">
+                        <a type="playlistTrack" class="btn-group listDownBtncont defColor" listIndex="${listIndex}" index="${i}" class="btn-group">
                             <button
                                 type="button"
-                                class="btn btn-orange defColor listDownBtn"
+                                class="btn btn-orange  listDownBtn"
                                 onclick="getBtnHandler(this,true)">
                                 <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "plause" : "down" : "down"}.svg">
                             </button>
                             <button
                                 type="button"
-                                class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange defColor listDownBtn"
+                                class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange listDownBtn"
                                 onclick="getBtnHandler(this,false)">
                                 <img src="./assets/play.svg">
                             </button>
@@ -178,13 +203,13 @@ function RenderContainer() {
                     <a type="track" index="${i}" class="btn-group defColor">
                             <button
                                 type="button"
-                                class="btn btn-orange defColor downBtn"
+                                class="btn btn-orange downBtn"
                                 onclick="getBtnHandler(this,true)">
                                 <img src="./assets/down.svg">
                             </button>
                             <button
                                 type="button"
-                                class="btn ${HTMLDATA.playing == d.id ? "btn-playing" : ""} btn-orange defColor downBtn"
+                                class="btn ${HTMLDATA.playing == d.id ? "btn-playing" : ""} btn-orange downBtn"
                                 onclick="getBtnHandler(this,false)">
                                 <img src="./assets/play.svg">
                             </button>
@@ -235,11 +260,11 @@ function RenderContainer() {
                         </div>
                         <div class="shadow playlistDownBtncont">
                         <a type="track" index="${i}" class="btn-group defColor">
-                            <button type="button" class="btn btn-orange defColor playlistDownBtn"  onclick="getBtnHandler(this,true)">
+                            <button type="button" class="btn btn-orange playlistDownBtn"  onclick="getBtnHandler(this,true)">
                                 Download
                                 <img src="./assets/down.svg" class="playlistDownBtnImg" >
                             </button>
-                            <button type="button" class="btn ${HTMLDATA.playing == d.id ? "btn-playing" : ""} btn-orange defColor playlistDownBtn" onclick="getBtnHandler(this,false)">
+                            <button type="button" class="btn ${HTMLDATA.playing == d.id ? "btn-playing" : ""} btn-orange playlistDownBtn" onclick="getBtnHandler(this,false)">
                                 Play
                                 <img src="./assets/play.svg" class="playlistDownBtnImg">
                             </button>
@@ -290,4 +315,3 @@ $(".viewSelectImg").click((e) => {
         RenderContainer();
     }
 })
-
