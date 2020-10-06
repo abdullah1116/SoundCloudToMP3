@@ -32,6 +32,21 @@ img {
     height: 100%;
 }
 
+.showOnSearch {
+    display: none;
+}
+
+body.searching .showOnSearch {
+    display: initial;
+}
+
+body.searching .hideOnSearch {
+    /* display: none; */
+    /* filter: blur(5px);
+    transition: all 5s; */
+    animation: blurAnimate 2s infinite;
+}
+
 .btn {
     z-index: 10;
 }
@@ -46,6 +61,10 @@ img {
     background-color: #343a40 !important;
     box-shadow: 0px 0px 3px 1px #f50;
     transition: box-shadow .05s;
+}
+
+.title {
+    color: #00000099;
 }
 
 .form-control:focus {
@@ -77,7 +96,6 @@ img {
     border-radius: 9px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px !important;
 }
 
 #SearchBtn {
@@ -133,7 +151,7 @@ img {
 
 .viewBtnCont {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .item {
@@ -323,5 +341,17 @@ img {
     }
     70% {
         box-shadow: 0 0 #d2602755, inset 0 0 0px 2px #d26027
+    }
+}
+
+@keyframes blurAnimate {
+    0% {
+        filter: blur(1px);
+    }
+    50% {
+        filter: blur(5px);
+    }
+    70% {
+        filter: blur(1px);
     }
 }

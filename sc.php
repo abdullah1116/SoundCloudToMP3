@@ -72,7 +72,7 @@ function getAudio()
     // $url = "https://api.soundcloud.com/tracks/229936313/stream?client_id=86b6a66bb2d863f5d64dd8a91cd8de94";
     if (empty($_GET['id'])) sendError('Nothing played');
     $id = $_GET['id'];
-    $url = str_replace('%method%', "tracks/{$id}/stream?", API_URL);
+    $url =  "https://www.genmp3.net/getStream.php?id={$id}";
 
-    echo callAPI($url);
+    echo json_decode(callAPI($url), true)['link'];
 }

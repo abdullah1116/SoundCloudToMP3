@@ -55,7 +55,8 @@ function searchHandler() {
                 HTMLDATA = { ...HTMLDATA, ...this.response.content };
                 RenderContainer();
                 $(".glowThis").removeClass("glow");
-                $(".loaderBody").addClass("loaderHide");
+                $("body").removeClass("searching");
+                // $(".viewSelecCont").removeClass("d-none");
 
             } else {
                 console.error("error: Please try again");
@@ -64,8 +65,15 @@ function searchHandler() {
         });
         xhr.open("GET", HTMLDATA.searched.link);
         xhr.send();
+
+
         $(".glowThis").addClass("glow");
-        $(".loaderBody").removeClass("loaderHide");
+        $("body").addClass("searching");
+        // $(".loaderBody").removeClass("loaderHide");
+
+        // $(".viewSelecCont").addClass("d-none");
+
+
     } else {
         HTMLDATA.searched.title = "";
     }
