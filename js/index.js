@@ -81,7 +81,7 @@ function getBtnHandler(e, downlaod) {
     }
 
     if (downlaod) {
-        get(item.id, item.title, downlaod);
+        downlaodFile(item.id, item.title, downlaod);
     } else {
         if (HTMLDATA.playing.id == item.id) {
 
@@ -118,13 +118,14 @@ function getBtnHandler(e, downlaod) {
             HTMLDATA.playing.id = item.id;
             HTMLDATA.playing.state = true;
 
-            get(item.id, item.title, downlaod);
+
+            downlaodFile(item.id, item.title, downlaod);
         }
 
     }
 
 
-    function get(id, fileName, downlaod) {
+    function downlaodFile(id, fileName, downlaod) {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         xhr.addEventListener("readystatechange", function () {
@@ -178,13 +179,13 @@ function RenderContainer() {
                                 type="button"
                                 class="btn btn-orange  listDownBtn"
                                 onclick="getBtnHandler(this,true)">
-                                <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "plause" : "down" : "down"}.svg">
+                                <img src="./assets/down.svg">
                             </button>
                             <button
                                 type="button"
                                 class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange listDownBtn"
                                 onclick="getBtnHandler(this,false)">
-                                <img src="./assets/play.svg">
+                                <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg">
                             </button>
                     </a>
                     </div>`
@@ -209,9 +210,9 @@ function RenderContainer() {
                             </button>
                             <button
                                 type="button"
-                                class="btn ${HTMLDATA.playing == d.id ? "btn-playing" : ""} btn-orange downBtn"
+                                class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange downBtn"
                                 onclick="getBtnHandler(this,false)">
-                                <img src="./assets/play.svg">
+                                <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg">
                             </button>
                     </a>
                         </div>
@@ -264,9 +265,9 @@ function RenderContainer() {
                                 Download
                                 <img src="./assets/down.svg" class="playlistDownBtnImg" >
                             </button>
-                            <button type="button" class="btn ${HTMLDATA.playing == d.id ? "btn-playing" : ""} btn-orange playlistDownBtn" onclick="getBtnHandler(this,false)">
+                            <button type="button" class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange playlistDownBtn" onclick="getBtnHandler(this,false)">
                                 Play
-                                <img src="./assets/play.svg" class="playlistDownBtnImg">
+                                <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" class="playlistDownBtnImg">
                             </button>
                         </a>
                         </div>
