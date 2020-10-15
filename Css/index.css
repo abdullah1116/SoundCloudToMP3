@@ -20,7 +20,6 @@ audio::-internal-media-controls-download-button {
 
 audio::-webkit-media-controls-pane {
     border-radius: 0%;
-    background-color: re;
 }
 
 p {
@@ -44,7 +43,7 @@ body.searching .hideOnSearch {
     /* display: none; */
     /* filter: blur(5px);
     transition: all 5s; */
-    animation: blurAnimate 2s infinite;
+    animation: blurAnimate 30s normal forwards;
 }
 
 .btn {
@@ -85,11 +84,17 @@ body.searching .hideOnSearch {
 }
 
 .defColor {
-    /* background-image: linear-gradient(#cc4705, #d67442);
-    color: white; */
-    background-image: linear-gradient(#ff5500db, #ff5500a6);
+    background-image: linear-gradient(#f50, #ff8239);
+    /* background-image: linear-gradient(#cc4705, #d67442); */
     color: white;
-    backdrop-filter: blur(8px);
+    /* background-image: linear-gradient(#ff5500db, #ff5500a6); */
+    /* backdrop-filter: blur(8px); */
+    /* color: white; */
+}
+
+.input-group.input-group-sm.glowThis * {
+    font-size: 2rem;
+    height: auto;
 }
 
 .searchCont {
@@ -221,7 +226,7 @@ body.searching .hideOnSearch {
     position: absolute;
     height: 200;
     width: 200;
-    background-color: #ffffffcc;
+    background-color: #ffffff44;
     border: solid #f50 1px !important;
     overflow: auto;
 }
@@ -237,8 +242,8 @@ body.searching .hideOnSearch {
 
 .listItem {
     font-size: 12;
-    color: white;
-    background-color: #67676785;
+    color: black;
+    background-color: #ffffffd1;
     height: 20;
     display: flex;
     flex-direction: row;
@@ -324,22 +329,58 @@ body.searching .hideOnSearch {
 
 .menu {
     position: fixed;
-    background: red;
+    /* background: red; */
+    background-color: #f1f3f4;
     bottom: 0;
     right: 0;
+    box-shadow: 0 0 25px 5px #00000044;
+    /* border: solid 2px #343a40; */
+    /* border-bottom: none; */
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     z-index: 15;
+}
+
+.audioCont {
+    background-color: #f1f3f4;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 30px;
+    overflow: hidden;
+}
+
+.audioTitle {
+    margin-left: 15px;
+    margin-right: 15px;
+    overflow: hidden;
+    height: 24px;
+}
+
+#audioControls {
+    width: 100%;
+    border-radius: 0;
+    background-color: #f1f3f4;
+    height: 30px;
+}
+
+#audioControls:focus {
+    outline: none;
+}
+
+#audioControls::-webkit-media-controls-panel {
+    border-radius: 0;
+    background-color: #f1f3f4;
+    /* height: 20; */
+    /* background-color: red; */
 }
 
 @keyframes glowAni {
     0% {
         box-shadow: 0 0 #d2602755, inset 0 0 0px 2px #d26027
     }
-    50% {
+    65% {
         box-shadow: 0 0 0px 8.5px #d26027, inset 0 0 0px 2px #d26027;
     }
-    70% {
+    77% {
         box-shadow: 0 0 #d2602755, inset 0 0 0px 2px #d26027
     }
 }
@@ -348,10 +389,26 @@ body.searching .hideOnSearch {
     0% {
         filter: blur(1px);
     }
-    50% {
-        filter: blur(5px);
+    20% {
+        filter: blur(1.5px);
     }
-    70% {
-        filter: blur(1px);
+    50% {
+        filter: blur(3.5px);
+    }
+    100% {
+        filter: blur(50px);
     }
 }
+
+/* 
+@keyframes blurAnimate {
+    0% {
+        filter: blur(1px);
+    }
+    65% {
+        filter: blur(3.5px);
+    }
+    77% {
+        filter: blur(1px);
+    }
+} */

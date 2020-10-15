@@ -2,6 +2,7 @@
 
 <head>
     <script src="./js/jquery.js"></script>
+
     <link rel="stylesheet" href="./Css/bootstrap.css">
     <link rel="stylesheet" href="./Css/index.css">
     <link rel="stylesheet" href="./Css/loader.css">
@@ -11,8 +12,21 @@
     <meta name="Keywords" content="soundcloud,mp3,converter,free,online,download">
     <!-- <meta name="author" content="John Doe"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" href="./assets/favicon.ico">
     <title>SoundCloud To MP3</title>
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 </head>
 
 <body style="overflow: overlay;">
@@ -24,7 +38,7 @@
 
 
     <!-- Search bar -->
-    <div class="p-2 mt-5 mb-3 pt-5 row justify-content-center text-center">
+    <div class="p-2 mt-5 mb-3 pt-5 d-flex justify-content-center text-center">
         <div class="col-8">
             <h3 class="title">Download your favorite tracks to your personal storage and enjoy them even when you are
                 offline!</h3>
@@ -32,7 +46,7 @@
             <div class="bg-dark searchCont shadow w-100 p-2 mt-5">
                 <div class="input-group input-group-sm glowThis">
                     <input type="text" class="form-control"
-                        placeholder="enter the name or url of track you want to search..." id="SearchInput">
+                        placeholder="Enter the name or url of track you want to search..." id="SearchInput">
                     <div class="input-group-append">
                         <span class="input-group-text font-weight-bold defColor px-3 " id="SearchBtn"
                             onclick="searchHandler()">Search</span>
@@ -44,8 +58,12 @@
 
 
 
-    <div class=" p-1 col-lg-4 d-flex bg-dark shadow menu" id="">
-        <audio controls id="audioControls" style="width: 100%;"></audio>
+    <div class=" p-1 col-lg-4 menu" id="">
+        <div class="audioPanelCont">
+
+            <p class="audioTitle"></p>
+        </div>
+        <audio noDownload controls id="audioControls" controlsList="nodownload"></audio>
         <div class="dowload"></div>
     </div>
 
@@ -82,6 +100,10 @@
         </div>
     </div>
 
+
+
+    <datalist id="autoComp">
+    </datalist>
 
 </body>
 

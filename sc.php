@@ -25,6 +25,10 @@ switch ($type) {
         getLink();
         break;
 
+    case 'keySuggest':
+        getSuggest();
+        break;
+
     default:
         sendError('Something went wrong...');
         break;
@@ -75,4 +79,16 @@ function getAudio()
     $url =  "https://www.genmp3.net/getStream.php?id={$id}";
 
     echo json_decode(callAPI($url), true)['link'];
+}
+
+
+function getSuggest()
+{
+    if (empty($_GET['key'])) sendError('Nothing searched');
+
+    $key = $_GET['key'];
+
+    $url = "https://clients1.google.com/complete/search?q={$key}&client=safari&ds=yt";
+
+    sendResponse(keyMapper(callAPI($url)));
 }

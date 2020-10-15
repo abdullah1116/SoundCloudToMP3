@@ -12,12 +12,10 @@ isGridView = true;
 
 $(() => {
     let para = new URL(window.location.href).searchParams.get('search');
-    console.log(para);
     if (para != null) {
         document.getElementById("SearchInput").value = para;
         searchHandler();
     }
-
 }
 )
 
@@ -34,7 +32,7 @@ $(() => {
 // }
 
 function searchHandler() {
-    var searchText = $("#SearchInput").val()
+    var searchText = $("#SearchInput").val();
 
 
 
@@ -59,7 +57,7 @@ function searchHandler() {
                 // $(".viewSelecCont").removeClass("d-none");
 
             } else {
-                console.error("error: Please try again");
+                // console.error("error: Please try again");
                 return;
             }
         });
@@ -78,6 +76,49 @@ function searchHandler() {
         HTMLDATA.searched.title = "";
     }
 }
+
+
+
+// function keyHandler(key) {
+
+//     function getSuggest(key) {
+//         return;
+//         if (key == $('#SearchInput').val()) {
+//             // updateAutoComp([]);
+//             var xhr = new XMLHttpRequest();
+//             xhr.responseType = 'json';
+//             xhr.addEventListener("readystatechange", function () {
+//                 if (this.readyState === 4 && this.response != null && !this.response.error) {
+//                     if (key == $('#SearchInput').val()) {
+//                         updateAutoComp(this.response.content);
+//                     }
+//                 }
+//             });
+//             xhr.open("GET", `sc.php?type=keySuggest&key=${key}`);
+//             xhr.send();
+//         }
+//     }
+
+//     function updateAutoComp(listArray) {
+
+
+//         var autoCompArray = [];
+//         listArray.forEach(e => autoCompArray.push(e));
+//         // autocomplete(document.getElementById("SearchInput"), autoCompArray);
+//         $("#SearchInput").autocomplete({
+//             source: autoCompArray
+//         });
+//         // var autoCompHtml = "";
+//         // listArray.forEach(e => autoCompHtml += `<option value="${e}">`);
+//         // $("#autoComp")[0].innerHTML = autoCompHtml;
+//     }
+
+//     // setTimeout(() => { getSuggest(`${key}`); }, 200);
+//     getSuggest(key);
+
+// }
+
+
 
 function getBtnHandler(e, downlaod) {
 
@@ -122,6 +163,7 @@ function getBtnHandler(e, downlaod) {
 
             $(e).addClass("btn-playing");
             $(e).children()[0].src = "assets/pause.svg";
+            $(".audioTitle").text(item.title)
 
             HTMLDATA.playing.id = item.id;
             HTMLDATA.playing.state = true;
@@ -193,7 +235,7 @@ function RenderContainer() {
                                 type="button"
                                 class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange listDownBtn"
                                 onclick="getBtnHandler(this,false)">
-                                <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg">
+                                <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" >
                             </button>
                     </a>
                     </div>`
@@ -324,3 +366,56 @@ $(".viewSelectImg").click((e) => {
         RenderContainer();
     }
 })
+$("#SearchInput").on("input", function (event) { keyHandler($(event.target).val()) })
+
+
+// var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua &amp; Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia &amp; Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central Arfrican Republic", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauro", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russia", "Rwanda", "Saint Pierre &amp; Miquelon", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "St Kitts &amp; Nevis", "St Lucia", "St Vincent", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad &amp; Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks &amp; Caicos", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"];
+
+// autocomplete(document.getElementById("SearchInput"), countries);
+
+
+
+
+// setTimeout(() => { window.location = window.location; }, 3000)
+$.fn.googleSuggest = function (opts) {
+    opts = $.extend({ service: 'youtube', secure: true }, opts);
+
+    var services = {
+        youtube: { client: 'youtube', ds: 'yt' },
+        books: { client: 'books', ds: 'bo' },
+        products: { client: 'products-cc', ds: 'sh' },
+        news: { client: 'news-cc', ds: 'n' },
+        images: { client: 'img', ds: 'i' },
+        web: { client: 'psy', ds: '' },
+        recipes: { client: 'psy', ds: 'r' }
+    }, service = services[opts.service];
+    opts.delay = 0;
+    opts.source = function (request, response) {
+        $.ajax({
+            url: 'http' + (opts.secure ? 's' : '') + '://clients1.google.com/complete/search',
+            dataType: 'jsonp',
+            data: {
+                q: request.term,
+                nolabels: 't',
+                client: service.client,
+                ds: service.ds
+            },
+            success: function (data) {
+                response($.map(data[1], function (item) {
+                    return { value: $("<span>").html(item[0]).text() };
+                }));
+            }
+        });
+    };
+
+    opts.select = function (event, ui) {
+        $('#SearchInput').val(ui.item.label);
+        searchHandler();
+    };
+    return this.each(function () {
+        $(this).autocomplete(opts);
+    });
+};
+
+$('#SearchInput').googleSuggest();
+

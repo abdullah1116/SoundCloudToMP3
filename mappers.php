@@ -43,3 +43,10 @@ function playlistMapper($items)
         return $my_style = singlePlaylistResource($row);
     }, $input_array = json_decode($items, true));
 }
+
+function keyMapper($items)
+{
+    return array_map(function ($row) {
+        return $my_style =  $row[0];
+    }, $input_array = json_decode($items, true)[1]);
+}
