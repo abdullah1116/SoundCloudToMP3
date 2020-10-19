@@ -6,7 +6,8 @@ require_once('vendor/autoload.php');
 require_once('./api.php');
 require_once('./mappers.php');
 
-const API_URL = "https://api.soundcloud.com/%method%&client_id=86b6a66bb2d863f5d64dd8a91cd8de94";
+const API_URL = "https://api.soundcloud.com/%method%&client_id=86b6a66bb2d863f5d64dd8a91cd8de94"; // youtube
+// const API_URL = "https://api.soundcloud.com/%method%&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP"; // soundcloud
 
 
 
@@ -15,6 +16,10 @@ $type = $_GET['type'] ?? '';
 switch ($type) {
     case 'search':
         getSearch();
+        break;
+
+    case 'top':
+        getTop();
         break;
 
     case 'audio':
@@ -46,6 +51,16 @@ function getSearch()
     sendResponse([
         'tracks' => tracksMapper(callAPI($urlTracks)),
         'playlists' => playlistMapper(callAPI($urlPlaylists)),
+    ]);
+}
+
+function getTop()
+{
+
+    $url = "https://api-v2.soundcloud.com/charts?kind=top&limit=10&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP";
+    sendResponse([
+        'tracks' => topMapper(callAPI($url)),
+        'playlists' => [],
     ]);
 }
 
@@ -88,7 +103,7 @@ function getSuggest()
 
     $key = $_GET['key'];
 
-    $url = "https://clients1.google.com/complete/search?q={$key}&client=safari&ds=yt";
+    $url = "https://api-v2.soundcloud.com/search/queries?q={$key}&limit=10&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP";
 
     sendResponse(keyMapper(callAPI($url)));
 }

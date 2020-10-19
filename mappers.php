@@ -44,9 +44,18 @@ function playlistMapper($items)
     }, $input_array = json_decode($items, true));
 }
 
-function keyMapper($items)
+
+function topMapper($items)
 {
     return array_map(function ($row) {
-        return $my_style =  $row[0];
-    }, $input_array = json_decode($items, true)[1]);
+        return $my_style = singleTrackResource($row['track']);
+    }, $input_array = json_decode($items, true)['collection']);
+}
+
+function keyMapper($items)
+{
+    // return json_decode($items, true)['collection'];
+    return array_map(function ($row) {
+        return $my_style =  $row['output'];
+    }, $input_array = json_decode($items, true)['collection']);
 }

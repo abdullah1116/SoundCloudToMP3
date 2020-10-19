@@ -1,3 +1,13 @@
+::-moz-selection {
+    color: white;
+    background: #F50;
+}
+
+::selection {
+    color: white;
+    background: #F50;
+}
+
 ::-webkit-scrollbar {
     width: 2px;
 }
@@ -35,14 +45,12 @@ img {
     display: none;
 }
 
+/* 
 body.searching .showOnSearch {
     display: initial;
-}
+} */
 
 body.searching .hideOnSearch {
-    /* display: none; */
-    /* filter: blur(5px);
-    transition: all 5s; */
     animation: blurAnimate 30s normal forwards;
 }
 
@@ -63,12 +71,26 @@ body.searching .hideOnSearch {
 }
 
 .title {
-    color: #00000099;
+    color: #00000085;
+}
+
+#backgroundImage {
+    background-image: url('../assets/BackgroundImage.jpg');
+    /* position: fixed; */
+    width: 100vw;
+    /* height: 100%; */
+    padding-bottom: 25px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 .form-control:focus {
-    border-color: #f50;
-    box-shadow: 0px 0px 1px 2px #ff550099;
+    box-shadow: none;
+}
+
+.btn-orange {
+    color: white;
 }
 
 .btn-orange:focus {
@@ -85,11 +107,7 @@ body.searching .hideOnSearch {
 
 .defColor {
     background-image: linear-gradient(#f50, #ff8239);
-    /* background-image: linear-gradient(#cc4705, #d67442); */
     color: white;
-    /* background-image: linear-gradient(#ff5500db, #ff5500a6); */
-    /* backdrop-filter: blur(8px); */
-    /* color: white; */
 }
 
 .input-group.input-group-sm.glowThis * {
@@ -101,10 +119,33 @@ body.searching .hideOnSearch {
     border-radius: 9px;
     margin-left: auto;
     margin-right: auto;
+    background-color: #2f2f2f91;
+}
+
+#SearchInput {
+    border: none;
+    background: none;
+    color: white;
+    font-weight: 100;
+    margin-right: -1;
+}
+
+#SearchInput::placeholder {
+    color: #ffffff6b;
+    opacity: 1;
+}
+
+#SearchInput:-ms-input-placeholder {
+    color: #ffffff6b;
+}
+
+#SearchInput::-ms-input-placeholder {
+    color: #ffffff6b;
 }
 
 #SearchBtn {
     border: none;
+    border-radius: 5px;
 }
 
 .input-group-text {
@@ -115,6 +156,7 @@ body.searching .hideOnSearch {
     width: auto;
     border-radius: 10px;
     align-items: center;
+    background-color: #2f2f2f91;
 }
 
 .CopybtnCont {
@@ -137,6 +179,7 @@ body.searching .hideOnSearch {
     background-image: linear-gradient(#cc4705, #d67442);
     border: solid 1px #f50;
     transition: all .05s;
+    box-shadow: 0 0 20px 5px #00000036;
 }
 
 .Copybtn {
@@ -161,12 +204,18 @@ body.searching .hideOnSearch {
 
 .item {
     width: 220px;
+    backdrop-filter: blur(6px);
+    /* background-color: #00000038; */
+    box-shadow: 0 0 20px 5px #00000036;
 }
 
 .itemList {
     width: -webkit-fill-available;
     flex-direction: row;
     position: relative;
+    backdrop-filter: blur(6px);
+    background-color: #00000038;
+    box-shadow: 0 0 20px 5px #00000036;
 }
 
 .imgCont {
@@ -215,24 +264,23 @@ body.searching .hideOnSearch {
 
 .soundArtist {
     font-size: 11;
-    color: #999;
+    /* color: #ffffffd9; */
 }
 
 .soundTitle {
     word-break: break-all;
+    /* color: white; */
 }
 
 .listCont {
     position: absolute;
-    height: 200;
-    width: 200;
-    background-color: #ffffff44;
-    border: solid #f50 1px !important;
+    height: 200px;
+    width: 205px;
+    background-color: #2d2d2d8c;
     overflow: auto;
 }
 
 .listContList {
-    /* position: absolute; */
     height: 200;
     width: 100%;
     background-color: #ffffffcc;
@@ -242,14 +290,14 @@ body.searching .hideOnSearch {
 
 .listItem {
     font-size: 12;
-    color: black;
-    background-color: #ffffffd1;
+    color: #ffffffaa;
+    background-color: #00000030;
     height: 20;
     display: flex;
     flex-direction: row;
     overflow: hidden;
     text-align: initial;
-    /* padding-left: 5px; */
+    border: solid 1px #0000000f;
 }
 
 .ListSoundImg {
@@ -270,10 +318,11 @@ body.searching .hideOnSearch {
 }
 
 .playlistItemList {
-    width: -webkit-fill-available;
     flex-direction: row;
     position: relative;
     display: inline-flex;
+    backdrop-filter: blur(6px);
+    background-color: #00000038;
 }
 
 .playlistItemListInner {
@@ -281,12 +330,10 @@ body.searching .hideOnSearch {
 }
 
 .playlistContList {
-    /* position: absolute; */
     height: 275;
     width: 100%;
-    background-color: #ffffffcc;
-    border: solid #f50 1px !important;
     overflow: auto;
+    background-color: #00000038;
 }
 
 .playlistDownBtncont {
@@ -313,6 +360,7 @@ body.searching .hideOnSearch {
 
 .playlistTrackTitle {
     word-break: break-all;
+    color: white;
 }
 
 .listDownBtn {
@@ -329,13 +377,10 @@ body.searching .hideOnSearch {
 
 .menu {
     position: fixed;
-    /* background: red; */
     background-color: #f1f3f4;
     bottom: 0;
     right: 0;
     box-shadow: 0 0 25px 5px #00000044;
-    /* border: solid 2px #343a40; */
-    /* border-bottom: none; */
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     z-index: 15;
@@ -369,8 +414,6 @@ body.searching .hideOnSearch {
 #audioControls::-webkit-media-controls-panel {
     border-radius: 0;
     background-color: #f1f3f4;
-    /* height: 20; */
-    /* background-color: red; */
 }
 
 @keyframes glowAni {
@@ -399,16 +442,3 @@ body.searching .hideOnSearch {
         filter: blur(50px);
     }
 }
-
-/* 
-@keyframes blurAnimate {
-    0% {
-        filter: blur(1px);
-    }
-    65% {
-        filter: blur(3.5px);
-    }
-    77% {
-        filter: blur(1px);
-    }
-} */
