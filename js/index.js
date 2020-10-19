@@ -37,8 +37,6 @@ function searchHandler() {
         xhr.responseType = 'json';
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4 && this.response != null && !this.response.error) {
-
-                console.log("xhr done");
                 HTMLDATA.tracks = [];
                 HTMLDATA.playlists = [];
                 HTMLDATA = { ...HTMLDATA, ...this.response.content };
@@ -65,8 +63,6 @@ function getTop() {
     xhr.responseType = 'json';
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4 && this.response != null && !this.response.error) {
-
-            console.log("xhr done");
             HTMLDATA.tracks = [];
             HTMLDATA.playlists = [];
             HTMLDATA = { ...HTMLDATA, ...this.response.content };
