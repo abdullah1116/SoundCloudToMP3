@@ -124,5 +124,11 @@ function RenderContainer(Top) {
             }
         })
     }
+    if (HTML == "") {
+        HTML =
+            `<span class="align-self-center">
+                <h4>Oops no result found with this search, try searching differently.</h4>
+            </span>`
+    }
     $("#Container")[0].innerHTML = Top == undefined || Top == "" ? HTML : Top + HTML;
 }

@@ -45,7 +45,6 @@ img {
     display: none;
 }
 
-
 body.searching .showOnSearch {
     display: initial;
 }
@@ -203,7 +202,9 @@ body.searching .hideOnSearch {
 }
 
 .item {
-    width: 220px;
+    /* width: 220px; */
+    width: calc(15vw + 15vh + 15px);
+    max-width: 316px;
     backdrop-filter: blur(6px);
     /* background-color: #00000038; */
     box-shadow: 0 0 20px 5px #00000036;
@@ -258,8 +259,12 @@ body.searching .hideOnSearch {
 }
 
 .soundBackImg {
-    height: 200;
-    width: 200;
+    /* height: 200;
+    width: 200; */
+    height: calc(15vw + 15vh);
+    width: calc(15vw + 15vh);
+    max-height: 300px;
+    max-width: 300px;
 }
 
 .soundArtist {
@@ -274,8 +279,12 @@ body.searching .hideOnSearch {
 
 .listCont {
     position: absolute;
-    height: 200px;
-    width: 205px;
+    /* height: 200px;
+        width: 205px; */
+    height: calc(15vw + 15vh);
+    width: calc(15vw + 15vh);
+    max-height: 300px;
+    max-width: 300px;
     background-color: #2d2d2d8c;
     overflow: auto;
 }
@@ -377,13 +386,25 @@ body.searching .hideOnSearch {
 
 .menu {
     position: fixed;
-    background-color: #f1f3f4;
     bottom: 0;
     right: 0;
-    box-shadow: 0 0 25px 5px #00000044;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     z-index: 15;
+}
+
+.playerCont {
+    bottom: -100;
+    background-color: #f1f3f4;
+    box-shadow: 0 0 25px 5px #00000044;
+    z-index: 16;
+}
+
+.playerBtn {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 !important;
 }
 
 .audioCont {

@@ -23,6 +23,9 @@ function searchHandler(searchText) {
             HTMLDATA.playlists = [];
             HTMLDATA = { ...HTMLDATA, ...this.response.content };
             // RenderContainer();
+            setTimeout(() => {
+                $("body").append(`<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>`);
+            }, 500);
             renderDownload()
             // $(".glowThis").removeClass("glow");
             // $("body").removeClass("searching");
@@ -46,6 +49,8 @@ $(() => {
 }
 )
 function renderDownload() {
+
+
     $(".soundTitle").text(HTMLDATA.tracks[0].title);
     $(".soundArtist").text(HTMLDATA.tracks[0].user);
     $(".image")[0].src = (HTMLDATA.tracks[0].image.replace("-large", "-t500x500"));

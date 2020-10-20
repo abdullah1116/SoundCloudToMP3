@@ -17,35 +17,38 @@ function getBtnHandler(e, downlaod) {
     } else {
         if (HTMLDATA.playing.id == item.id) {
 
-            var player = document.getElementById("audioControls");
+            var audioplayer = document.getElementById("audioControls");
 
             if (HTMLDATA.playing.state == true) {
 
+                player().pause(e)
+                // $(".btn-playing").children()[0].src = "assets/play.svg";
+                // $(".btn-playing").removeClass("btn-playing");
 
-                $(".btn-playing").children()[0].src = "assets/play.svg";
-                $(".btn-playing").removeClass("btn-playing");
-
-                player.pause();
+                // audioplayer.pause();
 
             } else {
 
-                $(e).addClass("btn-playing");
-                $(e).children()[0].src = "assets/pause.svg";
+                // $(e).addClass("btn-playing");
+                // $(e).children()[0].src = "assets/pause.svg";
 
-                player.src = HTMLDATA.playing.src;
-                player.play();
+                // audioplayer.src = HTMLDATA.playing.src;
+                // audioplayer.play();
+                player().play(e);
 
             }
             HTMLDATA.playing.state = !HTMLDATA.playing.state;
 
         } else {
             if (HTMLDATA.playing.state == true && $(".btn-playing").children().length != 0) {
-                $(".btn-playing").children()[0].src = "assets/play.svg";
-                $(".btn-playing").removeClass("btn-playing");
+                // $(".btn-playing").children()[0].src = "assets/play.svg";
+                // $(".btn-playing").removeClass("btn-playing");
+                player().pause(e)
             }
+            player().resume(e);
 
-            $(e).addClass("btn-playing");
-            $(e).children()[0].src = "assets/pause.svg";
+            // $(e).addClass("btn-playing");
+            // $(e).children()[0].src = "assets/pause.svg";
             $(".audioTitle").text(item.title)
 
             HTMLDATA.playing.id = item.id;

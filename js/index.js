@@ -17,10 +17,15 @@ $(() => {
     } else {
         getTop();
     }
+    setTimeout(() => {
+        $("body").append(`<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>`);
+    }, 5000);
 }
 )
 
-
+function showHandler() {
+    player().show();
+}
 function searchHandler() {
     var searchText = $("#SearchInput").val();
     $('#SearchInput').autocomplete('close');

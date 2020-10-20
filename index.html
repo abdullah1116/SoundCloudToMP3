@@ -4,6 +4,7 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/jquery-ui.js"></script>
 
+    <script src="./js/Player.js"></script>
     <script src="./js/getBtnHandler.js"></script>
     <script src="./js/HtmlRender.js"></script>
 
@@ -33,7 +34,7 @@
 <body style="overflow: overlay;">
     <!-- navebar -->
     <nav class="navbar navbar-dark font-weight-bold shadow defColor">
-        <a class="navbar-brand" href="#">SoundCloud To MP3</a>
+        <a class="navbar-brand" href="../">SoundCloud To MP3</a>
     </nav>
 
     <div class="loaderBody showOnSearch">
@@ -94,18 +95,23 @@
 
 
 
-    <div class=" p-1 col-lg-4 menu" id="">
+    <div class=" p-1 col-lg-4 menu playerCont">
         <div class="audioPanelCont">
             <p class="audioTitle"></p>
         </div>
         <audio noDownload controls id="audioControls" controlsList="nodownload"></audio>
         <div class="dowload"></div>
     </div>
+    <div class=" p-1 col-lg-4 menu playerBtn">
+        <div style="height: 35px;width: 35px;">
+            <img src="../assets/UpArrow.svg" onclick="showHandler()">
+        </div>
+    </div>
 
 
 
 </body>
 <script src="./js/index.js"></script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>
+<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script> -->
 
 </html>
