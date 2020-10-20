@@ -8,7 +8,12 @@ function getBtnHandler(e, downlaod) {
     }
 
     if (downlaod) {
-        FileHandler(item.id, item.title, downlaod);
+        // FileHandler(item.id, item.title, downlaod);
+
+        // window.location = "../download/?link=" + item.link;
+        window.open("../download/?link=" + item.link, '_blank');
+
+        // /http://localhost/download/?link=https://soundcloud.com/user660378/2012-28
     } else {
         if (HTMLDATA.playing.id == item.id) {
 
@@ -89,7 +94,7 @@ function getBtnHandler(e, downlaod) {
                 }
             }
         });
-        xhr.open("GET", `sc.php?type=audio&id=${id}`);
+        xhr.open("GET", `../sc.php?type=audio&id=${id}`);
         xhr.send();
     }
 }

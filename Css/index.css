@@ -45,10 +45,10 @@ img {
     display: none;
 }
 
-/* 
+
 body.searching .showOnSearch {
     display: initial;
-} */
+}
 
 body.searching .hideOnSearch {
     animation: blurAnimate 30s normal forwards;
@@ -213,7 +213,7 @@ body.searching .hideOnSearch {
     width: -webkit-fill-available;
     flex-direction: row;
     position: relative;
-    backdrop-filter: blur(6px);
+    /* backdrop-filter: blur(6px); */
     background-color: #00000038;
     box-shadow: 0 0 20px 5px #00000036;
 }
@@ -321,7 +321,7 @@ body.searching .hideOnSearch {
     flex-direction: row;
     position: relative;
     display: inline-flex;
-    backdrop-filter: blur(6px);
+    /* backdrop-filter: blur(6px); */
     background-color: #00000038;
 }
 

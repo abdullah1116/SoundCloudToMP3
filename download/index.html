@@ -1,0 +1,144 @@
+<html>
+
+<head>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+
+    <script src="../js/getBtnHandler.js"></script>
+    <script src="../js/HtmlRender.js"></script>
+
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Css/index.css">
+    <link rel="stylesheet" href="../Css/loader.css">
+    <link rel="stylesheet" href="../Css/jquery-ui.css">
+
+
+    <meta name="description"
+        content="Download your favorite tracks to your personal storage and enjoy them even when you are offline!">
+    <meta name="Keywords" content="soundcloud,mp3,converter,free,online,download">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/favicon.ico">
+    <title>SoundCloud To MP3</title>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body style="overflow: overlay;">
+    <!-- navebar -->
+    <nav class="navbar navbar-dark font-weight-bold shadow defColor">
+        <a class="navbar-brand" href="#">SoundCloud To MP3</a>
+    </nav>
+
+
+    <div id="backgroundImage">
+
+        <!-- Search bar -->
+        <div class="p-2 mt-5 pt-5 d-flex justify-content-center text-center">
+            <div class="col-8">
+                <h3 class="title">
+                    Download your favorite tracks to your personal storage and enjoy them even when you are offline!
+                </h3>
+
+                <!-- <div class="searchCont shadow w-100 p-2 mt-4">
+                    <div class="input-group input-group-sm glowThis">
+                        <input type="text" class="form-control"
+                            placeholder="Enter the name or url of track you want to search..." id="SearchInput">
+                        <div class="input-group-append">
+                            <span class="input-group-text font-weight-bold defColor px-3 " id="SearchBtn"
+                                onclick="searchHandler()">
+                                Search
+                            </span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+
+        <!-- <div class="container viewBtnCont text-right hideOnSearch">
+            <div class="input-group input-group-sm shadow viewSelecCont">
+                <img src="../assets/list.svg" viewType="list" class="viewSelectImg" style="margin-right: -5px;">
+                <img src="../assets/grid.svg" viewType="grid" class="viewSelectImg viewSelectImg-selected">
+            </div>
+        </div> -->
+
+    </div>
+
+
+
+
+    <div>
+
+
+        <!-- tracks Container -->
+        <div class="my-5 pb-5 container hideOnSearch" id="Container" style="display: none;">
+            <div class="mx-3 my-1 p-2 Row  w-100 shadow rounded "
+                style="    position: relative;    justify-content: space-between;">
+                <div class="Row">
+                    <div class="ximgContList" style="    width: calc(15vh + 15vw);
+                height: calc(15vh + 15vw);">
+                        <img src="" class="image rounded" alt="Image Not Found">
+                    </div>
+                    <div class="p-3">
+                        <p class="soundArtist"></p>
+                        <p class="soundTitle"></p>
+
+                    </div>
+                </div>
+                <div class="p-2"
+                    style="border-left: solid .5px #00000022; display: flex; flex-direction: column-reverse;">
+                    <button type="button" class="btn btn-orange" onclick="downloadBtnHandler()"
+                        style="background-color: #f50;">
+                        Download
+                        <img src="../assets/down.svg" class="playlistDownBtnImg">
+                    </button>
+                </div>
+                <!-- <div class="shadow playlistDownBtncont">
+                    <a type="track" index="0" class="btn-group defColor">
+                        
+                        <!-- <button type="button" class="btn  btn-orange playlistDownBtn"
+                            onclick="getBtnHandler(this,false)">
+                            Play
+                            <img src="../assets/play.svg" class="playlistDownBtnImg">
+                        </button> -->
+                <!-- </a>
+            </div> -->
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="loaderBody showOnSearch">
+        <div class="a" style="--n: 5">
+            <div class="dot" style="--i: 0"></div>
+            <div class="dot" style="--i: 1"></div>
+            <div class="dot" style="--i: 2"></div>
+            <div class="dot" style="--i: 3"></div>
+            <div class="dot" style="--i: 4"></div>
+        </div>
+    </div>
+
+    <!-- <div class=" p-1 col-lg-4 menu" id="">
+        <div class="audioPanelCont">
+            <p class="audioTitle"></p>
+        </div>
+        <audio noDownload controls id="audioControls" controlsList="nodownload"></audio>
+        <div class="dowload"></div>
+    </div> -->
+
+
+</body>
+
+<!-- <script src="../js/index.js"></script> -->
+<script src="../js/download.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>
+
+</html>

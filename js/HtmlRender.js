@@ -5,20 +5,20 @@ function RenderContainer(Top) {
         let list = ""
         d.tracks.map((d, i) => { //playlist inner list 
             list += `<div class="listItem  rounded">
-                        <img  src="${d.image}" class="ListSoundImg rounded" alt="Image Not Found">
+                        <img  src="${d.image.replace("-large", "-t250x250")}" class="ListSoundImg rounded" alt="Image Not Found">
                         <p class="playlistTrackTitle">${d.title}</p>
                         <a type="playlistTrack" class="btn-group listDownBtncont defColor" listIndex="${listIndex}" index="${i}" class="btn-group">
                             <button
                                 type="button"
                                 class="btn btn-orange  listDownBtn"
                                 onclick="getBtnHandler(this,true)">
-                                <img src="./assets/down.svg">
+                                <img src="../assets/down.svg">
                             </button>
                             <button
                                 type="button"
                                 class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange listDownBtn"
                                 onclick="getBtnHandler(this,false)">
-                                <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" >
+                                <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" >
                             </button>
                     </a>
                     </div>`
@@ -28,7 +28,7 @@ function RenderContainer(Top) {
 
     // $("#Container").children().remove()
 
-    if (isGridView) {
+    if (HTMLDATA.isGridView) {
 
         HTMLDATA.tracks.map((d, i) => {
             HTML += (
@@ -39,18 +39,18 @@ function RenderContainer(Top) {
                                 type="button"
                                 class="btn btn-orange downBtn"
                                 onclick="getBtnHandler(this,true)">
-                                <img src="./assets/down.svg">
+                                <img src="../assets/down.svg">
                             </button>
                             <button
                                 type="button"
-                                class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange downBtn"
+                                class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""}btn-orange downBtn"
                                 onclick="getBtnHandler(this,false)">
-                                <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg">
+                                <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg">
                             </button>
                     </a>
                         </div>
                     <div class="imgCont">            
-                        <img  src="${d.image}" 
+                        <img  src="${d.image.replace("-large", "-t250x250")}" 
                               class="soundBackImg rounded" 
                               alt="Image Not Found">
                     </div>
@@ -66,7 +66,7 @@ function RenderContainer(Top) {
                     `<div class="m-3 p-2 item rounded">                
                     <div class="imgCont">
                         <div class="listCont rounded">${rendList(d, i)}</div>
-                        <img  src="${d.image}" class="soundBackImg rounded" alt="Image Not Found">                        
+                        <img  src="${d.image.replace("-large", "-t250x250")}" class="soundBackImg rounded" alt="Image Not Found">                        
                     </div>
                     <p class="soundArtist">${d.user}</p>
                     <p class="soundTitle">${d.title}</p>
@@ -81,7 +81,7 @@ function RenderContainer(Top) {
                 `<div class="mx-3 my-1 p-2 itemList Row  w-100 shadow rounded ">
                         
                         <div class="imgContList">
-                            <img src="${d.image}"
+                            <img src="${d.image.replace("-large", "-t250x250")}"
                             class="soundBackImgList rounded" alt="Image Not Found">
                         </div>
                         <div class="col p-3">
@@ -92,11 +92,11 @@ function RenderContainer(Top) {
                         <a type="track" index="${i}" class="btn-group defColor">
                             <button type="button" class="btn btn-orange playlistDownBtn"  onclick="getBtnHandler(this,true)">
                                 Download
-                                <img src="./assets/down.svg" class="playlistDownBtnImg" >
+                                <img src="../assets/down.svg" class="playlistDownBtnImg" >
                             </button>
                             <button type="button" class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange playlistDownBtn" onclick="getBtnHandler(this,false)">
                                 Play
-                                <img src="./assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" class="playlistDownBtnImg">
+                                <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" class="playlistDownBtnImg">
                             </button>
                         </a>
                         </div>
@@ -111,7 +111,7 @@ function RenderContainer(Top) {
                         <div class="mb-1 playlistItemListInner">
                             <a type="track" index="${i}"></a>
                             <div class="imgContList">
-                                <img src="${d.image}"
+                                <img src="${d.image.replace("-large", "-t250x250")}"
                                 class="soundBackImgList rounded" alt="Image Not Found">
                             </div>
                             <div class="p-3">

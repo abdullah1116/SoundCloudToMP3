@@ -4,10 +4,9 @@ HTMLDATA = {
         src: "",
         state: false,
     },
-    searched: { artist: undefined }
+    searched: { artist: undefined },
+    isGridView: true,
 };
-
-isGridView = true;
 
 
 $(() => {
@@ -30,7 +29,7 @@ function searchHandler() {
     if (searchText != undefined && searchText != "" && HTMLDATA.searched.title != searchText) {
 
         HTMLDATA.searched.title = searchText;
-        HTMLDATA.searched.link = (/soundcloud.com\//.test(searchText) ? `sc.php?type=link&link=${searchText}` : `sc.php?type=search&search=${searchText}`)
+        HTMLDATA.searched.link = (/soundcloud.com\//.test(searchText) ? `../sc.php?type=link&link=${searchText}` : `../sc.php?type=search&search=${searchText}`)
 
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -75,7 +74,7 @@ function getTop() {
             color: #00000085;">Most heard tracks: </p>`);
         }
     });
-    xhr.open("GET", 'sc.php?type=top');
+    xhr.open("GET", '../sc.php?type=top');
     xhr.send();
 }
 
@@ -90,7 +89,7 @@ $(".viewSelectImg").click((e) => {
 
     if (!$($(e)[0].target).hasClass("viewSelectImg-selected")) {
         $(".viewSelectImg").toggleClass("viewSelectImg-selected");
-        isGridView = !isGridView;
+        HTMLDATA.isGridView = !HTMLDATA.isGridView;
         RenderContainer();
     }
 })
@@ -100,7 +99,7 @@ $.fn.googleSuggest = function (opts) {
     opts.delay = 0;
     opts.source = function (request, response) {
         $.ajax({
-            url: 'sc.php/?type=keySuggest',
+            url: '../sc.php/?type=keySuggest',
             data: {
                 key: request.term
             },
