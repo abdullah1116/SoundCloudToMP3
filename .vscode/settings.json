@@ -1,0 +1,7 @@
+{
+    "tslint.run": "onType",
+    "tslint.autoFixOnSave": true,
+
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications"
+}
