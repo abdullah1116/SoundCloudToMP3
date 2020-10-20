@@ -215,7 +215,7 @@ body.searching .hideOnSearch {
     flex-direction: row;
     position: relative;
     /* backdrop-filter: blur(6px); */
-    background-color: #00000038;
+    /* background-color: #00000038; */
     box-shadow: 0 0 20px 5px #00000036;
 }
 
@@ -394,7 +394,7 @@ body.searching .hideOnSearch {
 }
 
 .playerCont {
-    bottom: -100;
+    bottom: -55;
     background-color: #f1f3f4;
     box-shadow: 0 0 25px 5px #00000044;
     z-index: 16;

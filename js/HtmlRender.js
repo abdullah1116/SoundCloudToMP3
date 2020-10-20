@@ -78,7 +78,7 @@ function RenderContainer(Top) {
 
         HTMLDATA.tracks.map((d, i) => {
             HTML += (
-                `<div class="mx-3 my-1 p-2 itemList Row  w-100 shadow rounded ">
+                `<div class="mx-3 my-1 p-2 itemList Row  w-100 rounded ">
                         
                         <div class="imgContList">
                             <img src="${d.image.replace("-large", "-t250x250")}"

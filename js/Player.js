@@ -11,7 +11,7 @@ function player() {
             audioPlayer.play();
         },
         pause: () => {
-            $(".playerCont").animate({ bottom: "-100px" });
+            $(".playerCont").animate({ bottom: "-55" });
             $(".btn-playing").children()[0].src = "assets/play.svg";
             $(".btn-playing").removeClass("btn-playing");
 
@@ -24,7 +24,7 @@ function player() {
             $(e).children()[0].src = "assets/pause.svg";
         },
         stop: () => {
-            $(".playerCont").animate({ bottom: "-100px" });
+            $(".playerCont").animate({ bottom: "-55" });
         }
     }
 
