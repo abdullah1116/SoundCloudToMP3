@@ -34,18 +34,13 @@ function getBtnHandler(e, downlaod) {
 
                 // audioplayer.src = HTMLDATA.playing.src;
                 // audioplayer.play();
-                player().play(e);
+                player().resume(e);
 
             }
             HTMLDATA.playing.state = !HTMLDATA.playing.state;
 
         } else {
-            if (HTMLDATA.playing.state == true && $(".btn-playing").children().length != 0) {
-                // $(".btn-playing").children()[0].src = "assets/play.svg";
-                // $(".btn-playing").removeClass("btn-playing");
-                player().pause(e)
-            }
-            player().resume(e);
+            player().play(e);
 
             // $(e).addClass("btn-playing");
             // $(e).children()[0].src = "assets/pause.svg";

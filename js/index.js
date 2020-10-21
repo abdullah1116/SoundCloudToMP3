@@ -20,6 +20,12 @@ $(() => {
     setTimeout(() => {
         $("body").append(`<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>`);
     }, 5000);
+
+    if (screen.width < 1000) {
+        $(".viewSelectImg").toggleClass("viewSelectImg-selected");
+        HTMLDATA.isGridView = !HTMLDATA.isGridView;
+    }
+
 }
 )
 
@@ -40,10 +46,14 @@ function searchHandler() {
         xhr.withCredentials = true;
         xhr.responseType = 'json';
         xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4 && this.response != null && !this.response.error) {
+            if (this.readyState === 4) {
                 HTMLDATA.tracks = [];
                 HTMLDATA.playlists = [];
-                HTMLDATA = { ...HTMLDATA, ...this.response.content };
+
+                if (this.response != null) {
+                    HTMLDATA = { ...HTMLDATA, ...this.response.content };
+                }
+
                 RenderContainer();
                 $(".glowThis").removeClass("glow");
                 $("body").removeClass("searching");

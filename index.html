@@ -18,6 +18,8 @@
         content="Download your favorite tracks to your personal storage and enjoy them even when you are offline!">
     <meta name="Keywords" content="soundcloud,mp3,converter,free,online,download">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en-us">
+
     <link rel="icon" href="./assets/favicon.ico">
     <title>SoundCloud To MP3</title>
 
@@ -51,10 +53,10 @@
 
         <!-- Search bar -->
         <div class="p-2 mt-5 pt-5 d-flex justify-content-center text-center">
-            <div class="col-8">
-                <h3 class="title">
+            <div class="searchTextCont">
+                <span class="title">
                     Download your favorite tracks to your personal storage and enjoy them even when you are offline!
-                </h3>
+                </span>
 
                 <div class="searchCont shadow w-100 p-2 mt-4">
                     <div class="input-group input-group-sm glowThis">
@@ -103,7 +105,8 @@
             <p class="audioTitle"></p>
         </div>
         <audio noDownload controls id="audioControls" controlsList="nodownload"></audio>
-        <div class="dowload"></div>
+        <div class="download"></div>
+        <span class="playerSpace"></span>
     </div>
     <!-- <div class=" p-1 col-lg-4 menu playerBtn">
         <div style="height: 25px;width: 25px;">

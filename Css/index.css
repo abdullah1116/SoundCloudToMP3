@@ -71,6 +71,7 @@ body.searching .hideOnSearch {
 
 .title {
     color: #00000085;
+    font-size: 1.75rem;
 }
 
 #backgroundImage {
@@ -112,6 +113,10 @@ body.searching .hideOnSearch {
 .input-group.input-group-sm.glowThis * {
     font-size: 2rem;
     height: auto;
+}
+
+.searchTextCont {
+    max-width: 800px;
 }
 
 .searchCont {
@@ -398,14 +403,18 @@ body.searching .hideOnSearch {
     background-color: #f1f3f4;
     box-shadow: 0 0 25px 5px #00000044;
     transition: all .7s;
+    height: 65px;
 }
 
 .playerHide .playerBtn {
     height: 20px;
+    transition: all .7s;
 }
 
 .playerHide {
-    bottom: -55;
+    /* bottom: -55; */
+    height: 25px;
+    transition: all .7s;
 }
 
 .playerBtn {
@@ -444,6 +453,21 @@ body.searching .hideOnSearch {
 #audioControls::-webkit-media-controls-panel {
     border-radius: 0;
     background-color: #f1f3f4;
+}
+
+@media only screen and (max-width: 1000px) {
+    .title {
+        font-size: 1rem;
+    }
+    #SearchInput {
+        font-size: 1.5rem;
+    }
+    #SearchBtn {
+        font-size: 1.2rem;
+    }
+    .playerCont {
+        bottom: 30px;
+    }
 }
 
 @keyframes glowAni {
