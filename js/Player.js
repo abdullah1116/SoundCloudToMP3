@@ -5,58 +5,70 @@ function player() {
     return {
 
         play: (e) => {
-            if ($(".btn-playing").length != 0) {
-                $(".btn-playing").children()[0].src = "assets/play.svg";
-                $(".btn-playing").removeClass("btn-playing");
-            }
-
-            // $(".playerCont").removeClass("playerHide");  
-
+            player().removeclass();
 
             $(e).addClass("btn-playing");
             $(e).children()[0].src = "assets/pause.svg";
+
+            player().show();
 
             audioPlayer.src = HTMLDATA.playing.src;
             audioPlayer.play();
         },
         pause: () => {
-            // $(".playerCont").animate({ bottom: "-55" });            
-            // $(".playerCont").addClass("playerHide");
-            $(".btn-playing").children()[0].src = "assets/play.svg";
-            $(".btn-playing").removeClass("btn-playing");
-
+            player().removeclass();
             audioPlayer.pause();
 
         },
         resume: (e) => {
-            // $(".playerCont").animate({ bottom: "0px" });
-
-            $(".btn-playing").removeClass("btn-playing");
-            // $(".playerCont").removeClass("playerHide");
+            player().removeclass();
 
 
             $(e).addClass("btn-playing");
             $(e).children()[0].src = "assets/pause.svg";
+            audioPlayer.play();
         },
+
+        removeclass: () => {
+            if ($(".btn-playing").length != 0) {
+                $(".btn-playing").children()[0].src = "assets/play.svg";
+                $(".btn-playing").removeClass("btn-playing");
+            }
+        },
+
+        refresh: () => {
+            setTimeout(() => {
+                console.warn(!audioPlayer.paused);
+                if (!audioPlayer.paused || audioPlayer.readyState != 4) {
+                    player().show();
+                } else {
+                    player().removeclass();
+                    player().hide();
+                    HTMLDATA.playing.state = false;
+                }
+            }, 1000)
+        },
+
+
 
         show: () => {
-            // $(".playerCont").animate({ bottom: "0px" });
             $(".playerCont").removeClass("playerHide");
-
         },
+
         hide: () => {
             $(".playerCont").addClass("playerHide")
-            // $(".playerCont").animate({ bottom: "-55" });
         }
     }
 
 }
 $(() => {
     document.getElementById('audioControls').onpause = function (e) {
-        player().hide();
+        player().refresh();
+        // player().hide();
+        // player().removeclass();
 
     }
     document.getElementById('audioControls').onplay = function (e) {
-        player().show();
+        player().refresh();
     }
 })

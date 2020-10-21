@@ -43,7 +43,7 @@ function RenderContainer(Top) {
                             </button>
                             <button
                                 type="button"
-                                class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""}btn-orange downBtn"
+                                class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing " : "" : ""}btn-orange downBtn"
                                 onclick="getBtnHandler(this,false)">
                                 <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg">
                             </button>

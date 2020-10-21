@@ -336,7 +336,7 @@ body.searching .hideOnSearch {
     position: relative;
     display: inline-flex;
     /* backdrop-filter: blur(6px); */
-    background-color: #00000038;
+    /* background-color: #00000038; */
 }
 
 .playlistItemListInner {
