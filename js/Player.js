@@ -1,9 +1,12 @@
 
 function player() {
     var audioPlayer = document.getElementById("audioControls");
+
     return {
         show: (e) => {
-            $(".playerCont").animate({ bottom: "0px" });
+            // $(".playerCont").animate({ bottom: "0px" });
+            $(".playerCont").removeClass("playerHide");
+
         },
         play: (e) => {
             player().resume(e)
@@ -11,7 +14,8 @@ function player() {
             audioPlayer.play();
         },
         pause: () => {
-            $(".playerCont").animate({ bottom: "-55" });
+            // $(".playerCont").animate({ bottom: "-55" });            
+            $(".playerCont").addClass("playerHide");
             $(".btn-playing").children()[0].src = "assets/play.svg";
             $(".btn-playing").removeClass("btn-playing");
 
@@ -19,13 +23,20 @@ function player() {
 
         },
         resume: (e) => {
-            $(".playerCont").animate({ bottom: "0px" });
+            // $(".playerCont").animate({ bottom: "0px" });
+            $(".playerCont").removeClass("playerHide");
             $(e).addClass("btn-playing");
             $(e).children()[0].src = "assets/pause.svg";
         },
-        stop: () => {
-            $(".playerCont").animate({ bottom: "-55" });
+        hide: () => {
+            $(".playerCont").addClass("playerHide")
+            // $(".playerCont").animate({ bottom: "-55" });
         }
     }
 
 }
+$(() => {
+    document.getElementById('audioControls').onpause = function (e) {
+        player().hide();
+    }
+})
