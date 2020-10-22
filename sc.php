@@ -57,7 +57,7 @@ function getSearch()
 function getTop()
 {
 
-    $url = "https://api-v2.soundcloud.com/charts?kind=top&limit=10&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP";
+    $url = "https://api-v2.soundcloud.com/charts?kind=top&limit=12&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP";
     sendResponse([
         'tracks' => topMapper(callAPI($url)),
         'playlists' => [],

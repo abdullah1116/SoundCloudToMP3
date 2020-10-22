@@ -1,4 +1,5 @@
 HTMLDATA = {
+    Top: "",
     playing: {
         id: "",
         src: "",
@@ -24,6 +25,7 @@ $(() => {
     if (screen.width < 1000) {
         $(".viewSelectImg").toggleClass("viewSelectImg-selected");
         HTMLDATA.isGridView = !HTMLDATA.isGridView;
+        $(".playlistDownBtnText").css('display', 'none')
     }
 
 }
@@ -49,7 +51,7 @@ function searchHandler() {
             if (this.readyState === 4) {
                 HTMLDATA.tracks = [];
                 HTMLDATA.playlists = [];
-
+                HTMLDATA.Top = "";
                 if (this.response != null) {
                     HTMLDATA = { ...HTMLDATA, ...this.response.content };
                 }
@@ -80,13 +82,16 @@ function getTop() {
             HTMLDATA.tracks = [];
             HTMLDATA.playlists = [];
             HTMLDATA = { ...HTMLDATA, ...this.response.content };
-            RenderContainer(`<p style="
+            HTMLDATA.Top = `
+            <p style="
             position: absolute;
             margin-top: -30px;
             font-size: 25px;
             font-weight: bold;
-            left: 30px;
-            color: #00000085;">Most heard tracks: </p>`);
+            left: 60px;
+            color: #00000085;">Most heard tracks: </p>`
+
+            RenderContainer();
         }
     });
     xhr.open("GET", '../sc.php?type=top');

@@ -1,5 +1,5 @@
 
-function RenderContainer(Top) {
+function RenderContainer() {
     var HTML = ""
     const rendList = (d, listIndex) => {
         let list = ""
@@ -91,11 +91,11 @@ function RenderContainer(Top) {
                         <div class="shadow playlistDownBtncont">
                         <a type="track" index="${i}" class="btn-group defColor">
                             <button type="button" class="btn btn-orange playlistDownBtn"  onclick="getBtnHandler(this,true)">
-                                Download
+                                <span class="playlistDownBtnText">Download</span>
                                 <img src="../assets/down.svg" class="playlistDownBtnImg" >
                             </button>
                             <button type="button" class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange playlistDownBtn" onclick="getBtnHandler(this,false)">
-                                Play
+                                <span class="playlistDownBtnText">Play</span>
                                 <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" class="playlistDownBtnImg">
                             </button>
                         </a>
@@ -130,5 +130,9 @@ function RenderContainer(Top) {
                 <h4>Oops no result found with this search, try searching differently.</h4>
             </span>`
     }
-    $("#Container")[0].innerHTML = Top == undefined || Top == "" ? HTML : Top + HTML;
+    $("#Container")[0].innerHTML = HTMLDATA.Top == undefined || HTMLDATA.Top == "" ? HTML : HTMLDATA.Top + HTML;
+
+    if (screen.width < 1000) {
+        $(".playlistDownBtnText").css('display', 'none')
+    }
 }

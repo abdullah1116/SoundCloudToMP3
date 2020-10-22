@@ -199,6 +199,30 @@ body.searching .hideOnSearch {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 20%;
+}
+
+.footer {
+    /* background-color: wheat; */
+    padding: 1px;
+    /* padding: 15px;    
+    padding-bottom: 50px; */
+    border-top: solid .1px #f50;
+    box-shadow: 0 0 30px 0 #0004;
+    background-color: #343a40;
+}
+
+.links {
+    color: #f50 !important;
+}
+
+.linksBreak {
+    color: #fff !important;
+}
+
+.linksCont {
+    max-width: 800px;
+    text-align: -webkit-center;
 }
 
 .viewBtnCont {
