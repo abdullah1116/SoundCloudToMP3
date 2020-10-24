@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 
 <head>
     <script src="./js/jquery.js?"></script>
@@ -76,8 +76,8 @@
 
         <div class="container viewBtnCont text-right hideOnSearch">
             <div class="input-group input-group-sm shadow viewSelecCont">
-                <img src="./assets/list.svg" viewType="list" class="viewSelectImg" style="margin-right: -5px;">
-                <img src="./assets/grid.svg" viewType="grid" class="viewSelectImg viewSelectImg-selected">
+                <img src="./assets/list.svg" viewType="list" class="viewSelectImg" style="margin-right: -5px;" alt="">
+                <img src="./assets/grid.svg" viewType="grid" class="viewSelectImg viewSelectImg-selected" alt="">
             </div>
         </div>
 
@@ -91,7 +91,41 @@
         <div class="my-5 pb-5 container hideOnSearch" id="Container">
 
         </div>
-        <div class="footer">
+
+        <!-- how to use -->
+        <div class="tipsCont">
+            <div class="tips container">
+                <span class="tipsTitle">How to Use</span>
+                <p class="p-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, aliquid possimus officia quasi
+                    animi temporibus sit id, esse earum cupiditate veritatis deleniti aspernatur fuga recusandae nam
+                    sed? Sunt, laudantium alias!
+                </p>
+            </div>
+        </div>
+        <div class="tipsCont">
+            <div class="tips container">
+                <span class="tipsTitle">Contact us</span>
+                <!-- <p class="p-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, aliquid possimus officia quasi
+                    animi temporibus sit id, esse earum cupiditate veritatis deleniti aspernatur fuga recusandae nam
+                    sed? Sunt, laudantium alias!
+                </p> -->
+            </div>
+        </div>
+        <div class="tipsCont">
+            <div class="tips container">
+                <span class="tipsTitle">Playlist downloader</span>
+                <!-- <p class="p-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, aliquid possimus officia quasi
+                    animi temporibus sit id, esse earum cupiditate veritatis deleniti aspernatur fuga recusandae nam
+                    sed? Sunt, laudantium alias!
+                </p> -->
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer" style="position: absolute;">
             <div class="linksCont">
                 <div style="max-width: 300px; justify-content: space-around;display: flex;">
                     <a class="links" href="../blog">Blog</a>
@@ -109,7 +143,7 @@
 
     <div class=" p-1 col-lg-4 menu playerCont playerHide">
         <div class="playerBtn">
-            <img src="../assets/UpArrow.svg" onclick="showHandler()">
+            <img src="../assets/UpArrow.svg" onclick="showHandler()" alt="">
         </div>
         <div class="audioPanelCont">
             <p class="audioTitle"></p>

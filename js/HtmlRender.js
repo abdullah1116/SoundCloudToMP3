@@ -7,7 +7,7 @@ function RenderContainer() {
             list += `<div class="listItem  rounded">
                         <img  src="${d.image.replace("-large", "-t250x250")}" class="ListSoundImg rounded" alt="Image Not Found">
                         <p class="playlistTrackTitle">${d.title}</p>
-                        <a type="playlistTrack" class="btn-group listDownBtncont defColor" listIndex="${listIndex}" index="${i}" class="btn-group">
+                        <div type="playlistTrack" class="btn-group listDownBtncont defColor" listIndex="${listIndex}" index="${i}" class="btn-group">
                             <button
                                 type="button"
                                 class="btn btn-orange  listDownBtn"
@@ -20,7 +20,7 @@ function RenderContainer() {
                                 onclick="getBtnHandler(this,false)">
                                 <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" >
                             </button>
-                    </a>
+                        </div>
                     </div>`
         })
         return (list);
@@ -34,20 +34,20 @@ function RenderContainer() {
             HTML += (
                 `<div class="m-3 p-2 item rounded">
                         <div class="shadow downBtnCont">
-                    <a type="track" index="${i}" class="btn-group defColor">
+                    <div type="track" index="${i}" class="btn-group defColor">
                             <button
                                 type="button"
                                 class="btn btn-orange downBtn"
                                 onclick="getBtnHandler(this,true)">
-                                <img src="../assets/down.svg">
+                                <img src="../assets/down.svg" alt="">
                             </button>
                             <button
                                 type="button"
                                 class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing " : "" : ""}btn-orange downBtn"
                                 onclick="getBtnHandler(this,false)">
-                                <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg">
+                                <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" alt="">
                             </button>
-                    </a>
+                    </div>
                         </div>
                     <div class="imgCont">            
                         <img  src="${d.image.replace("-large", "-t250x250")}" 
@@ -89,16 +89,16 @@ function RenderContainer() {
                                 <p class="soundTitle">${d.title}</p>
                         </div>
                         <div class="shadow playlistDownBtncont">
-                        <a type="track" index="${i}" class="btn-group defColor">
+                        <div type="track" index="${i}" class="btn-group defColor">
                             <button type="button" class="btn btn-orange playlistDownBtn"  onclick="getBtnHandler(this,true)">
                                 <span class="playlistDownBtnText">Download</span>
-                                <img src="../assets/down.svg" class="playlistDownBtnImg" >
+                                <img src="../assets/down.svg" class="playlistDownBtnImg"  alt="">
                             </button>
                             <button type="button" class="btn ${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "btn-playing" : "" : ""} btn-orange playlistDownBtn" onclick="getBtnHandler(this,false)">
                                 <span class="playlistDownBtnText">Play</span>
-                                <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" class="playlistDownBtnImg">
+                                <img src="../assets/${HTMLDATA.playing.state ? HTMLDATA.playing.id == d.id ? "pause" : "play" : "play"}.svg" class="playlistDownBtnImg" alt="">
                             </button>
-                        </a>
+                        </div>
                         </div>
                     </div>`);
         })
@@ -132,7 +132,6 @@ function RenderContainer() {
     }
     $("#Container")[0].innerHTML = HTMLDATA.Top == undefined || HTMLDATA.Top == "" ? HTML : HTMLDATA.Top + HTML;
 
-    if (screen.width < 1000) {
-        $(".playlistDownBtnText").css('display', 'none')
-    }
+
+    $('.footer').css('position', $(document).height() > screen.height ? "static" : "absolute" + " !important")
 }
