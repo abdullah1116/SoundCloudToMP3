@@ -71,6 +71,7 @@ body.searching .hideOnSearch {
 
 .title {
     color: #00000085;
+    font-size: 1.75rem;
 }
 
 #backgroundImage {
@@ -112,6 +113,10 @@ body.searching .hideOnSearch {
 .input-group.input-group-sm.glowThis * {
     font-size: 2rem;
     height: auto;
+}
+
+.searchTextCont {
+    max-width: 800px;
 }
 
 .searchCont {
@@ -194,6 +199,45 @@ body.searching .hideOnSearch {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 50%;
+}
+
+.tipsCont {
+    width: 100%;
+    padding: 15px;
+    padding-bottom: 50px;
+    /* border-top: solid 2px #f50; */
+    box-shadow: 0 -7px 30px 0 #0003;
+}
+
+.tips {}
+
+.tipsTitle {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.footer {
+    width: 100%;
+    padding: 1px;
+    bottom: 0;
+    /* padding-bottom: 50px; */
+    border-top: solid .1px #f50;
+    box-shadow: 0 -5px 30px 0 #0004;
+    background-color: #343a40;
+}
+
+.links {
+    color: #f50 !important;
+}
+
+.linksBreak {
+    color: #fff !important;
+}
+
+.linksCont {
+    max-width: 800px;
+    text-align: -webkit-center;
 }
 
 .viewBtnCont {
@@ -205,7 +249,7 @@ body.searching .hideOnSearch {
     /* width: 220px; */
     width: calc(15vw + 15vh + 15px);
     max-width: 316px;
-    backdrop-filter: blur(6px);
+    /* backdrop-filter: blur(6px); */
     /* background-color: #00000038; */
     box-shadow: 0 0 20px 5px #00000036;
 }
@@ -215,7 +259,7 @@ body.searching .hideOnSearch {
     flex-direction: row;
     position: relative;
     /* backdrop-filter: blur(6px); */
-    background-color: #00000038;
+    /* background-color: #00000038; */
     box-shadow: 0 0 20px 5px #00000036;
 }
 
@@ -331,7 +375,7 @@ body.searching .hideOnSearch {
     position: relative;
     display: inline-flex;
     /* backdrop-filter: blur(6px); */
-    background-color: #00000038;
+    /* background-color: #00000038; */
 }
 
 .playlistItemListInner {
@@ -385,26 +429,39 @@ body.searching .hideOnSearch {
 }
 
 .menu {
-    position: fixed;
     bottom: 0;
+    position: fixed;
     right: 0;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     z-index: 15;
+    transition: all .7s;
 }
 
 .playerCont {
-    bottom: -100;
     background-color: #f1f3f4;
     box-shadow: 0 0 25px 5px #00000044;
-    z-index: 16;
+    transition: all .7s;
+    height: 65px;
+}
+
+.playerHide .playerBtn {
+    height: 20px;
+    transition: all .7s;
+}
+
+.playerHide {
+    /* bottom: -55; */
+    height: 25px;
+    transition: all .7s;
 }
 
 .playerBtn {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    padding: 0 !important;
+    height: 0px;
+    width: 25px;
+    margin-right: 50%;
+    margin-left: 50%;
+    transition: all .7s;
 }
 
 .audioCont {
@@ -435,6 +492,27 @@ body.searching .hideOnSearch {
 #audioControls::-webkit-media-controls-panel {
     border-radius: 0;
     background-color: #f1f3f4;
+}
+
+@media only screen and (max-width: 1000px) {
+    .title {
+        font-size: 1rem;
+    }
+    #SearchInput {
+        font-size: 1.5rem;
+    }
+    #SearchBtn {
+        font-size: 1.2rem;
+    }
+    .playerCont {
+        bottom: 30px;
+    }
+    .footer {
+        padding-bottom: 100px;
+    }
+    .playlistDownBtnText {
+        display: none;
+    }
 }
 
 @keyframes glowAni {

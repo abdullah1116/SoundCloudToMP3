@@ -57,7 +57,7 @@ function getSearch()
 function getTop()
 {
 
-    $url = "https://api-v2.soundcloud.com/charts?kind=top&limit=10&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP";
+    $url = "https://api-v2.soundcloud.com/charts?kind=top&limit=12&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP";
     sendResponse([
         'tracks' => topMapper(callAPI($url)),
         'playlists' => [],
@@ -91,7 +91,7 @@ function getAudio()
     // $url = "https://api.soundcloud.com/tracks/229936313/stream?client_id=86b6a66bb2d863f5d64dd8a91cd8de94";
     if (empty($_GET['id'])) sendError('Nothing played');
     $id = $_GET['id'];
-    $url =  "https://www.genmp3.net/getStream.php?id={$id}";
+    $url =  "https://www.genmp3.net/getStream.php?id={$id}&apikey=cldvdosndmp320";
 
     echo json_decode(callAPI($url), true)['link'];
 }

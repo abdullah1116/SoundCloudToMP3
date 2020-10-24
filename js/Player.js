@@ -1,31 +1,74 @@
 
 function player() {
     var audioPlayer = document.getElementById("audioControls");
+
     return {
-        show: (e) => {
-            $(".playerCont").animate({ bottom: "0px" });
-        },
+
         play: (e) => {
-            player().resume(e)
+            player().removeclass();
+
+            $(e).addClass("btn-playing");
+            $(e).children()[0].src = "assets/pause.svg";
+
+            player().show();
+
             audioPlayer.src = HTMLDATA.playing.src;
             audioPlayer.play();
         },
         pause: () => {
-            $(".playerCont").animate({ bottom: "-100px" });
-            $(".btn-playing").children()[0].src = "assets/play.svg";
-            $(".btn-playing").removeClass("btn-playing");
-
+            player().removeclass();
             audioPlayer.pause();
 
         },
         resume: (e) => {
-            $(".playerCont").animate({ bottom: "0px" });
+            player().removeclass();
+
+
             $(e).addClass("btn-playing");
             $(e).children()[0].src = "assets/pause.svg";
+            audioPlayer.play();
         },
-        stop: () => {
-            $(".playerCont").animate({ bottom: "-100px" });
+
+        removeclass: () => {
+            if ($(".btn-playing").length != 0) {
+                $(".btn-playing").children()[0].src = "assets/play.svg";
+                $(".btn-playing").removeClass("btn-playing");
+            }
+        },
+
+        refresh: () => {
+            setTimeout(() => {
+                console.warn(!audioPlayer.paused);
+                if (!audioPlayer.paused || audioPlayer.readyState != 4) {
+                    player().show();
+                } else {
+                    player().removeclass();
+                    player().hide();
+                    HTMLDATA.playing.state = false;
+                }
+            }, 1000)
+        },
+
+
+
+        show: () => {
+            $(".playerCont").removeClass("playerHide");
+        },
+
+        hide: () => {
+            $(".playerCont").addClass("playerHide")
         }
     }
 
 }
+$(() => {
+    document.getElementById('audioControls').onpause = function (e) {
+        player().refresh();
+        // player().hide();
+        // player().removeclass();
+
+    }
+    document.getElementById('audioControls').onplay = function (e) {
+        player().refresh();
+    }
+})
