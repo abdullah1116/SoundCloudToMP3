@@ -13,7 +13,10 @@
         <script src="./js/Player.js?"></script>
         <script src="./js/getBtnHandler.js?"></script>
         <script src="./js/HtmlRender.js?"></script>
-
+        <link
+            href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+            rel="stylesheet"
+        />
         <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -44,160 +47,157 @@
             <a class="navbar-brand" href="./">SoundCloud To MP3</a>
         </nav>
 
-        <div class="loaderBody showOnSearch">
-            <div class="a" style="--n: 5">
-                <div class="dot" style="--i: 0"></div>
-                <div class="dot" style="--i: 1"></div>
-                <div class="dot" style="--i: 2"></div>
-                <div class="dot" style="--i: 3"></div>
-                <div class="dot" style="--i: 4"></div>
-            </div>
-        </div>
+        <div class="body-wrapper">
+            <div id="header-container" style="background-color: #fdb35e">
+                <!-- Search bar -->
+                <div class="searchTextCont">
+                    <span class="title">
+                        Download your favorite tracks to your personal storage
+                        and enjoy them even when you are offline!
+                    </span>
 
-        <div id="backgroundImage" style="background-color: #f50">
-            <!-- Search bar -->
-            <div class="searchTextCont">
-                <span class="title">
-                    Download your favorite tracks to your personal storage and
-                    enjoy them even when you are offline!
-                </span>
-
-                <div class="searchCont shadow w-100 p-2 mt-4">
-                    <div class="input-group input-group-sm glowThis">
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Enter the name or url of track you want to search..."
-                            id="SearchInput"
-                        />
-                        <div class="input-group-append">
-                            <span
-                                class="input-group-text font-weight-bold defColor px-3"
-                                id="SearchBtn"
-                                onclick="searchHandler()"
-                            >
-                                Search
-                            </span>
+                    <div class="searchCont shadow w-100 p-2 mt-4">
+                        <div class="input-group input-group-sm glowThis">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Enter a name or url..."
+                                id="SearchInput"
+                                autofocus
+                            />
+                            <div class="input-group-append">
+                                <span
+                                    class="input-group-text font-weight-bold defColor px-3"
+                                    id="SearchBtn"
+                                    onclick="searchHandler()"
+                                >
+                                    Search
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="mt-1">
-                    <span class="links tipsLinks">How to Use</span>
-                    <span class="links tipsLinks">Contact us</span>
-                    <span class="links tipsLinks">Playlist downloader</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <!-- heading Container -->
-            <div class="mt-3 hideOnSearch" id="heading"></div>
-
-            <!-- result layout selector -->
-            <div class="viewBtnCont text-right hideOnSearch">
-                <div class="input-group input-group-sm shadow viewSelecCont">
-                    <img
-                        src="./assets/list.svg"
-                        viewType="list"
-                        class="viewSelectImg"
-                        style="margin-right: -5px"
-                        alt=""
-                    />
-                    <img
-                        src="./assets/grid.svg"
-                        viewType="grid"
-                        class="viewSelectImg viewSelectImg-selected"
-                        alt=""
-                    />
-                </div>
-            </div>
-
-            <!-- tracks Container -->
-            <div class="mb-5 mt-2 hideOnSearch" id="Container"></div>
-
-            <!-- how to use -->
-            <div class="tipsCont" id="howtouse">
-                <div class="tips">
-                    <span class="tipsTitle">How to Use</span>
-                    <p class="p-3">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Magnam, aliquid possimus officia quasi animi temporibus
-                        sit id, esse earum cupiditate veritatis deleniti
-                        aspernatur fuga recusandae nam sed? Sunt, laudantium
-                        alias!
-                    </p>
-                </div>
-            </div>
-
-            <!-- Contact us -->
-            <div class="tipsCont" id="contactus">
-                <div class="tips">
-                    <span class="tipsTitle">Contact us</span>
-                    <p class="p-3">
-                        <a href="mailto:suggestion@soundcoludtomp3.live">
-                            suggestion@soundcoludtomp3.live
+                    <div class="mt-1">
+                        <a href="#how-to-use" class="links tips-links">
+                            How to Use
                         </a>
-                    </p>
+                        <a href="#contact-us" class="links tips-links">
+                            Contact us
+                        </a>
+                        <a href="#playlist-downloader" class="links tips-links">
+                            Playlist downloader
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Playlist downloader -->
-            <div class="tipsCont" id="playlistdownloader">
-                <div class="tips">
-                    <span class="tipsTitle">Playlist downloader</span>
-                    <!-- <p class="p-3">
+            <div class="container">
+                <!-- heading Container -->
+                <div class="mt-3 hideOnSearch text-center" id="heading"></div>
+
+                <!-- result layout selector -->
+                <div class="viewBtnCont text-right hideOnSearch">
+                    <div
+                        class="input-group input-group-sm shadow viewSelecCont"
+                    >
+                        <img
+                            src="./assets/list.svg"
+                            viewType="list"
+                            class="viewSelectImg"
+                            style="margin-right: -5px"
+                            alt=""
+                        />
+                        <img
+                            src="./assets/grid.svg"
+                            viewType="grid"
+                            class="viewSelectImg viewSelectImg-selected"
+                            alt=""
+                        />
+                    </div>
+                </div>
+
+                <!-- tracks Container -->
+                <div class="mb-5 mt-2 hideOnSearch" id="Container"></div>
+
+                <!-- how to use -->
+                <div class="tipsCont" id="how-to-use">
+                    <div class="tips">
+                        <span class="tipsTitle">How to Use</span>
+                        <p class="p-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Magnam, aliquid possimus officia quasi animi
+                            temporibus sit id, esse earum cupiditate veritatis
+                            deleniti aspernatur fuga recusandae nam sed? Sunt,
+                            laudantium alias!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact us -->
+                <div class="tipsCont" id="contact-us">
+                    <div class="tips">
+                        <span class="tipsTitle">Contact us</span>
+                        <p class="p-3">
+                            <a href="mailto:suggestion@soundcoludtomp3.live">
+                                suggestion@soundcoludtomp3.live
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Playlist downloader -->
+                <div class="tipsCont" id="playlist-downloader">
+                    <div class="tips">
+                        <span class="tipsTitle">Playlist downloader</span>
+                        <!-- <p class="p-3">
                     Lorem ipsum
                 </p> -->
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- footer -->
-        <div class="footer py-4">
-            <div
-                class="links"
-                data-toggle="modal"
-                data-target="#modalBlog"
-            >
-                Blog
+            <!-- footer -->
+            <div class="footer py-4">
+                <div class="links" data-toggle="modal" data-target="#modalBlog">
+                    Blog
+                </div>
+
+                <div
+                    class="links"
+                    data-toggle="modal"
+                    data-target="#modalPrivacy"
+                >
+                    Privacy policy
+                </div>
+
+                <div
+                    class="links"
+                    data-toggle="modal"
+                    data-target="#modalTermsofuse"
+                >
+                    Terms of use
+                </div>
             </div>
 
-            <div
-                class="links"
-                data-toggle="modal"
-                data-target="#modalPrivacy"
-            >
-                Privacy policy
+            <div class="p-1 col-lg-4 menu playerCont playerHide">
+                <div class="playerBtn">
+                    <img
+                        src="./assets/UpArrow.svg"
+                        onclick="showHandler()"
+                        alt=""
+                    />
+                </div>
+                <div class="audioPanelCont">
+                    <p class="audioTitle"></p>
+                </div>
+                <audio
+                    noDownload
+                    controls
+                    id="audioControls"
+                    controlsList="nodownload"
+                ></audio>
+                <div class="download"></div>
+                <span class="playerSpace"></span>
             </div>
-
-            <div
-                class="links"
-                data-toggle="modal"
-                data-target="#modalTermsofuse"
-            >
-                Terms of use
-            </div>
-        </div>
-
-        <div class="p-1 col-lg-4 menu playerCont playerHide">
-            <div class="playerBtn">
-                <img
-                    src="./assets/UpArrow.svg"
-                    onclick="showHandler()"
-                    alt=""
-                />
-            </div>
-            <div class="audioPanelCont">
-                <p class="audioTitle"></p>
-            </div>
-            <audio
-                noDownload
-                controls
-                id="audioControls"
-                controlsList="nodownload"
-            ></audio>
-            <div class="download"></div>
-            <span class="playerSpace"></span>
         </div>
 
         <!-- Modals -->
@@ -262,6 +262,16 @@
                     </div>
                     <div class="modal-body">...</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="loaderBody showOnSearch">
+            <div class="a" style="--n: 5">
+                <div class="dot" style="--i: 0"></div>
+                <div class="dot" style="--i: 1"></div>
+                <div class="dot" style="--i: 2"></div>
+                <div class="dot" style="--i: 3"></div>
+                <div class="dot" style="--i: 4"></div>
             </div>
         </div>
     </body>

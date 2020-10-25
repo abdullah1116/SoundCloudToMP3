@@ -42,42 +42,56 @@ function RenderContainer(Header) {
 
     if (HTMLDATA.isGridView) {
         HTMLDATA.tracks.map((d, i) => {
-            HTML += `<div class="m-3 p-2 item rounded">
-                        <div class="shadow downBtnCont">
-                    <div type="track" index="${i}" class="btn-group defColor">
-                            <button
-                                type="button"
-                                class="btn btn-orange downBtn"
-                                onclick="getBtnHandler(this,true)">
-                                <img src="./assets/down.svg" alt="">
-                            </button>
-                            <button
-                                type="button"
-                                class="btn ${
-                                    HTMLDATA.playing.state
-                                        ? HTMLDATA.playing.id == d.id
-                                            ? 'btn-playing '
-                                            : ''
+            HTML += `
+            <div class="item">
+                <span class="shadow downBtnCont">
+                    <span type="track" index="${i}" class="btn-group defColor">
+                        <button
+                            type="button"
+                            class="btn btn-orange downBtn"
+                            onclick="getBtnHandler(this,true)"
+                        >
+                            <img src="./assets/down.svg" alt="" />
+                        </button>
+                        <button
+                            type="button"
+                            class="btn ${
+                                HTMLDATA.playing.state
+                                    ? HTMLDATA.playing.id == d.id
+                                        ? 'btn-playing '
                                         : ''
-                                }btn-orange downBtn"
-                                onclick="getBtnHandler(this,false)">
-                                <img src="./assets/${
+                                    : ''
+                            } btn-orange downBtn"
+                            onclick="getBtnHandler(this,false)"
+                        >
+                            <img
+                                src="./assets/${
                                     HTMLDATA.playing.state &&
                                     HTMLDATA.playing.id == d.id
                                         ? 'pause'
                                         : 'play'
-                                }.svg" alt="">
-                            </button>
-                    </div>
-                        </div>
-                    <div class="imgCont">
-                        <img  src="${d.image.replace('-large', '-t250x250')}"
-                              class="soundBackImg rounded"
-                              alt="Image Not Found">
-                    </div>
+                                }.svg"
+                                alt=""
+                            />
+                        </button>
+                    </span>
+                </span>
+                <a class="item-link" href="http://localhost:3333/download/?link=${
+                    d.link
+                }" target="_blank">
+                    <span class="imgCont">
+                        <img
+                            src="${d.image.replace('-large', '-t250x250')}"
+                            class="soundBackImg"
+                            alt="Image Not Found"
+                        />
+                    </span>
                     <p class="soundArtist">${d.user}</p>
                     <p class="soundTitle">${d.title}</p>
-                </div>`;
+                </a>
+            </div>
+
+                `;
         });
 
         HTMLDATA.playlists.map((d, i) => {
@@ -172,5 +186,5 @@ function RenderContainer(Header) {
     }
     $('#Container')[0].innerHTML = HTML;
 
-    $('#heading')[0].innerHTML = Header != undefined ?  Header  :  '';
+    $('#heading')[0].innerHTML = Header != undefined ? Header : '';
 }

@@ -1,3 +1,34 @@
+* {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 500;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 25;
+    height: 60px;
+}
+
+.body-wrapper {
+    margin-top: 60px;
+}
+
+#header-container {
+    width: 100%;
+
+    background-image: url('../assets/BackgroundImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
 ::-moz-selection {
     color: white;
     background: #f50;
@@ -74,20 +105,6 @@ body.searching .hideOnSearch {
     font-size: 1.75rem;
 }
 
-#backgroundImage {
-    width: 100vw;
-    padding: 70px 10px 25px 10px;
-    /* padding-top: 70px;
-    padding-bottom: 25px; */
-    text-align: -webkit-center;
-
-    background-image: url('../assets/BackgroundImage.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    z-index: -1;
-}
-
 .form-control:focus {
     box-shadow: none;
 }
@@ -99,13 +116,6 @@ body.searching .hideOnSearch {
 .btn-orange:focus {
     border-color: #f50;
     box-shadow: 0px 0px 1px 2px #ff550099;
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 20;
 }
 
 .defColor {
@@ -171,6 +181,7 @@ body.searching .hideOnSearch {
     border-radius: 10px;
     align-items: center;
     background-color: #00000091;
+    cursor: pointer;
 }
 
 .CopybtnCont {
@@ -219,7 +230,7 @@ body.searching .hideOnSearch {
 
 .tipsCont {
     width: 100%;
-    padding: 15px;
+    padding: 1rem;
 
     margin-top: 30px;
     margin-bottom: 30px;
@@ -228,8 +239,6 @@ body.searching .hideOnSearch {
 
     box-shadow: 0 0 10px 0px #00000020;
     border-radius: 5px;
-
-
 }
 
 .tipsTitle {
@@ -239,15 +248,9 @@ body.searching .hideOnSearch {
 
 .footer {
     width: 100%;
-    bottom: 0;
 
     display: flex;
     justify-content: center;
-
-    background-color: white;
-    border-top: solid 0.1px #f50;
-
-    box-shadow: 0 0 10px 0px #00000020;
 }
 
 .links {
@@ -258,7 +261,18 @@ body.searching .hideOnSearch {
     font-weight: bold;
 
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.links:hover {
+    text-decoration: none;
+    color: #f50;
+    transition: all 0.2s ease-in;
+}
+
+.links.tips-links:hover {
+    color: #000;
 }
 
 .linksBreak {
@@ -283,6 +297,20 @@ body.searching .hideOnSearch {
     /* backdrop-filter: blur(6px); */
     /* background-color: #00000038; */
     box-shadow: 0 0 10px 0px #00000020;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem !important;
+}
+
+.item-link {
+    text-decoration: none;
+    color: gray;
+    transition: all 0.3s ease-in;
+}
+
+.item-link:hover {
+    text-decoration: none;
+    color:#333;
 }
 
 .itemList {
@@ -296,8 +324,12 @@ body.searching .hideOnSearch {
 }
 
 .imgCont {
+    display: block;
     text-align: center;
     width: 100%;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    border-radius: 0.25rem !important;
 }
 
 .imgContList {
@@ -324,6 +356,7 @@ body.searching .hideOnSearch {
     margin: 5;
     border-radius: 10px;
     position: absolute;
+    z-index: 20;
 }
 
 .downBtnlist {
@@ -341,16 +374,29 @@ body.searching .hideOnSearch {
     width: calc(15vw + 15vh);
     max-height: 300px;
     max-width: 300px;
+    transition: all 0.3s ease-in;
+}
+
+.item:hover .soundBackImg {
+    transform: scale(1.1);
 }
 
 .soundArtist {
-    font-size: 11;
-    /* color: #000000de; */
+    font-size: small;
+    line-height: 1;
 }
 
 .soundTitle {
     word-break: break-all;
     /* color: white; */
+}
+
+.download-page .soundArtist {
+    font-size: 1rem;
+}
+
+.download-page .soundTitle{
+    font-size: 2rem;
 }
 
 .listCont {
