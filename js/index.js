@@ -89,16 +89,16 @@ function getTop() {
             HTMLDATA.tracks = [];
             HTMLDATA.playlists = [];
             HTMLDATA = { ...HTMLDATA, ...this.response.content };
-            HTMLDATA.Top = `
-            <p style="
-            position: absolute;
-            margin-top: -30px;
-            font-size: 25px;
-            font-weight: bold;
-            left: 60px;
-            color: #00000085;">Most heard tracks: </p>`;
+            // HTMLDATA.Top = `
+            // <p style="
+            // position: absolute;
+            // margin-top: -30px;
+            // font-size: 25px;
+            // font-weight: bold;
+            // left: 60px;
+            // color: #00000085;">Most heard tracks: </p>`;
 
-            RenderContainer();
+            RenderContainer("Most heard tracks:");
         }
     });
     xhr.open('GET', './sc.php?type=top');

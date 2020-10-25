@@ -1,4 +1,4 @@
-function RenderContainer() {
+function RenderContainer(Header) {
     var HTML = '';
     const rendList = (d, listIndex) => {
         let list = '';
@@ -170,8 +170,7 @@ function RenderContainer() {
                 <h4>Oops no result found with this search, try searching differently.</h4>
             </span>`;
     }
-    $('#Container')[0].innerHTML =
-        HTMLDATA.Top == undefined || HTMLDATA.Top == ''
-            ? HTML
-            : HTMLDATA.Top + HTML;
+    $('#Container')[0].innerHTML = HTML;
+
+    $('#heading')[0].innerHTML = Header != undefined ?  Header  :  '';
 }

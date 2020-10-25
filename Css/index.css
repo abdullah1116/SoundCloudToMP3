@@ -55,7 +55,6 @@ body.searching .hideOnSearch {
 
 .btn {
     z-index: 10;
-
 }
 
 .btn-group {
@@ -67,7 +66,7 @@ body.searching .hideOnSearch {
     background-image: none !important;
     background-color: #343a40 !important;
     box-shadow: 0px 0px 3px 1px #f50;
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
 .title {
@@ -76,13 +75,18 @@ body.searching .hideOnSearch {
 }
 
 #backgroundImage {
-    background-image: url('../assets/BackgroundImage.jpg');
-    /* position: fixed; */
+
     width: 100vw;
-    /* height: 100%; */
-    padding-bottom: 25px;
+    padding:  70px 10px 25px 10px;
+    /* padding-top: 70px;
+    padding-bottom: 25px; */
+    text-align: -webkit-center;
+
+    background-image: url('../assets/BackgroundImage.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+
+
     z-index: -1;
 }
 
@@ -117,7 +121,13 @@ body.searching .hideOnSearch {
 }
 
 .searchTextCont {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
     max-width: 800px;
+
 }
 
 .searchCont {
@@ -195,6 +205,12 @@ body.searching .hideOnSearch {
     border-radius: 10px;
 }
 
+#heading {
+    font-size: 25px;
+    font-weight: bold;
+
+    color: #00000085;
+}
 #container {
     display: flex;
     flex-wrap: wrap;
@@ -207,7 +223,10 @@ body.searching .hideOnSearch {
     padding: 15px;
     padding-bottom: 50px;
     /* border-top: solid 2px #f50; */
-    box-shadow: 0 -7px 30px 0 #0003;
+    box-shadow: 0 0 20px 5px #00000036;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
 }
 
 .tipsTitle {
@@ -217,7 +236,6 @@ body.searching .hideOnSearch {
 
 .footer {
     width: 100%;
-    padding: 1px;
     bottom: 0;
     /* padding-bottom: 50px; */
     border-top: solid 0.1px #f50;
@@ -227,6 +245,8 @@ body.searching .hideOnSearch {
 
 .links {
     color: #f50 !important;
+    margin: 0 1rem;
+    cursor: pointer;
 }
 
 .linksBreak {
@@ -510,7 +530,7 @@ body.searching .hideOnSearch {
         bottom: 30px;
     }
     .footer {
-        padding-bottom: 100px;
+        padding-bottom: 100px !important;
     }
     .playlistDownBtnText {
         display: none;
