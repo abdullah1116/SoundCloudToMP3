@@ -13,7 +13,7 @@ function singleTrackResource($row)
             : $row['user']['avatar_url'],
         // 'stream_url' => $row['stream_url'] ?? null,
         'user' => $row['user']['username'],
-        'link' => $row['uri'],
+        'link' => $row['permalink_url'],
     ];
 }
 

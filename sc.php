@@ -76,7 +76,6 @@ function getLink()
 
     $kind = $linkCallResponse['kind'];
 
-
     sendResponse([
         ($kind . 's') => [
             $kind == 'track'

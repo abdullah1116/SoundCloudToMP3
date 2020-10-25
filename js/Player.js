@@ -1,14 +1,14 @@
-
 function player() {
-    var audioPlayer = document.getElementById("audioControls");
+    var audioPlayer = document.getElementById('audioControls');
 
     return {
-
-        play: (e) => {
+        play: e => {
             player().removeclass();
+            HTMLDATA.playing.state = true;
 
-            $(e).addClass("btn-playing");
-            $(e).children()[0].src = "assets/pause.svg";
+            $(e).addClass('btn-playing');
+            $(e).children('img').attr('src', 'assets/pause.svg');
+            $(e).children('span').text('Pause');
 
             player().show();
 
@@ -18,27 +18,32 @@ function player() {
         pause: () => {
             player().removeclass();
             audioPlayer.pause();
-
         },
-        resume: (e) => {
+        resume: e => {
             player().removeclass();
 
+            $(e).addClass('btn-playing');
+            $('.btn-playing').children('img').attr('src', 'assets/play.svg');
+            $('.btn-playing').children('span').text('Pause');
 
-            $(e).addClass("btn-playing");
-            $(e).children()[0].src = "assets/pause.svg";
             audioPlayer.play();
         },
 
         removeclass: () => {
-            if ($(".btn-playing").length != 0) {
-                $(".btn-playing").children()[0].src = "assets/play.svg";
-                $(".btn-playing").removeClass("btn-playing");
+            if ($('.btn-playing').length != 0) {
+
+                $('.btn-playing')
+                    .children('img')
+                    .attr('src', 'assets/play.svg');
+
+                $('.btn-playing').children('span').text('Play');
+
+                $('.btn-playing').removeClass('btn-playing');
             }
         },
 
         refresh: () => {
             setTimeout(() => {
-                console.warn(!audioPlayer.paused);
                 if (!audioPlayer.paused || audioPlayer.readyState != 4) {
                     player().show();
                 } else {
@@ -46,29 +51,24 @@ function player() {
                     player().hide();
                     HTMLDATA.playing.state = false;
                 }
-            }, 1000)
+            }, 1000);
         },
 
-
-
         show: () => {
-            $(".playerCont").removeClass("playerHide");
+            $('.playerCont').removeClass('playerHide');
         },
 
         hide: () => {
-            $(".playerCont").addClass("playerHide")
-        }
-    }
-
+            $('.playerCont').addClass('playerHide');
+        },
+    };
 }
+
 $(() => {
     document.getElementById('audioControls').onpause = function (e) {
         player().refresh();
-        // player().hide();
-        // player().removeclass();
-
-    }
+    };
     document.getElementById('audioControls').onplay = function (e) {
         player().refresh();
-    }
-})
+    };
+});

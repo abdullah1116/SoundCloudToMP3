@@ -30,6 +30,7 @@ function callAPI($url)
 
 function sendError($message)
 {
+    header('HTTP/1.1 400 Bad Request');
     header('Content-type: application/json');
     echo json_encode([
         'error' => true,
@@ -47,6 +48,7 @@ function sendResponse($content)
     ]);
     die;
 }
+
 
 function dd($data)
 {

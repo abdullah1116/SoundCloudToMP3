@@ -1,11 +1,11 @@
 ::-moz-selection {
     color: white;
-    background: #F50;
+    background: #f50;
 }
 
 ::selection {
     color: white;
-    background: #F50;
+    background: #f50;
 }
 
 ::-webkit-scrollbar {
@@ -55,6 +55,7 @@ body.searching .hideOnSearch {
 
 .btn {
     z-index: 10;
+
 }
 
 .btn-group {
@@ -66,7 +67,7 @@ body.searching .hideOnSearch {
     background-image: none !important;
     background-color: #343a40 !important;
     box-shadow: 0px 0px 3px 1px #f50;
-    transition: box-shadow .05s;
+    transition: all .5s;
 }
 
 .title {
@@ -180,10 +181,9 @@ body.searching .hideOnSearch {
 
 .viewSelectImg-selected {
     padding: 5px;
-    background-image: linear-gradient(#cc4705, #d67442);
+    background-image: linear-gradient(#f50, #ff8239);
     border: solid 1px #f50;
-    transition: all .05s;
-    box-shadow: 0 0 20px 5px #00000036;
+    transition: all 0.05s;
 }
 
 .Copybtn {
@@ -210,8 +210,6 @@ body.searching .hideOnSearch {
     box-shadow: 0 -7px 30px 0 #0003;
 }
 
-.tips {}
-
 .tipsTitle {
     font-size: x-large;
     font-weight: bold;
@@ -222,8 +220,8 @@ body.searching .hideOnSearch {
     padding: 1px;
     bottom: 0;
     /* padding-bottom: 50px; */
-    border-top: solid .1px #f50;
-    box-shadow: 0 -5px 30px 0 #0004;
+    border-top: solid 0.1px #f50;
+    box-shadow: 0 -10px 30px 0 #0004;
     background-color: #343a40;
 }
 
@@ -435,25 +433,29 @@ body.searching .hideOnSearch {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     z-index: 15;
-    transition: all .7s;
+    transition: all 0.7s;
 }
 
 .playerCont {
+    height: 65px;
+
     background-color: #f1f3f4;
     box-shadow: 0 0 25px 5px #00000044;
-    transition: all .7s;
-    height: 65px;
+
+    overflow: hidden;
+
+    transition: all 0.7s;
 }
 
 .playerHide .playerBtn {
     height: 20px;
-    transition: all .7s;
+    transition: all 0.7s;
 }
 
 .playerHide {
     /* bottom: -55; */
     height: 25px;
-    transition: all .7s;
+    transition: all 0.7s;
 }
 
 .playerBtn {
@@ -461,7 +463,7 @@ body.searching .hideOnSearch {
     width: 25px;
     margin-right: 50%;
     margin-left: 50%;
-    transition: all .7s;
+    transition: all 0.7s;
 }
 
 .audioCont {
@@ -517,13 +519,13 @@ body.searching .hideOnSearch {
 
 @keyframes glowAni {
     0% {
-        box-shadow: 0 0 #d2602755, inset 0 0 0px 2px #d26027
+        box-shadow: 0 0 #d2602755, inset 0 0 0px 2px #d26027;
     }
     65% {
         box-shadow: 0 0 0px 8.5px #d26027, inset 0 0 0px 2px #d26027;
     }
     77% {
-        box-shadow: 0 0 #d2602755, inset 0 0 0px 2px #d26027
+        box-shadow: 0 0 #d2602755, inset 0 0 0px 2px #d26027;
     }
 }
 

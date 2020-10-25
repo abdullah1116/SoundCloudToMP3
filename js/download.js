@@ -28,7 +28,7 @@ function searchHandler(searchText) {
             }, 500);
             renderDownload()
             // $(".glowThis").removeClass("glow");
-            // $("body").removeClass("searching");
+            $('body').removeClass('searching');
         }
     });
     xhr.open("GET", HTMLDATA.searched.link);
@@ -36,7 +36,7 @@ function searchHandler(searchText) {
 
 
     // $(".glowThis").addClass("glow");
-    // $("body").addClass("searching");
+    $('body').addClass('searching');
 }
 
 $(() => {
