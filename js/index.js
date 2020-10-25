@@ -98,7 +98,7 @@ function getTop() {
             // left: 60px;
             // color: #00000085;">Most heard tracks: </p>`;
 
-            RenderContainer("Most heard tracks:");
+            RenderContainer('Most heard tracks:');
         }
     });
     xhr.open('GET', './sc.php?type=top');
@@ -120,6 +120,34 @@ $('.viewSelectImg').click(e => {
         HTMLDATA.isGridView = !HTMLDATA.isGridView;
         RenderContainer();
     }
+});
+
+$('.tipsLinks').click(e => {
+    let div;
+
+    switch (e.currentTarget.textContent) {
+        case 'How to Use':
+            div = 'howtouse';
+            break;
+
+        case 'Contact us':
+            div = 'contactus';
+            break;
+
+        case 'Playlist downloader':
+            div = 'playlistdownloader';
+            break;
+        default:
+            return;
+            break;
+    }
+
+    $('html, body').animate(
+        {
+            scrollTop: $('#' + div).offset().top - 70,
+        },
+        500,
+    );
 });
 
 $.fn.googleSuggest = function (opts) {

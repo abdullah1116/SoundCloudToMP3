@@ -56,30 +56,35 @@
 
         <div id="backgroundImage" style="background-color: #f50">
             <!-- Search bar -->
-                <div class="searchTextCont">
-                    <span class="title">
-                        Download your favorite tracks to your personal storage
-                        and enjoy them even when you are offline!
-                    </span>
+            <div class="searchTextCont">
+                <span class="title">
+                    Download your favorite tracks to your personal storage and
+                    enjoy them even when you are offline!
+                </span>
 
-                    <div class="searchCont shadow w-100 p-2 mt-4">
-                        <div class="input-group input-group-sm glowThis">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Enter the name or url of track you want to search..."
-                                id="SearchInput"
-                            />
-                            <div class="input-group-append">
-                                <span
-                                    class="input-group-text font-weight-bold defColor px-3"
-                                    id="SearchBtn"
-                                    onclick="searchHandler()"
-                                >
-                                    Search
-                                </span>
-                            </div>
+                <div class="searchCont shadow w-100 p-2 mt-4">
+                    <div class="input-group input-group-sm glowThis">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter the name or url of track you want to search..."
+                            id="SearchInput"
+                        />
+                        <div class="input-group-append">
+                            <span
+                                class="input-group-text font-weight-bold defColor px-3"
+                                id="SearchBtn"
+                                onclick="searchHandler()"
+                            >
+                                Search
+                            </span>
                         </div>
+                    </div>
+                </div>
+                <div class="mt-1">
+                    <span class="links tipsLinks">How to Use</span>
+                    <span class="links tipsLinks">Contact us</span>
+                    <span class="links tipsLinks">Playlist downloader</span>
                 </div>
             </div>
         </div>
@@ -111,7 +116,7 @@
             <div class="mb-5 mt-2 hideOnSearch" id="Container"></div>
 
             <!-- how to use -->
-            <div class="tipsCont">
+            <div class="tipsCont" id="howtouse">
                 <div class="tips">
                     <span class="tipsTitle">How to Use</span>
                     <p class="p-3">
@@ -125,7 +130,7 @@
             </div>
 
             <!-- Contact us -->
-            <div class="tipsCont">
+            <div class="tipsCont" id="contactus">
                 <div class="tips">
                     <span class="tipsTitle">Contact us</span>
                     <!-- <p class="p-3">
@@ -135,7 +140,7 @@
             </div>
 
             <!-- Playlist downloader -->
-            <div class="tipsCont">
+            <div class="tipsCont" id="playlistdownloader">
                 <div class="tips">
                     <span class="tipsTitle">Playlist downloader</span>
                     <!-- <p class="p-3">
@@ -147,16 +152,16 @@
 
         <!-- footer -->
         <div class="footer py-4" style="justify-content: center; display: flex">
-            <div class="links" data-toggle="modal" data-target="#modalBlog">
+            <div class="links color-orange" data-toggle="modal" data-target="#modalBlog">
                 Blog
             </div>
 
-            <div class="links" data-toggle="modal" data-target="#modalPrivacy">
+            <div class="links color-orange" data-toggle="modal" data-target="#modalPrivacy">
                 Privacy policy
             </div>
 
             <div
-                class="links"
+                class="links color-orange"
                 data-toggle="modal"
                 data-target="#modalTermsofuse"
             >

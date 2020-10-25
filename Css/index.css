@@ -114,6 +114,10 @@ body.searching .hideOnSearch {
     background-image: linear-gradient(#f50, #ff8239);
     color: white;
 }
+.color-orange{
+    color: #f50 !important;
+
+}
 
 .input-group.input-group-sm.glowThis * {
     font-size: 2rem;
@@ -244,10 +248,11 @@ body.searching .hideOnSearch {
 }
 
 .links {
-    color: #f50 !important;
     margin: 0 1rem;
     cursor: pointer;
+    text-decoration: underline;
 }
+
 
 .linksBreak {
     color: #fff !important;
