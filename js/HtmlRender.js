@@ -98,7 +98,11 @@ function RenderContainer(Header) {
             if (d.tracks.length != 0) {
                 HTML += `<div class="m-3 p-2 item rounded">
                     <div class="imgCont">
-                        <div class="listCont rounded">${rendList(d, i)}</div>
+                        <div class="listCont custom-scroll rounded">${rendList(
+                            d,
+                            i,
+                        )}
+                        </div>
                         <img  src="${d.image.replace(
                             '-large',
                             '-t250x250',

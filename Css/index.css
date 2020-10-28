@@ -40,19 +40,23 @@
 }
 
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #7777;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #ff5500cc;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #ff5500;
+}
+.custom-scroll {
+    scrollbar-color: #ff5500cc #7777;
+    scrollbar-width: thin;
 }
 
 audio::-internal-media-controls-download-button {
@@ -310,7 +314,7 @@ body.searching .hideOnSearch {
 
 .item-link:hover {
     text-decoration: none;
-    color:#333;
+    color: #333;
 }
 
 .itemList {
@@ -395,7 +399,7 @@ body.searching .hideOnSearch {
     font-size: 1rem;
 }
 
-.download-page .soundTitle{
+.download-page .soundTitle {
     font-size: 2rem;
 }
 
@@ -409,6 +413,7 @@ body.searching .hideOnSearch {
     max-width: 300px;
     background-color: #2d2d2d8c;
     overflow: auto;
+    z-index: 20;
 }
 
 .listContList {
@@ -464,7 +469,7 @@ body.searching .hideOnSearch {
     height: 275;
     width: 100%;
     overflow: auto;
-    background-color: #00000038;
+    background-color: #000000aa;
 }
 
 .playlistDownBtncont {
@@ -492,6 +497,7 @@ body.searching .hideOnSearch {
 .playlistTrackTitle {
     word-break: break-all;
     color: white;
+    font-size: 13.5px;
 }
 
 .listDownBtn {
