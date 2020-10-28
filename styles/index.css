@@ -233,7 +233,7 @@ body.searching .hideOnSearch {
     font-size: 25px;
     font-weight: bold;
 
-    color: #00000085;
+    color: #0009;
 }
 #container {
     display: flex;
@@ -253,6 +253,14 @@ body.searching .hideOnSearch {
 
     box-shadow: 0 5px 10px 0 #00000020;
     border-radius: 5px;
+}
+
+.tips p{
+    color: #000a;
+}
+
+.tips span{
+    color: #000c;
 }
 
 .tipsTitle {
@@ -275,7 +283,7 @@ body.searching .hideOnSearch {
 .links {
     margin: 0 1rem;
 
-    color: #eee;
+    color: #f50;
 
     font-weight: bold;
 
@@ -286,7 +294,7 @@ body.searching .hideOnSearch {
 
 .links:hover {
     text-decoration: none;
-    color: #f50;
+    color: #eee;
     transition: all 0.2s ease-in;
 }
 
