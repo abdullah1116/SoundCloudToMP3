@@ -1,5 +1,5 @@
 HTMLDATA = {
-    Top: '',
+    Header: '',
     playing: {
         id: '',
         src: '',
@@ -56,7 +56,7 @@ function searchHandler() {
             if (this.readyState === 4) {
                 HTMLDATA.tracks = [];
                 HTMLDATA.playlists = [];
-                HTMLDATA.Top = '';
+                HTMLDATA.Header = '';
                 if (this.response != null) {
                     HTMLDATA = { ...HTMLDATA, ...this.response.content };
                 }
@@ -88,6 +88,7 @@ function getTop() {
         ) {
             HTMLDATA.tracks = [];
             HTMLDATA.playlists = [];
+            HTMLDATA.Header = 'Most heard tracks';
             HTMLDATA = { ...HTMLDATA, ...this.response.content };
             // HTMLDATA.Top = `
             // <p style="
@@ -98,7 +99,7 @@ function getTop() {
             // left: 60px;
             // color: #00000085;">Most heard tracks: </p>`;
 
-            RenderContainer('Most heard tracks');
+            RenderContainer();
         }
     });
     xhr.open('GET', './sc.php?type=top');

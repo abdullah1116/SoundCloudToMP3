@@ -190,5 +190,5 @@ function RenderContainer(Header) {
     }
     $('#Container')[0].innerHTML = HTML;
 
-    $('#heading')[0].innerHTML = Header != undefined ? Header : '';
+    $('#heading')[0].innerHTML = HTMLDATA.Header != undefined ? HTMLDATA.Header : '';
 }

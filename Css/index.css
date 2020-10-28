@@ -530,7 +530,9 @@ body.searching .hideOnSearch {
 
     overflow: hidden;
 
+    z-index: 100;
     transition: all 0.7s;
+    
 }
 
 .playerHide .playerBtn {
