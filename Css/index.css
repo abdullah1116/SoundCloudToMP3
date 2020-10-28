@@ -4,10 +4,12 @@
     scroll-behavior: smooth;
 }
 
+
+
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     z-index: 25;
     height: 60px;
 }
@@ -54,6 +56,10 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #ff5500;
 }
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
 .custom-scroll {
     scrollbar-color: #ff5500cc #7777;
     scrollbar-width: thin;
