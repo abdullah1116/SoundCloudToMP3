@@ -47,8 +47,12 @@
             <a class="navbar-brand" href="./">SoundCloud To MP3</a>
         </nav> -->
         <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
-        <nav class="navbar navbar-dark  navbar-expand-lg fixed-top  navbar-light defColor ">
-            <a class="navbar-brand font-weight-bold ml-5" href="./">SoundCloud To MP3</a>
+        <nav
+            class="navbar navbar-dark navbar-expand-lg fixed-top navbar-light defColor"
+        >
+            <a class="navbar-brand font-weight-bold ml-5" href="./">
+                SoundCloud To MP3
+            </a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -60,7 +64,10 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+            <div
+                class="collapse navbar-collapse"
+                id="navbarNavAltMarkup"
+            >
                 <div class="navbar-nav">
                     <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
                     <a href="#how-to-use" class="nav-link">How to Use</a>
@@ -170,9 +177,7 @@
 
             <!-- footer -->
             <div class="footer py-4">
-                <a class="links" href="Blog">
-                    Blog
-                </a>
+                <a class="links" href="blog">Blog</a>
 
                 <div
                     class="links"
@@ -188,6 +193,13 @@
                     data-target="#modalTermsofuse"
                 >
                     Terms of use
+                </div>
+                <div
+                    class="links"
+                    data-toggle="modal"
+                    data-target="#modalDisclaimer"
+                >
+                    Disclaimer
                 </div>
             </div>
 
@@ -263,6 +275,28 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
                             Terms of use
+                        </h5>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="modal fade" id="modalDisclaimer">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Disclaimer
                         </h5>
                         <button
                             type="button"
