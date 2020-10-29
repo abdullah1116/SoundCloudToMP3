@@ -244,7 +244,7 @@ body.searching .hideOnSearch {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    min-height: 50%;
+    /* min-height: 50%;s */
 }
 
 .tipsCont {
