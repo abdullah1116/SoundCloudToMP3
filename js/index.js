@@ -180,3 +180,7 @@ $.fn.googleSuggest = function (opts) {
 };
 
 $('#SearchInput').googleSuggest();
+
+$('.listItem').click(e => {
+    console.log(e);
+});

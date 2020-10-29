@@ -460,6 +460,12 @@ body.searching .hideOnSearch {
     overflow: hidden;
     text-align: initial;
     border: solid 1px #0000000f;
+    cursor: pointer;
+    transition: all .2s;
+
+}
+.listItem:hover{
+    background-color: #af3a00;
 }
 
 .ListSoundImg {

@@ -4,7 +4,9 @@ function RenderContainer(Header) {
         let list = '';
         d.tracks.map((d, i) => {
             //playlist inner list
-            list += `<div class="listItem  rounded">
+            list += `<a class="listItem  rounded" href="/download/?link=${
+                d.link
+            }">
                         <img  src="${d.image.replace(
                             '-large',
                             '-t250x250',
@@ -35,7 +37,7 @@ function RenderContainer(Header) {
                                 }.svg" >
                             </button>
                         </div>
-                    </div>`;
+                    </a>`;
         });
         return list;
     };
@@ -76,7 +78,7 @@ function RenderContainer(Header) {
                         </button>
                     </span>
                 </span>
-                <a class="item-link" href="http://localhost:3333/download/?link=${
+                <a class="item-link" href="/download/?link=${
                     d.link
                 }" target="_blank">
                     <span class="imgCont">
@@ -119,10 +121,14 @@ function RenderContainer(Header) {
         HTMLDATA.tracks.map((d, i) => {
             HTML += `<div class="mx-3 my-1 p-2 itemList Row  w-100 rounded ">
 
-                        <div class="imgContList">
+                        <a class="imgContList" href="/download/?link=${
+                            d.link
+                        }">
                             <img src="${d.image.replace('-large', '-t250x250')}"
                             class="soundBackImgList rounded" alt="Image Not Found">
-                        </div>
+
+                            
+                        </a>
                         <div class="col p-3">
                                 <p class="soundArtist">${d.user}</p>
                                 <p class="soundTitle">${d.title}</p>
@@ -190,5 +196,6 @@ function RenderContainer(Header) {
     }
     $('#Container')[0].innerHTML = HTML;
 
-    $('#heading')[0].innerHTML = HTMLDATA.Header != undefined ? HTMLDATA.Header : '';
+    $('#heading')[0].innerHTML =
+        HTMLDATA.Header != undefined ? HTMLDATA.Header : '';
 }
