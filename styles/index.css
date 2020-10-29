@@ -284,7 +284,9 @@ body.searching .hideOnSearch {
 
 }
 
-
+.modal-dialog{
+    max-width: 750 !important;
+}
 .links {
     margin: 0 1rem;
 
