@@ -58,11 +58,13 @@ function renderDownload() {
         '-large',
         '-t500x500',
     );
-    $('#fileDurText').text(
-        (+HTMLDATA.tracks[0].duration / 60000).toFixed(2) + ' min',
-    );
-    $('#fileSizeText').text(
-        (+HTMLDATA.tracks[0].duration / 65675.2).toFixed(2) + ' MB',
+
+    $('#fileDetails').text(
+        `Duration: ${
+            (+HTMLDATA.tracks[0].duration / 60000).toFixed(2) + ' min'
+        } | FileSize: ${
+            (+HTMLDATA.tracks[0].duration / 65675.2).toFixed(2) + ' MB'
+        }`,
     );
 
     $('.hideOnSearch').show();
