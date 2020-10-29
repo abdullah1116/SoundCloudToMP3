@@ -1,16 +1,7 @@
 <html lang="en">
     <head>
-        <script src="../js/jquery.js?"></script>
-
-        <link rel="stylesheet" href="../styles/bootstrap.min.css?3" />
-        <link rel="stylesheet" href="../styles/index.css?3" />
-        <link rel="stylesheet" href="../styles/loader.css?3" />
-
-        <link
-            href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-            rel="stylesheet"
-        />
-
+        <!-- meta -->
+        <title>SoundCloud To MP3</title>
         <meta
             name="description"
             content="Download your favorite tracks to your personal storage and enjoy them even when you are offline!"
@@ -21,16 +12,31 @@
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="../assets/favicon.ico" />
-        <title>SoundCloud To MP3</title>
+
+        <script src="../js/jquery.js?"></script>
+
+        <link rel="stylesheet" href="../styles/bootstrap.min.css?3" />
+        <link rel="stylesheet" href="../styles/index.css?3" />
+        <link rel="stylesheet" href="../styles/download.css" />
+        <link rel="stylesheet" href="../styles/loader.css?3" />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+            rel="stylesheet"
+        />
     </head>
 
     <body style="overflow: overlay; background-color: #fafafa !important">
         <!-- navebar -->
-        <nav class="navbar navbar-dark  navbar-expand-lg fixed-top  navbar-light defColor ">
-            <a class="navbar-brand font-weight-bold ml-5" href="./">SoundCloud To MP3</a>
+        <nav
+            class="navbar navbar-dark navbar-expand-lg fixed-top navbar-light defColor"
+        >
+            <a class="navbar-brand font-weight-bold ml-5" href="./">
+                SoundCloud To MP3
+            </a>
         </nav>
 
-        <div class="body-wrapper" style="height: 100%;">
+        <div class="body-wrapper" style="height: 100%">
             <div id="header-container" style="background-color: #fdb35e">
                 <!-- Search bar -->
                 <div class="searchTextCont">
@@ -42,40 +48,36 @@
             </div>
 
             <!-- tracks Container -->
-            <div class="my-5 container hideOnSearch" style="display: none">
-                <div class="p-2 d-flex w-100 shadow rounded bg-light">
-                    <div
-                        class="ximgContList"
-                        style="
-                            width: calc(15vh + 15vw);
-                            height: calc(15vh + 15vw);
-                        "
+            <div
+                class="my-5 text-center align-items-center d-flex flex-column container hideOnSearch"
+                style="display: none !important;"
+            >
+                <div class="ximgContList" style="width: 350px; height: 350px">
+                    <img src="" class="image rounded" alt="Image Not Found" />
+                </div>
+                <div class="p-3">
+                    <p class="soundArtist"></p>
+                    <p class="soundTitle font-large"></p>
+                    <button
+                        type="button"
+                        class="btn btn-orange"
+                        onclick="downloadBtnHandler(this)"
+                        style="background-color: #f50; width: 160px"
                     >
+                        <span>
+                            <span></span>
+                            Download
+                        </span>
                         <img
-                            src=""
-                            class="image rounded"
-                            alt="Image Not Found"
+                            src="../assets/down.svg"
+                            class="playlistDownBtnImg"
                         />
-                    </div>
-                    <div class="p-3">
-                        <p class="soundArtist"></p>
-                        <p class="soundTitle font-large"></p>
-                        <button
-                            type="button"
-                            class="btn btn-orange"
-                            onclick="downloadBtnHandler(this)"
-                            style="background-color: #f50; width: 160px"
-                        >
-                            <span>
-                                <span></span>
-                                Download
-                            </span>
-                            <img
-                                src="../assets/down.svg"
-                                class="playlistDownBtnImg"
-                            />
-                        </button>
-                    </div>
+                    </button>
+                </div>
+                <div style="color: #0009">
+                    <span id="fileSizeText">##</span>
+                    |
+                    <span id="fileDurText">##</span>
                 </div>
             </div>
         </div>

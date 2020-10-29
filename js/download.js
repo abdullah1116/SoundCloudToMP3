@@ -9,7 +9,7 @@ HTMLDATA = {
 };
 
 function searchHandler(searchText) {
-    HTMLDATA.searched.link = `../sc.php?type=link&link=${searchText}`;
+    HTMLDATA.searched.link = `../sc.php?type=link&link=${searchText}&details=true`;
 
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
@@ -19,7 +19,7 @@ function searchHandler(searchText) {
             if (this.response.error) {
                 alert('Something went wrong!');
                 $('body').removeClass('searching');
-
+                window.close();
                 return;
             }
             HTMLDATA.tracks = [];
@@ -58,6 +58,13 @@ function renderDownload() {
         '-large',
         '-t500x500',
     );
+    $('#fileDurText').text(
+        (+HTMLDATA.tracks[0].duration / 60000).toFixed(2) + ' min',
+    );
+    $('#fileSizeText').text(
+        (+HTMLDATA.tracks[0].duration / 65675.2).toFixed(2) + ' MB',
+    );
+
     $('.hideOnSearch').show();
 }
 
@@ -76,10 +83,8 @@ function FileHandler(id, fileName, e) {
             downXhr.open('GET', this.response);
             downXhr.send();
             downXhr.onprogress = event => {
-                let percent = (
-                    ((event.loaded / event.total) * 100) |
-                    0
-                ).toFixed() + '%';
+                let percent =
+                    (((event.loaded / event.total) * 100) | 0).toFixed() + '%';
 
                 $(e).children('span').children('span').text(percent);
             };

@@ -70,16 +70,20 @@ function getLink()
     if (empty($_GET['link'])) sendError('Nothing searched');
 
     $link = $_GET['link'];
+    $details = !empty($_GET['details']) && $_GET['details'] == 'true';
     $url = str_replace('%method%', "resolve?format=json&url={$link}", API_URL);
 
     $linkCallResponse = json_decode(callAPI(callAPI($url)), true);
 
     $kind = $linkCallResponse['kind'];
 
+
     sendResponse([
         ($kind . 's') => [
             $kind == 'track'
-                ? singleTrackResource($linkCallResponse)
+                ? $details  == true ?
+                singleTrackResourceDetailed($linkCallResponse) :
+                singleTrackResource($linkCallResponse)
                 : singlePlaylistResource($linkCallResponse)
         ]
     ]);

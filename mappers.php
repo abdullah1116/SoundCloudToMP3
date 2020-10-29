@@ -1,8 +1,6 @@
 <?php
 require_once('./api.php');
 
-
-// we ye chl rha hy
 function singleTrackResource($row)
 {
     return [
@@ -14,6 +12,21 @@ function singleTrackResource($row)
         // 'stream_url' => $row['stream_url'] ?? null,
         'user' => $row['user']['username'],
         'link' => $row['permalink_url'],
+    ];
+}
+
+function singleTrackResourceDetailed($row)
+{
+    return [
+        'id' => $row['id'],
+        'title' => $row['title'],
+        'image' => !empty($row['artwork_url'])
+            ? $row['artwork_url']
+            : $row['user']['avatar_url'],
+        'user' => $row['user']['username'],
+        'duration' => $row['duration'],
+        // 'size' => $row['original_content_size'],
+
     ];
 }
 
