@@ -68,9 +68,9 @@
     <!-- css -->
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./styles/index.css?5" />
-    <link rel="stylesheet" href="./styles/loader.css?5" />
-    <link rel="stylesheet" href="./styles/jquery-ui.css?5" />
+    <link rel="stylesheet" href="./styles/index.css?6" />
+    <link rel="stylesheet" href="./styles/loader.css" />
+    <link rel="stylesheet" href="./styles/jquery-ui.css" />
 
     <link rel="icon" href="./assets/favicon.ico" />
 </head>

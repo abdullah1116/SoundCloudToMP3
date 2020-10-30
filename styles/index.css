@@ -421,6 +421,9 @@ body.searching .hideOnSearch {
     word-break: break-all;
     /* color: white; */
 }
+.font-large {
+    font-size: 2rem;
+}
 
 .download-page .soundArtist {
     font-size: 1rem;
