@@ -106,7 +106,7 @@ if (!empty($getLink['tracks'])) {
     <script src="../js/jquery.js?"></script>
 </head>
 
-<body style="overflow: overlay; background-color: #fafafa !important">
+<body style="overflow: overlay;">
     <!-- navebar -->
     <?php require_once "../template/nav.php" ?>
     <div class="body-wrapper">
@@ -127,7 +127,8 @@ if (!empty($getLink['tracks'])) {
             </div>
             <div class="p-3">
                 <p class="soundArtist"><?php echo $tracks->user ?></p>
-                <p class="soundTitle font-large"><?php echo $tracks->title ?></p>
+                <p class="soundTitle font-large m-0"><?php echo $tracks->title ?></p>
+                <div class="mb-3"><audio controls src="<?php echo $tracks->stream_url ?>"></audio></div>
                 <button type="button" class="btn btn-orange" onclick="FileHandler(this)" style="background-color: #f50; width: 160px">
                     <span>
                         <span></span>
@@ -135,15 +136,18 @@ if (!empty($getLink['tracks'])) {
                     </span>
                     <img src="../assets/down.svg" class="playlistDownBtnImg" />
                 </button>
+                <div style="color: #0009">
+                    <span id="fileDetails">
+                        <?php echo $tracks->duration ?> |
+                        <?php echo $tracks->size ?>
+                    </span>
+                </div>
             </div>
-            <div style="color: #0009">
-                <span id="fileDetails">
-                    <?php echo $tracks->duration ?> |
-                    <?php echo $tracks->size ?>
-                </span>
-            </div>
+
         </div>
     </div>
+    </div>
+
     <?php require_once "../template/footer.php" ?>
 </body>
 
@@ -190,5 +194,6 @@ if (!empty($getLink['tracks'])) {
         xhr.send();
     }
 </script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6" async></script>
 
 </html>

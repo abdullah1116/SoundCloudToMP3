@@ -16,6 +16,7 @@ function singleTrackResource($row)
 
 function singleTrackResourceDetailed($row)
 {
+    // return $row;
     return [
         'id' => $row['id'],
         'title' => $row['title'],
@@ -26,6 +27,8 @@ function singleTrackResourceDetailed($row)
         'duration' => 'Duration: ' . number_format($row['duration'] / 60000, 2, ".", "") . ' minutes',
         'size' => 'File size: ' . number_format($row['duration'] / 65675.2, 2, ".", "") . ' MB',
         'link' => $row['permalink_url'],
+        'stream_url' => getStreamLink($row['id']),
+
 
     ];
 }

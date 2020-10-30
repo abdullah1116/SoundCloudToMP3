@@ -62,11 +62,15 @@ function getAudio()
     // $url = "https://api.soundcloud.com/tracks/229936313/stream?client_id=86b6a66bb2d863f5d64dd8a91cd8de94";
     if (empty($_GET['id'])) sendError('Nothing played');
     $id = $_GET['id'];
-    $url =  "https://www.genmp3.net/getStream.php?id={$id}&apikey=cldvdosndmp320";
 
-    echo json_decode(callAPI($url), true)['link'];
+    echo    getStreamLink($id);
 }
 
+function getStreamLink($id)
+{
+    $url =  "https://www.genmp3.net/getStream.php?id={$id}&apikey=cldvdosndmp320";
+    return json_decode(callAPI($url), true)['link'];
+}
 
 function getSuggest()
 {

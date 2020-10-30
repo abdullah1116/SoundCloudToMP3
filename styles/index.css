@@ -2,12 +2,17 @@
     font-family: 'Varela Round', sans-serif;
     font-weight: 500;
     scroll-behavior: smooth;
+    outline: none;
 }
-.navbar{
+body {
+    background-color: #0001 !important;
+}
+.navbar {
     width: 100vw;
+    box-shadow: 0 5px 10px 0 #00000020;
 }
 .navbar-dark .navbar-nav .nav-link {
-    color: rgb(255 255 255);
+    color: rgb(255 255 255) !important;
 }
 .nav-link {
     margin: 0 1rem;
@@ -16,13 +21,12 @@
     white-space: nowrap;
 }
 
-.navbar-collapse{
+.navbar-collapse {
     justify-content: flex-end;
     padding-right: 7vw;
 }
 .body-wrapper {
     padding-top: 50px;
-    background-color: #0001;
     min-height: calc(100vh - 80px);
 }
 
@@ -261,11 +265,11 @@ body.searching .hideOnSearch {
     border-radius: 5px;
 }
 
-.tips p{
+.tips p {
     color: #000a;
 }
 
-.tips span{
+.tips span {
     color: #000c;
 }
 
@@ -283,19 +287,14 @@ body.searching .hideOnSearch {
     background-color: #343a40;
     box-shadow: 0 -5px 10px 0 #00000020;
     height: 80px;
-
 }
 
-.modal-dialog{
+.modal-dialog {
     max-width: 750 !important;
 }
 .links {
     margin: 0 1rem;
-
     color: #f50;
-
-    font-weight: bold;
-
     cursor: pointer;
     text-decoration: none;
     white-space: nowrap;
@@ -328,7 +327,7 @@ body.searching .hideOnSearch {
     max-width: 316px;
     /* backdrop-filter: blur(6px); */
     /* background-color: #00000038; */
-    box-shadow:0 5px 10px 0 #00000020;
+    box-shadow: 0 5px 10px 0 #00000020;
     margin: 1rem;
     padding: 0.5rem;
     border-radius: 0.25rem !important;
@@ -463,10 +462,9 @@ body.searching .hideOnSearch {
     text-align: initial;
     border: solid 1px #0000000f;
     cursor: pointer;
-    transition: all .2s;
-
+    transition: all 0.2s;
 }
-.listItem:hover{
+.listItem:hover {
     background-color: #af3a00;
 }
 

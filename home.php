@@ -75,7 +75,7 @@
     <link rel="icon" href="./assets/favicon.ico" />
 </head>
 
-<body style="overflow: overlay; background-color: #fafafa !important">
+<body style="overflow: overlay;">
     <!-- navebar -->
     <!-- <nav class="navbar navbar-dark font-weight-bold shadow defColor">
             <a class="navbar-brand" href="./">SoundCloud To MP3</a>
@@ -138,8 +138,8 @@
                 <div class="tips">
                     <span class="tipsTitle">Contact us</span>
                     <p class="p-3">
-                        <a href="mailto:suggestion@soundcoludtomp3.live">
-                            suggestion@soundcoludtomp3.live
+                        <a href="mailto:suggestion@soundcloudtomp3.live">
+                            suggestion@soundcloudtomp3.live
                         </a>
                     </p>
                 </div>
@@ -156,7 +156,6 @@
             </div>
         </div>
 
-        <?php require_once "./template/footer.php" ?>
 
         <div class="p-1 col-lg-4 menu playerCont playerHide">
             <div class="playerBtn">
@@ -170,6 +169,8 @@
             <span class="playerSpace"></span>
         </div>
     </div>
+    <?php require_once "./template/footer.php" ?>
+
 
     <div class="loaderBody showOnSearch">
         <div class="a" style="--n: 5">
