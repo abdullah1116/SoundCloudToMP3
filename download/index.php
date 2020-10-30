@@ -121,7 +121,7 @@ if (!empty($getLink['tracks'])) {
         </div>
 
         <!-- tracks Container -->
-        <div class="my-5 text-center align-items-center d-flex flex-column container hideOnSearch" style="">
+        <div class="my-5 text-center align-items-center d-flex flex-column container hideOnSearch">
             <div class="ximgContList" style="width: 350px; height: 350px">
                 <img src="<?php echo $tracks->image ?>" class="image rounded" alt="<?php echo $tracks->title ?>" />
             </div>
