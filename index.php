@@ -7,4 +7,4 @@ if ((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") &&
     header('Location: ' . $location);
     exit;
 }
-echo file_get_contents('index.html');
+require_once 'home.php';
