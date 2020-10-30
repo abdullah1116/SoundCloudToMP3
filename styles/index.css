@@ -251,6 +251,9 @@ body.searching .hideOnSearch {
     justify-content: center;
     /* min-height: 50%;s */
 }
+.container {
+    color: #333e;
+}
 
 .tipsCont {
     width: 100%;
