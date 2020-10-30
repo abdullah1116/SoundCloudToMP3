@@ -3,7 +3,7 @@
     font-weight: 500;
     scroll-behavior: smooth;
 }
-.fix-top{
+.navbar{
     width: 100vw;
 }
 .navbar-dark .navbar-nav .nav-link {
@@ -23,6 +23,7 @@
 .body-wrapper {
     padding-top: 50px;
     background-color: #0001;
+    min-height: calc(100vh - 80px);
 }
 
 #header-container {
@@ -281,6 +282,7 @@ body.searching .hideOnSearch {
     border-top: solid 2px #f50;
     background-color: #343a40;
     box-shadow: 0 -5px 10px 0 #00000020;
+    height: 80px;
 
 }
 
@@ -628,7 +630,7 @@ body.searching .hideOnSearch {
     .playerCont {
         bottom: 30px;
     }
-    .footer {
+    .home .footer {
         padding-bottom: 100px !important;
     }
     .playlistDownBtnText {

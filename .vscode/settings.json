@@ -3,6 +3,5 @@
     "tslint.autoFixOnSave": true,
 
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications",
     "phpserver.port": 3333
 }

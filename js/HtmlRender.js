@@ -4,7 +4,7 @@ function RenderContainer(Header) {
         let list = '';
         d.tracks.map((d, i) => {
             //playlist inner list
-            list += `<a class="listItem  rounded" href="/download/?link=${
+            list += `<a class="listItem  rounded" href="./download/?link=${
                 d.link
             }">
                         <img  src="${d.image.replace(
@@ -78,7 +78,7 @@ function RenderContainer(Header) {
                         </button>
                     </span>
                 </span>
-                <a class="item-link" href="/download/?link=${
+                <a class="item-link" href="./download/?link=${
                     d.link
                 }" target="_blank">
                     <span class="imgCont">
@@ -121,7 +121,7 @@ function RenderContainer(Header) {
         HTMLDATA.tracks.map((d, i) => {
             HTML += `<div class="mx-3 my-1 p-2 itemList Row  w-100 rounded ">
 
-                        <a class="imgContList" href="/download/?link=${
+                        <a class="imgContList" href="./download/?link=${
                             d.link
                         }">
                             <img src="${d.image.replace('-large', '-t250x250')}"

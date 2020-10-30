@@ -1,5 +1,4 @@
 <?php
-require_once('./api.php');
 
 function singleTrackResource($row)
 {
@@ -21,11 +20,12 @@ function singleTrackResourceDetailed($row)
         'id' => $row['id'],
         'title' => $row['title'],
         'image' => !empty($row['artwork_url'])
-            ? $row['artwork_url']
-            : $row['user']['avatar_url'],
+            ? largeImage($row['artwork_url'])
+            : largeImage($row['user']['avatar_url']),
         'user' => $row['user']['username'],
-        'duration' => $row['duration'],
-        // 'size' => $row['original_content_size'],
+        'duration' => 'Duration: ' . number_format($row['duration'] / 60000, 2, ".", "") . ' minutes',
+        'size' => 'File size: ' . number_format($row['duration'] / 65675.2, 2, ".", "") . ' MB',
+        'link' => $row['permalink_url'],
 
     ];
 }
@@ -43,8 +43,8 @@ function singlePlaylistResource($row)
         'id' => $row['id'],
         'title' => $row['title'],
         'image' => !empty($row['artwork_url'])
-            ? $row['artwork_url']
-            : $row['user']['avatar_url'],
+            ? largeImage($row['artwork_url'])
+            : largeImage($row['user']['avatar_url']),
         // 'stream_url' => $row['stream_url'] ?? null,
         'user' => $row['user']['username'],
         'tracks' => tracksMapper(json_encode($row['tracks'])),
@@ -72,4 +72,13 @@ function keyMapper($items)
     return array_map(function ($row) {
         return $my_style =  $row['output'];
     }, $input_array = json_decode($items, true)['collection']);
+}
+
+function largeImage($src)
+{
+    return str_replace(
+        'large.jpg',
+        't500x500.jpg',
+        $src
+    );
 }
