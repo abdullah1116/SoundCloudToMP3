@@ -138,9 +138,7 @@
                 <div class="tips">
                     <span class="tipsTitle">Contact us</span>
                     <p class="p-3">
-                        <a href="mailto:suggestion@soundcloudtomp3.live">
-                            suggestion@soundcloudtomp3.live
-                        </a>
+                        <?php require_once  APP_PATH . "/content/contact-us.html" ?>
                     </p>
                 </div>
             </div>

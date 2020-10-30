@@ -98,7 +98,7 @@ function RenderContainer(Header) {
 
         HTMLDATA.playlists.map((d, i) => {
             if (d.tracks.length != 0) {
-                HTML += `<div class="m-3 p-2 item rounded">
+                HTML += `<div class="m-3 p-2 item item-link rounded">
                     <div class="imgCont">
                         <div class="listCont custom-scroll rounded">${rendList(
                             d,
@@ -119,7 +119,7 @@ function RenderContainer(Header) {
         //ListView render
 
         HTMLDATA.tracks.map((d, i) => {
-            HTML += `<div class="mx-3 my-1 p-2 itemList Row  w-100 rounded ">
+            HTML += `<div class="mx-3 my-1 p-2 itemList  item-link Row  w-100 rounded ">
 
                         <a class="imgContList" href="./download/?link=${
                             d.link
@@ -166,7 +166,7 @@ function RenderContainer(Header) {
         HTMLDATA.playlists.map((d, i) => {
             if (d.tracks.length != 0) {
                 HTML += `
-                        <div class="mx-3 my-1 p-2 playlistItemList w-100 shadow rounded ">
+                        <div class="mx-3 my-1 p-2 playlistItemList item-link w-100 shadow rounded ">
                         <div class="mb-1 playlistItemListInner">
                             <a type="track" index="${i}"></a>
                             <div class="imgContList">

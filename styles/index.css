@@ -335,6 +335,9 @@ body.searching .hideOnSearch {
     padding: 0.5rem;
     border-radius: 0.25rem !important;
 }
+.item:hover .soundBackImg {
+    transform: scale(1.1);
+}
 
 .item-link {
     text-decoration: none;
@@ -356,6 +359,13 @@ body.searching .hideOnSearch {
     /* background-color: #00000038; */
     box-shadow: 0 5px 10px 0 #00000020;
 }
+.itemList:hover .soundBackImgList {
+    transform: scale(1.1);
+}
+.soundBackImgList {
+    overflow: hidden;
+    transition: all 0.3s ease-in;
+}
 
 .imgCont {
     display: block;
@@ -370,6 +380,7 @@ body.searching .hideOnSearch {
     text-align: start;
     height: 150px;
     width: 150px;
+    overflow: hidden;
 }
 
 .listDownImg {
@@ -409,10 +420,6 @@ body.searching .hideOnSearch {
     max-height: 300px;
     max-width: 300px;
     transition: all 0.3s ease-in;
-}
-
-.item:hover .soundBackImg {
-    transform: scale(1.1);
 }
 
 .soundArtist {
