@@ -94,8 +94,8 @@ if (!empty($getLink['tracks'])) {
     </script>
     <link rel="icon" href="../assets/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" />
-    <link rel="stylesheet" href="../styles/index.css?6" />
-    <link rel="stylesheet" href="../styles/download.css?6" />
+    <link rel="stylesheet" href="../styles/index.css?7" />
+    <link rel="stylesheet" href="../styles/download.css?7" />
     <link rel="stylesheet" href="../styles/loader.css" />
     <link rel="stylesheet" href="../styles/bootstrap.min.css" />
 
