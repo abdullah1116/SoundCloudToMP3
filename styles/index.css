@@ -128,7 +128,7 @@ p {
 
 img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .showOnSearch {
@@ -316,6 +316,7 @@ body.searching .hideOnSearch {
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     border-top: solid 2px #f50;
     background-color: #343a40;
     box-shadow: 0 -5px 10px 0 #00000020;
@@ -356,8 +357,7 @@ body.searching .hideOnSearch {
 
 .item {
     background-color: #fff;
-    width: calc(15vw + 15vh + 15px);
-    max-width: 316px;
+    width: 300px;
     box-shadow: 0 5px 10px 0 #00000020;
     margin: 1rem;
     padding: 0.5rem;
@@ -399,7 +399,6 @@ body.searching .hideOnSearch {
 .imgCont {
     display: block;
     text-align: center;
-    width: 100%;
     margin-bottom: 1rem;
 }
 
@@ -437,10 +436,6 @@ body.searching .hideOnSearch {
 }
 
 .soundBackImg {
-    height: calc(15vw + 15vh);
-    width: calc(15vw + 15vh);
-    max-height: 300px;
-    max-width: 300px;
     transition: all 0.2s ease-in;
     border-radius: 10px;
     border-radius: 0.25rem !important;
@@ -589,7 +584,6 @@ body.searching .hideOnSearch {
     box-shadow: 0 0 25px 5px #00000044;
     overflow: hidden;
     z-index: 100;
-    transition: all 0.7s;
 }
 
 .playerHide .playerBtn {
@@ -598,16 +592,23 @@ body.searching .hideOnSearch {
 }
 
 .playerBtn,
+.playerCont,
+.playerHide {
+    transition: all 0.7s;
+}
+
 .playerHide {
     height: 25px;
-    transition: all 0.7s;
 }
 
 .playerBtn {
     height: 0;
     width: 25px;
-    margin-right: 50%;
-    margin-left: 50%;
+    margin: auto;
+}
+
+.playerBtn img {
+    height: 100%;
 }
 
 .audioCont {
