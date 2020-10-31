@@ -4,16 +4,20 @@
     scroll-behavior: smooth;
     outline: none;
 }
+
 body {
     background-color: #0001 !important;
 }
+
 .navbar {
     width: 100vw;
     box-shadow: 0 5px 10px 0 #00000020;
 }
+
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(255 255 255) !important;
 }
+
 .nav-link {
     margin: 0 1rem;
     cursor: pointer;
@@ -25,6 +29,7 @@ body {
     justify-content: flex-end;
     padding-right: 7vw;
 }
+
 .body-wrapper {
     padding-top: 50px;
     min-height: calc(100vh - 80px);
@@ -33,15 +38,12 @@ body {
 #header-container {
     width: 100%;
     padding: 2rem 1rem;
-
     display: flex;
     justify-content: center;
     text-align: center;
-
     background-image: url('../assets/BackgroundImage.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-
     box-shadow: 0 5px 10px 0 #00000020;
 }
 
@@ -70,6 +72,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #ff5500;
 }
+
 body::-webkit-scrollbar {
     width: 10px;
 }
@@ -146,6 +149,7 @@ body.searching .hideOnSearch {
     background-image: linear-gradient(#f50, #ff8239);
     color: white;
 }
+
 .color-orange {
     color: #f50 !important;
 }
@@ -159,7 +163,6 @@ body.searching .hideOnSearch {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
     max-width: 800px;
 }
 
@@ -242,15 +245,15 @@ body.searching .hideOnSearch {
 #heading {
     font-size: 25px;
     font-weight: bold;
-
     color: #0009;
 }
+
 #container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* min-height: 50%;s */
 }
+
 .container {
     color: #333e;
 }
@@ -258,12 +261,9 @@ body.searching .hideOnSearch {
 .tipsCont {
     width: 100%;
     padding: 1rem;
-
     margin-top: 30px;
     margin-bottom: 30px;
-
     background-color: white;
-
     box-shadow: 0 5px 10px 0 #00000020;
     border-radius: 5px;
 }
@@ -285,7 +285,6 @@ body.searching .hideOnSearch {
     width: 100%;
     display: flex;
     justify-content: center;
-
     border-top: solid 2px #f50;
     background-color: #343a40;
     box-shadow: 0 -5px 10px 0 #00000020;
@@ -295,6 +294,7 @@ body.searching .hideOnSearch {
 .modal-dialog {
     max-width: 750 !important;
 }
+
 .links {
     margin: 0 1rem;
     color: #f50;
@@ -325,18 +325,16 @@ body.searching .hideOnSearch {
 
 .item {
     background-color: #fff;
-    /* width: 220px; */
     width: calc(15vw + 15vh + 15px);
     max-width: 316px;
-    /* backdrop-filter: blur(6px); */
-    /* background-color: #00000038; */
     box-shadow: 0 5px 10px 0 #00000020;
     margin: 1rem;
     padding: 0.5rem;
     border-radius: 0.25rem !important;
 }
+
 .item:hover .soundBackImg {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .item-link {
@@ -355,13 +353,13 @@ body.searching .hideOnSearch {
     width: -webkit-fill-available;
     flex-direction: row;
     position: relative;
-    /* backdrop-filter: blur(6px); */
-    /* background-color: #00000038; */
     box-shadow: 0 5px 10px 0 #00000020;
 }
+
 .itemList:hover .soundBackImgList {
     transform: scale(1.1);
 }
+
 .soundBackImgList {
     overflow: hidden;
     transition: all 0.3s ease-in;
@@ -371,9 +369,7 @@ body.searching .hideOnSearch {
     display: block;
     text-align: center;
     width: 100%;
-    margin-bottom: 0.5rem;
-    overflow: hidden;
-    border-radius: 0.25rem !important;
+    margin-bottom: 1rem;
 }
 
 .imgContList {
@@ -399,7 +395,6 @@ body.searching .hideOnSearch {
 
 .downBtnCont {
     margin: 5;
-    border-radius: 10px;
     position: absolute;
     z-index: 20;
 }
@@ -413,13 +408,13 @@ body.searching .hideOnSearch {
 }
 
 .soundBackImg {
-    /* height: 200;
-    width: 200; */
     height: calc(15vw + 15vh);
     width: calc(15vw + 15vh);
     max-height: 300px;
     max-width: 300px;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
+    border-radius: 10px;
+    border-radius: 0.25rem !important;
 }
 
 .soundArtist {
@@ -429,8 +424,8 @@ body.searching .hideOnSearch {
 
 .soundTitle {
     word-break: break-all;
-    /* color: white; */
 }
+
 .font-large {
     font-size: 2rem;
 }
@@ -445,8 +440,6 @@ body.searching .hideOnSearch {
 
 .listCont {
     position: absolute;
-    /* height: 200px;
-        width: 205px; */
     height: calc(15vw + 15vh);
     width: calc(15vw + 15vh);
     max-height: 300px;
@@ -477,6 +470,7 @@ body.searching .hideOnSearch {
     cursor: pointer;
     transition: all 0.2s;
 }
+
 .listItem:hover {
     background-color: #af3a00;
 }
@@ -502,8 +496,6 @@ body.searching .hideOnSearch {
     flex-direction: row;
     position: relative;
     display: inline-flex;
-    /* backdrop-filter: blur(6px); */
-    /* background-color: #00000038; */
 }
 
 .playlistItemListInner {
@@ -569,12 +561,9 @@ body.searching .hideOnSearch {
 
 .playerCont {
     height: 65px;
-
     background-color: #f1f3f4;
     box-shadow: 0 0 25px 5px #00000044;
-
     overflow: hidden;
-
     z-index: 100;
     transition: all 0.7s;
 }
@@ -585,7 +574,6 @@ body.searching .hideOnSearch {
 }
 
 .playerHide {
-    /* bottom: -55; */
     height: 25px;
     transition: all 0.7s;
 }
@@ -632,18 +620,23 @@ body.searching .hideOnSearch {
     .title {
         font-size: 1.3rem;
     }
+
     #SearchInput {
         font-size: 1.5rem;
     }
+
     #SearchBtn {
         font-size: 1.2rem;
     }
+
     .playerCont {
         bottom: 30px;
     }
+
     .home .footer {
         padding-bottom: 100px !important;
     }
+
     .playlistDownBtnText {
         display: none;
     }
