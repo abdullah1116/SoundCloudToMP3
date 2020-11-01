@@ -1,5 +1,6 @@
 {
     "require": {
-        "mervick/curl-helper": "^2.2"
+        "mervick/curl-helper": "^2.2",
+        "cache/filesystem-adapter": "^1.0"
     }
 }

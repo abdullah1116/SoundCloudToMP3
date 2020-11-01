@@ -107,12 +107,6 @@ class LocalStorageCacheApi {
                                 resolve(data);
                             });
                             break;
-                        case 'text/html':
-                            response.text().then(data => {
-                                this.set(key, data);
-                                resolve(data);
-                            });
-                            break;
                         default:
                             reject();
                             break;
