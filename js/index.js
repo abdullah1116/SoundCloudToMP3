@@ -29,9 +29,10 @@ function searchHandler(updateHistory = true) {
 
     if (searchText != undefined && searchText != '') {
         window.document.title = `${searchText} | SoundCloud To MP3`;
-        $('#search-input').autocomplete('close');
 
         if (updateHistory) {
+            $('#search-input').autocomplete('close');
+
             history.pushState(
                 { search: searchText },
                 searchText,
