@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-light defColor">
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-light def-color">
     <a class="navbar-brand font-weight-bold ml-5" href="<?php echo APP_URL ?>">
         SoundCloud To MP3
     </a>

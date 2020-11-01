@@ -114,14 +114,6 @@ body::-webkit-scrollbar {
     scrollbar-width: thin;
 }
 
-audio::-internal-media-controls-download-button {
-    display: none;
-}
-
-audio::-webkit-media-controls-pane {
-    border-radius: 0;
-}
-
 p {
     margin: 0;
 }
@@ -131,15 +123,15 @@ img {
     height: auto;
 }
 
-.showOnSearch {
+.show-on-search {
     display: none;
 }
 
-body.searching .showOnSearch {
+body.searching .show-on-search {
     display: initial;
 }
 
-body.searching .hideOnSearch {
+body.searching .hide-on-search {
     animation: blurAnimate 30s normal forwards;
 }
 
@@ -177,7 +169,7 @@ body.searching .hideOnSearch {
     box-shadow: 0 0 1px 2px #ff550099;
 }
 
-.defColor {
+.def-color {
     background-image: linear-gradient(#f50, #ff8239);
     color: #fff;
 }
@@ -186,47 +178,47 @@ body.searching .hideOnSearch {
     color: #f50 !important;
 }
 
-.input-group.input-group-sm.glowThis * {
+.input-group.input-group-sm.glow-this * {
     font-size: 2rem;
     height: auto;
 }
 
-.searchTextCont {
+.search-text-cont {
     display: flex;
     justify-content: center;
     flex-direction: column;
     max-width: 800px;
 }
 
-.searchCont {
+.search-cont {
     border-radius: 9px;
     margin-left: auto;
     margin-right: auto;
     background-color: #00000091;
 }
 
-#SearchInput {
+#search-input {
     border: 0;
     background: 0 0;
     color: #fff;
     font-weight: 100;
-    margin-right: -1;
+    margin-right: -1px;
 }
 
-#SearchInput::placeholder {
+#search-input::placeholder {
     color: #ffffff6b;
     opacity: 1;
 }
 
-#SearchInput:-ms-input-placeholder {
+#search-input:-ms-input-placeholder {
     color: #ffffff6b;
 }
 
-#SearchInput::-ms-input-placeholder {
+#search-input::-ms-input-placeholder {
     color: #ffffff6b;
 }
 
-#SearchBtn {
+#search-btn {
     border: 0;
     border-radius: 5px;
 }
@@ -235,42 +227,29 @@ body.searching .hideOnSearch {
     cursor: pointer;
 }
 
-.CopybtnCont,
-.viewSelecCont {
+.view-selec-cont {
     width: auto;
     border-radius: 10px;
     align-items: center;
 }
 
-.viewSelecCont {
+.view-selec-cont {
     background-color: #00000091;
     cursor: pointer;
 }
 
-.CopybtnCont {
-    color: #fff;
-    padding-left: 10px;
-}
-
-.viewSelectImg {
-    height: 35;
-    width: 35;
+.view-select-img {
+    height: 35px;
+    width: 35px;
     padding: 9px;
     border-radius: 10px;
 }
 
-.viewSelectImg-selected {
+.view-select-img-selected {
     padding: 5px;
     background-image: linear-gradient(#f50, #ff8239);
     border: solid 1px #f50;
     transition: all 0.05s;
-}
-
-.Copybtn {
-    height: 35;
-    align-items: center;
-    padding: 5px 10px;
-    border-radius: 10px;
 }
 
 #heading {
@@ -289,7 +268,7 @@ body.searching .hideOnSearch {
     color: #333e;
 }
 
-.tipsCont {
+.tips-cont {
     width: 100%;
     padding: 1rem;
     margin-top: 30px;
@@ -297,6 +276,7 @@ body.searching .hideOnSearch {
     background-color: #fff;
     box-shadow: 0 5px 10px 0 #00000020;
     border-radius: 5px;
+    word-break: break-word;
 }
 
 .tips p {
@@ -307,7 +287,7 @@ body.searching .hideOnSearch {
     color: #000c;
 }
 
-.tipsTitle {
+.tips-title {
     font-size: x-large;
     font-weight: 700;
 }
@@ -324,7 +304,7 @@ body.searching .hideOnSearch {
 }
 
 .modal-dialog {
-    max-width: 750 !important;
+    max-width: 750px !important;
 }
 
 .links {
@@ -341,16 +321,16 @@ body.searching .hideOnSearch {
     transition: all 0.2s ease-in;
 }
 
-.linksBreak {
+.links-break {
     color: #fff !important;
 }
 
-.linksCont {
+.links-cont {
     max-width: 800px;
     text-align: -webkit-center;
 }
 
-.viewBtnCont {
+.view-btn-cont {
     display: flex;
     justify-content: flex-end;
 }
@@ -364,13 +344,9 @@ body.searching .hideOnSearch {
     border-radius: 0.25rem !important;
 }
 
-.item:hover .soundBackImg {
-    transform: scale(1.05);
-}
-
 .item-link {
     text-decoration: none;
-    color: gray;
+    color: #666;
     transition: all 0.3s ease-in;
 }
 
@@ -379,7 +355,39 @@ body.searching .hideOnSearch {
     color: #333;
 }
 
-.itemList {
+.sound-back-img {
+    transition: all 0.2s ease-in;
+    border-radius: 0.25rem !important;
+}
+
+.sound-artist {
+    font-size: small;
+    line-height: 1;
+}
+
+.sound-title {
+    word-break: break-all;
+}
+
+.item:hover .sound-title {
+    text-shadow: 0 0 1px black;
+    color: black;
+}
+
+.item:hover .sound-back-img {
+    transform: scale(1.05);
+}
+
+.download-page .sound-artist {
+    font-size: 1rem;
+}
+
+.download-page .sound-title,
+.font-large {
+    font-size: 2rem;
+}
+
+.item-list {
     background-color: #fff;
     width: -webkit-fill-available;
     flex-direction: row;
@@ -387,34 +395,34 @@ body.searching .hideOnSearch {
     box-shadow: 0 5px 10px 0 #00000020;
 }
 
-.itemList:hover .soundBackImgList {
+.item-list:hover .sound-back-img-list {
     transform: scale(1.1);
 }
 
-.soundBackImgList {
+.sound-back-img-list {
     overflow: hidden;
     transition: all 0.3s ease-in;
 }
 
-.imgCont {
+.img-cont {
     display: block;
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.imgContList {
+.img-cont-list {
     text-align: start;
     height: 150px;
     width: 150px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
-.listDownImg {
+.list-down-img {
     width: 15px;
     height: 15px;
 }
 
-.downBtn {
+.down-btn {
     height: 30px;
     width: 30px;
     padding: 9px;
@@ -423,43 +431,28 @@ body.searching .hideOnSearch {
     background: 0 0;
 }
 
-.downBtnCont {
-    margin: 5;
+.down-btn-cont {
+    margin: 5px;
     position: absolute;
     z-index: 20;
 }
 
-.downBtnlist {
-    height: 40;
+.down-btn-cont button {
+    padding: 0;
+}
+
+.down-btn-cont img {
+    width: 12px;
+    height: 12px;
+}
+
+.down-btn-list {
+    height: 40px;
     border: solid #343a40 2px;
-    padding: 0 8;
+    padding: 0 8px;
 }
 
-.soundBackImg {
-    transition: all 0.2s ease-in;
-    border-radius: 10px;
-    border-radius: 0.25rem !important;
-}
-
-.soundArtist {
-    font-size: small;
-    line-height: 1;
-}
-
-.soundTitle {
-    word-break: break-all;
-}
-
-.download-page .soundArtist {
-    font-size: 1rem;
-}
-
-.download-page .soundTitle,
-.font-large {
-    font-size: 2rem;
-}
-
-.listCont {
+.list-cont {
     position: absolute;
     height: calc(15vw + 15vh);
     width: calc(15vw + 15vh);
@@ -470,19 +463,19 @@ body.searching .hideOnSearch {
     z-index: 20;
 }
 
-.listContList {
-    height: 200;
+.list-cont-list {
+    height: 200px;
     width: 100%;
     background-color: #ffffffcc;
     border: solid #f50 1px !important;
     overflow: auto;
 }
 
-.listItem {
-    font-size: 12;
+.list-item {
+    font-size: 12px;
     color: #ffffffaa;
     background-color: #00000030;
-    height: 20;
+    height: 20px;
     display: flex;
     flex-direction: row;
     overflow: hidden;
@@ -492,17 +485,18 @@ body.searching .hideOnSearch {
     transition: all 0.2s;
 }
 
-.listItem:hover {
+.list-item:hover {
     background-color: #af3a00;
+    text-decoration: none;
 }
 
-.ListSoundImg {
+.list-sound-img {
     width: 20px;
     height: 20px;
     margin-right: 5px;
 }
 
-.listDownBtncont {
+.listdown-btn-cont {
     width: auto;
     margin-right: 0;
     margin-left: auto;
@@ -513,32 +507,32 @@ body.searching .hideOnSearch {
     border-radius: 5px;
 }
 
-.playlistItemList {
+.playlist-item-list {
     flex-direction: row;
     position: relative;
     display: inline-flex;
 }
 
-.playlistItemListInner {
+.playlist-item-list-inner {
     width: 200px;
 }
 
-.playlistContList {
-    height: 275;
+.playlist-cont-list {
+    height: 275px;
     width: 100%;
     overflow: auto;
     background-color: #000000aa;
 }
 
-.playlistDownBtncont {
-    margin: 5;
+.playlist-down-btn-cont {
+    margin: 5px;
     position: absolute;
     border-radius: 10px;
     right: 0;
     background: 0 0;
 }
 
-.playlistDownBtn {
+.playlist-down-btn {
     height: 30px;
     padding: 3px 7px 3px 10px;
     border-radius: 10px !important;
@@ -546,21 +540,26 @@ body.searching .hideOnSearch {
     background: 0 0;
 }
 
-.playlistDownBtnImg {
+.playlist-down-btn-img {
     width: 15px;
 }
 
-.playlistTrackTitle {
+.playlist-track-title {
     word-break: break-all;
     color: #fff;
     font-size: 13.5px;
 }
 
-.listDownBtn {
+.listdown-btn {
     height: 18px;
     width: 20px;
     padding: 3px;
     background: 0 0;
+}
+
+#fileDetails {
+    color: #0006;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
 }
 
 .glow {
@@ -578,7 +577,7 @@ body.searching .hideOnSearch {
     transition: all 0.7s;
 }
 
-.playerCont {
+.player-cont {
     height: 65px;
     background-color: #f1f3f4;
     box-shadow: 0 0 25px 5px #00000044;
@@ -586,59 +585,68 @@ body.searching .hideOnSearch {
     z-index: 100;
 }
 
-.playerHide .playerBtn {
+.player-hide .player-btn {
     height: 20px;
     transition: all 0.7s;
 }
 
-.playerBtn,
-.playerCont,
-.playerHide {
+.player-btn,
+.player-cont,
+.player-hide {
     transition: all 0.7s;
 }
 
-.playerHide {
+.player-hide {
     height: 25px;
 }
 
-.playerBtn {
+.player-btn {
     height: 0;
     width: 25px;
     margin: auto;
 }
 
-.playerBtn img {
+.player-btn img {
     height: 100%;
 }
 
-.audioCont {
+.audio-cont {
     background-color: #f1f3f4;
     border-top-left-radius: 32px;
     border-top-right-radius: 30px;
     overflow: hidden;
 }
 
-.audioTitle {
+.audio-title {
     margin-left: 15px;
     margin-right: 15px;
     overflow: hidden;
     height: 24px;
 }
 
-#audioControls {
+#audio-controls {
     width: 100%;
     border-radius: 0;
     background-color: #f1f3f4;
     height: 30px;
 }
 
-#audioControls:focus {
+#audio-controls:focus {
     outline: 0;
 }
 
-#audioControls::-webkit-media-controls-panel {
+#audio-controls::-webkit-media-controls-panel {
     border-radius: 0;
     background-color: #f1f3f4;
+}
+
+.lighthouse-hidden {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    border: 0;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -646,23 +654,23 @@ body.searching .hideOnSearch {
         font-size: 1.3rem;
     }
 
-    #SearchInput {
+    #search-input {
         font-size: 1.5rem;
     }
 
-    #SearchBtn {
+    #search-btn {
         font-size: 1.2rem;
     }
-
-    .playerCont {
+    /*
+    .player-cont {
         bottom: 30px;
-    }
+    } */
 
     .home .footer {
         padding-bottom: 100px !important;
     }
 
-    .playlistDownBtnText {
+    .playlist-down-btn-text {
         display: none;
     }
 }

@@ -1,5 +1,5 @@
 function player() {
-    var audioPlayer = document.getElementById('audioControls');
+    var audioPlayer = document.getElementById('audio-controls');
 
     return {
         play: e => {
@@ -31,7 +31,6 @@ function player() {
 
         removeclass: () => {
             if ($('.btn-playing').length != 0) {
-
                 $('.btn-playing')
                     .children('img')
                     .attr('src', 'assets/play.svg');
@@ -55,20 +54,20 @@ function player() {
         },
 
         show: () => {
-            $('.playerCont').removeClass('playerHide');
+            $('.player-cont').removeClass('player-hide');
         },
 
         hide: () => {
-            $('.playerCont').addClass('playerHide');
+            $('.player-cont').addClass('player-hide');
         },
     };
 }
 
 $(() => {
-    document.getElementById('audioControls').onpause = function (e) {
+    document.getElementById('audio-controls').onpause = function (e) {
         player().refresh();
     };
-    document.getElementById('audioControls').onplay = function (e) {
+    document.getElementById('audio-controls').onplay = function (e) {
         player().refresh();
     };
 });

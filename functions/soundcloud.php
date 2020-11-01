@@ -1,7 +1,7 @@
 <?php
 
 require_once 'app.php';
-require_once  APP_PATH . '/vendor/autoload.php';
+require_once APP_PATH . '/vendor/autoload.php';
 require_once APP_PATH . '/functions/api.php';
 require_once APP_PATH . '/functions/mappers.php';
 

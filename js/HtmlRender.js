@@ -1,59 +1,64 @@
-function RenderContainer(Header) {
+function RenderContainer() {
     var HTML = '';
     const rendList = (d, listIndex) => {
         let list = '';
-        d.tracks.map((d, i) => {
+        d.tracks.forEach((d, i) => {
             //playlist inner list
-            list += `<a class="listItem  rounded" href="./download/?link=${
+            list += `<a class="list-item  rounded" href="./download/?link=${
                 d.link
             }">
-                        <img  src="${d.image.replace(
-                            '-large',
-                            '-t250x250',
-                        )}" class="ListSoundImg rounded" alt="Image Not Found">
-                        <p class="playlistTrackTitle">${d.title}</p>
-                        <div type="playlistTrack" class="btn-group listDownBtncont defColor" listIndex="${listIndex}" index="${i}" class="btn-group">
-                            <button
-                                type="button"
-                                class="btn btn-orange  listDownBtn"
-                                onclick="getBtnHandler(this,true)">
-                                <img src="./assets/down.svg">
-                            </button>
-                            <button
-                                type="button"
-                                class="btn ${
-                                    HTMLDATA.playing.state
-                                        ? HTMLDATA.playing.id == d.id
-                                            ? 'btn-playing'
-                                            : ''
-                                        : ''
-                                } btn-orange listDownBtn"
-                                onclick="getBtnHandler(this,false)">
-                                <img src="./assets/${
-                                    HTMLDATA.playing.state &&
-                                    HTMLDATA.playing.id == d.id
-                                        ? 'pause'
-                                        : 'play'
-                                }.svg" >
-                            </button>
-                        </div>
-                    </a>`;
+                <img  src="${d.image}" class="list-sound-img rounded"
+                alt="Image Not Found"
+                />
+                <p class="playlist-track-title">${d.title}</p>
+                <div type="playlistTrack" class="btn-group listdown-btn-cont def-color" listIndex="${listIndex}" index="${i}" class="btn-group">
+                    <button
+                        type="button"
+                        class="btn btn-orange  listdown-btn"
+                        onclick="getBtnHandler(this,true)">
+                        <img src="./assets/down.svg"
+                        alt="Download track"
+                        />
+                    </button>
+                    <button
+                        type="button"
+                        class="btn ${
+                            HTMLDATA.playing.state
+                                ? HTMLDATA.playing.id == d.id
+                                    ? 'btn-playing'
+                                    : ''
+                                : ''
+                        } btn-orange listdown-btn"
+                        onclick="getBtnHandler(this,false)">
+                        <img src="./assets/${
+                            HTMLDATA.playing.state &&
+                            HTMLDATA.playing.id == d.id
+                                ? 'pause'
+                                : 'play'
+                        }.svg"
+                        alt="Play track"
+                        />
+                    </button>
+                </div>
+            </a>`;
         });
         return list;
     };
 
     if (HTMLDATA.isGridView) {
-        HTMLDATA.tracks.map((d, i) => {
+        HTMLDATA.tracks.forEach((d, i) => {
             HTML += `
             <div class="item">
-                <span class="shadow downBtnCont">
-                    <span type="track" index="${i}" class="btn-group defColor">
+                <span class="shadow down-btn-cont">
+                    <span type="track" index="${i}" class="btn-group def-color">
                         <button
                             type="button"
-                            class="btn btn-orange downBtn"
+                            class="btn btn-orange down-btn"
                             onclick="getBtnHandler(this,true)"
                         >
-                            <img src="./assets/down.svg" alt="" />
+                            <img src="./assets/down.svg"
+                            alt="Download track"
+                            />
                         </button>
                         <button
                             type="button"
@@ -63,7 +68,7 @@ function RenderContainer(Header) {
                                         ? 'btn-playing '
                                         : ''
                                     : ''
-                            } btn-orange downBtn"
+                            } btn-orange down-btn"
                             onclick="getBtnHandler(this,false)"
                         >
                             <img
@@ -73,7 +78,7 @@ function RenderContainer(Header) {
                                         ? 'pause'
                                         : 'play'
                                 }.svg"
-                                alt=""
+                                alt="Play track"
                             />
                         </button>
                     </span>
@@ -81,71 +86,74 @@ function RenderContainer(Header) {
                 <a class="item-link" href="./download/?link=${
                     d.link
                 }" target="_blank">
-                    <span class="imgCont">
+                    <span class="img-cont">
                         <img
-                            src="${d.image.replace('-large', '-t250x250')}"
-                            class="soundBackImg"
+                            src="${d.image}"
+                            class="sound-back-img"
                             alt="Image Not Found"
                         />
                     </span>
-                    <p class="soundArtist">${d.user}</p>
-                    <p class="soundTitle">${d.title}</p>
+                    <p class="sound-artist">${d.user}</p>
+                    <p class="sound-title">${d.title}</p>
                 </a>
             </div>
 
                 `;
         });
 
-        HTMLDATA.playlists.map((d, i) => {
+        HTMLDATA.playlists.forEach((d, i) => {
             if (d.tracks.length != 0) {
                 HTML += `<div class="m-3 p-2 item item-link rounded">
-                    <div class="imgCont">
-                        <div class="listCont custom-scroll rounded">${rendList(
+                    <div class="img-cont">
+                        <div class="list-cont custom-scroll rounded">${rendList(
                             d,
                             i,
                         )}
                         </div>
-                        <img  src="${d.image.replace(
-                            '-large',
-                            '-t250x250',
-                        )}" class="soundBackImg rounded" alt="Image Not Found">
+                        <img  src="${
+                            d.image
+                        }" class="sound-back-img rounded" alt="Image Not Found"
+                        />
                     </div>
-                    <p class="soundArtist">${d.user}</p>
-                    <p class="soundTitle">${d.title}</p>
+                    <p class="sound-artist">${d.user}</p>
+                    <p class="sound-title">${d.title}</p>
                 </div>`;
             }
         });
     } else {
         //ListView render
 
-        HTMLDATA.tracks.map((d, i) => {
-            HTML += `<div class="mx-3 my-1 p-2 itemList  item-link Row  w-100 rounded ">
+        HTMLDATA.tracks.forEach((d, i) => {
+            HTML += `<div class="mx-3 my-1 p-2 item-list  item-link Row  w-100 rounded ">
 
-                        <a class="imgContList" href="./download/?link=${
+                        <a class="img-cont-list" href="./download/?link=${
                             d.link
                         }">
-                            <img src="${d.image.replace('-large', '-t250x250')}"
-                            class="soundBackImgList rounded" alt="Image Not Found">
+                            <img src="${d.image}"
+                            class="sound-back-img-list rounded" alt="Image Not Found"
+                            />
 
-                            
+
                         </a>
                         <div class="col p-3">
-                                <p class="soundArtist">${d.user}</p>
-                                <p class="soundTitle">${d.title}</p>
+                                <p class="sound-artist">${d.user}</p>
+                                <p class="sound-title">${d.title}</p>
                         </div>
-                        <div class="shadow playlistDownBtncont">
-                        <div type="track" index="${i}" class="btn-group defColor">
-                            <button type="button" class="btn btn-orange playlistDownBtn"  onclick="getBtnHandler(this,true)">
-                                <span class="playlistDownBtnText">Download</span>
-                                <img src="./assets/down.svg" class="playlistDownBtnImg"  alt="">
+                        <div class="shadow playlist-down-btn-cont">
+                        <div type="track" index="${i}" class="btn-group def-color">
+                            <button type="button" class="btn btn-orange playlist-down-btn"  onclick="getBtnHandler(this,true)">
+                                <span class="playlist-down-btn-text">Download</span>
+                                <img src="./assets/down.svg" class="playlist-down-btn-img"
+                                alt="Download track"
+                                />
                             </button>
                             <button type="button" class="btn ${
                                 HTMLDATA.playing.state &&
                                 HTMLDATA.playing.id == d.id
                                     ? 'btn-playing'
                                     : ''
-                            } btn-orange playlistDownBtn" onclick="getBtnHandler(this,false)">
-                                <span class="playlistDownBtnText">${
+                            } btn-orange playlist-down-btn" onclick="getBtnHandler(this,false)">
+                                <span class="playlist-down-btn-text">${
                                     HTMLDATA.playing.state &&
                                     HTMLDATA.playing.id == d.id
                                         ? 'Pause'
@@ -156,32 +164,32 @@ function RenderContainer(Header) {
                                     HTMLDATA.playing.id == d.id
                                         ? 'pause'
                                         : 'play'
-                                }.svg" class="playlistDownBtnImg" alt="">
+                                }.svg" class="playlist-down-btn-img"
+                                    alt="Play track"
+                                    />
                             </button>
                         </div>
                         </div>
                     </div>`;
         });
 
-        HTMLDATA.playlists.map((d, i) => {
+        HTMLDATA.playlists.forEach((d, i) => {
             if (d.tracks.length != 0) {
                 HTML += `
-                        <div class="mx-3 my-1 p-2 playlistItemList item-link w-100 shadow rounded ">
-                        <div class="mb-1 playlistItemListInner">
+                        <div class="mx-3 my-1 p-2 playlist-item-list item-link w-100 shadow rounded ">
+                        <div class="mb-1 playlist-item-list-inner">
                             <a type="track" index="${i}"></a>
-                            <div class="imgContList">
-                                <img src="${d.image.replace(
-                                    '-large',
-                                    '-t250x250',
-                                )}"
-                                class="soundBackImgList rounded" alt="Image Not Found">
+                            <div class="img-cont-list">
+                                <img src="${d.image}"
+                                class="sound-back-img-list rounded" alt="Image Not Found"
+                                />
                             </div>
                             <div class="p-3">
-                                <p class="soundArtist">${d.user}</p>
-                                <p class="soundTitle">${d.title}</p>
+                                <p class="sound-artist">${d.user}</p>
+                                <p class="sound-title">${d.title}</p>
                             </div>
                         </div>
-                        <div class="playlistContList rounded">${rendList(
+                        <div class="playlist-cont-list rounded">${rendList(
                             d,
                             i,
                         )}</div>
@@ -189,13 +197,12 @@ function RenderContainer(Header) {
             }
         });
     }
-    if (HTML == '') {
+    if (!HTML) {
         HTML = `<span class="align-self-center">
                 <h4>Oops no result found with this search, try searching differently.</h4>
             </span>`;
     }
-    $('#Container')[0].innerHTML = HTML;
 
-    $('#heading')[0].innerHTML =
-        HTMLDATA.Header != undefined ? HTMLDATA.Header : '';
+    document.getElementById('container').innerHTML = HTML;
+    document.getElementById('heading').innerHTML = HTMLDATA.Header || '';
 }

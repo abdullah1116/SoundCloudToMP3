@@ -32,14 +32,14 @@ function searchHandler(searchText) {
                 );
             }, 500);
             renderDownload();
-            // $(".glowThis").removeClass("glow");
+            // $(".glow-this").removeClass("glow");
             $('body').removeClass('searching');
         }
     });
     xhr.open('GET', HTMLDATA.searched.link);
     xhr.send();
 
-    // $(".glowThis").addClass("glow");
+    // $(".glow-this").addClass("glow");
     $('body').addClass('searching');
 }
 
@@ -52,8 +52,8 @@ $(() => {
     }
 });
 function renderDownload() {
-    $('.soundTitle').text(HTMLDATA.tracks[0].title);
-    $('.soundArtist').text(HTMLDATA.tracks[0].user);
+    $('.sound-title').text(HTMLDATA.tracks[0].title);
+    $('.sound-artist').text(HTMLDATA.tracks[0].user);
     $('.image')[0].src = HTMLDATA.tracks[0].image.replace(
         '-large',
         '-t500x500',
@@ -67,7 +67,7 @@ function renderDownload() {
         }`,
     );
 
-    $('.hideOnSearch').show();
+    $('.hide-on-search').show();
 }
 
 function downloadBtnHandler(e) {
