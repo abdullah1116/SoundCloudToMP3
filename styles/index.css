@@ -63,6 +63,13 @@ body {
     padding-right: 7vw;
 }
 
+.nav-links-hide {
+    visibility: hidden;
+}
+.home .nav-links-hide {
+    visibility: visible;
+}
+
 .body-wrapper {
     padding-top: 50px;
     min-height: calc(100vh - 80px);
@@ -388,10 +395,11 @@ body.searching .hide-on-search {
 }
 
 .item-list {
-    background-color: #fff;
     width: -webkit-fill-available;
-    flex-direction: row;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
     box-shadow: 0 5px 10px 0 #00000020;
 }
 
@@ -433,6 +441,9 @@ body.searching .hide-on-search {
 
 .down-btn-cont {
     margin: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+
     position: absolute;
     z-index: 20;
 }
@@ -453,12 +464,13 @@ body.searching .hide-on-search {
 }
 
 .list-cont {
-    position: absolute;
-    height: calc(15vw + 15vh);
-    width: calc(15vw + 15vh);
-    max-height: 300px;
-    max-width: 300px;
-    background-color: #2d2d2d8c;
+    /* position: absolute; */
+    /* height: calc(15vw + 15vh); */
+    /* width: calc(15vw + 15vh); */
+    height: 284px;
+    width: 284px;
+    /* background-color: #2d2d2d8c; */
+    background-size: contain;
     overflow: auto;
     z-index: 20;
 }
@@ -474,7 +486,7 @@ body.searching .hide-on-search {
 .list-item {
     font-size: 12px;
     color: #ffffffaa;
-    background-color: #00000030;
+    background-color: #222b;
     height: 20px;
     display: flex;
     flex-direction: row;
@@ -506,7 +518,14 @@ body.searching .hide-on-search {
     justify-content: flex-end;
     border-radius: 5px;
 }
+.listdown-btn button {
+    padding: 0;
+}
 
+/* JUGAR */
+.listdown-btn img {
+    margin-top: -15px;
+}
 .playlist-item-list {
     flex-direction: row;
     position: relative;
@@ -526,10 +545,11 @@ body.searching .hide-on-search {
 
 .playlist-down-btn-cont {
     margin: 5px;
-    position: absolute;
-    border-radius: 10px;
     right: 0;
-    background: 0 0;
+    border-radius: 10px;
+    position: absolute;
+    overflow: hidden;
+    /* background: 0 0; */
 }
 
 .playlist-down-btn {
@@ -661,10 +681,6 @@ body.searching .hide-on-search {
     #search-btn {
         font-size: 1.2rem;
     }
-    /*
-    .player-cont {
-        bottom: 30px;
-    } */
 
     .home .footer {
         padding-bottom: 100px !important;
@@ -672,5 +688,16 @@ body.searching .hide-on-search {
 
     .playlist-down-btn-text {
         display: none;
+    }
+
+    .player-hide .player-btn {
+        height: 40px;
+    }
+
+    .player-hide {
+        height: 45px;
+    }
+    .menu {
+        border-radius: 0px;
     }
 }

@@ -49,8 +49,8 @@ function RenderContainer() {
         HTMLDATA.tracks.forEach((d, i) => {
             HTML += `
             <div class="item">
-                <span class="shadow down-btn-cont">
-                    <span type="track" index="${i}" class="btn-group def-color">
+                <span class="shadow down-btn-cont def-color">
+                    <span type="track" index="${i}" class="btn-group">
                         <button
                             type="button"
                             class="btn btn-orange down-btn"
@@ -105,15 +105,10 @@ function RenderContainer() {
             if (d.tracks.length != 0) {
                 HTML += `<div class="m-3 p-2 item item-link rounded">
                     <div class="img-cont">
-                        <div class="list-cont custom-scroll rounded">${rendList(
-                            d,
-                            i,
-                        )}
-                        </div>
-                        <img  src="${
+                        <div class="list-cont custom-scroll rounded" style="background-image:url(${
                             d.image
-                        }" class="sound-back-img rounded" alt="Image Not Found"
-                        />
+                        })">${rendList(d, i)}
+                        </div>
                     </div>
                     <p class="sound-artist">${d.user}</p>
                     <p class="sound-title">${d.title}</p>
@@ -132,16 +127,14 @@ function RenderContainer() {
                             <img src="${d.image}"
                             class="sound-back-img-list rounded" alt="Image Not Found"
                             />
-
-
                         </a>
                         <div class="col p-3">
                                 <p class="sound-artist">${d.user}</p>
                                 <p class="sound-title">${d.title}</p>
                         </div>
-                        <div class="shadow playlist-down-btn-cont">
-                        <div type="track" index="${i}" class="btn-group def-color">
-                            <button type="button" class="btn btn-orange playlist-down-btn"  onclick="getBtnHandler(this,true)">
+                        <div class="shadow playlist-down-btn-cont def-color">
+                        <div type="track" index="${i}" class="btn-group">
+                            <button type="button" class="btn btn-orange playlist-down-btn" onclick="getBtnHandler(this,true)">
                                 <span class="playlist-down-btn-text">Download</span>
                                 <img src="./assets/down.svg" class="playlist-down-btn-img"
                                 alt="Download track"
