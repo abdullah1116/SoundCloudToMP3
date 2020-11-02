@@ -69,7 +69,7 @@ function getAudio()
 function getStreamLink($id)
 {
     $url =  "https://www.genmp3.net/getStream.php?id={$id}&apikey=cldvdosndmp320";
-    return json_decode(callAPI($url), true)['link'];
+    return json_decode(callAPI($url, false), true)['link'];
 }
 
 function getSuggest()

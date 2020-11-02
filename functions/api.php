@@ -4,13 +4,13 @@ use Cache\Adapter\Filesystem\FilesystemCachePool;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 
-function callAPI($url)
+function callAPI($url, $cache = true)
 {
 
     $pool = initCache();
     $key = preg_replace('/\W+/', '', $url);
 
-    if ($pool->hasItem($key)) {
+    if ($pool->hasItem($key) && $cache) {
         $content = $pool->get($key);
     } else {
         $response = Mervick\CurlHelper::factory($url)->exec();
@@ -37,6 +37,10 @@ function callAPI($url)
 
         $content = $response['content'];
 
+
+        if (!$cache) {
+            return $content;
+        };
 
         $item = $pool->getItem($key);
         $item->set($content);
