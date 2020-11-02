@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "purge-styles": "purgecss --content *.php,*.html -css styles/index.css -o styles/index.css"
+    }
+}

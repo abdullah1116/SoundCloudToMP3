@@ -1,30 +1,54 @@
 <?php
 
+use Cache\Adapter\Filesystem\FilesystemCachePool;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
+
 function callAPI($url)
 {
-    $response = Mervick\CurlHelper::factory($url)->exec();
 
-    // die(print_r($response)); // for testing
+    $pool = initCache();
+    $key = preg_replace('/\W+/', '', $url);
 
-    if (!$response) sendError('api response error');
+    if ($pool->hasItem($key)) {
+        $content = $pool->get($key);
+    } else {
+        $response = Mervick\CurlHelper::factory($url)->exec();
 
-    if (empty($response['status'])) {
-        sendError('bad response');
+        // die(print_r($response)); // for testing
+
+        if (!$response) sendError('api response error');
+
+        if (empty($response['status'])) {
+            sendError('bad response');
+        }
+
+        if ($response['status'] === 302) {
+            return $response['headers']['Location'];
+        }
+
+        if ($response['status'] !== 200) {
+            sendError($response['status'] . ' bad status');
+        }
+
+        if (empty($response['content'])) {
+            sendError('empty content');
+        }
+
+        $content = $response['content'];
+
+        $pool->set($key, $content);
     }
 
-    if ($response['status'] === 302) {
-        return $response['headers']['Location'];
-    }
+    return $content;
+}
 
-    if ($response['status'] !== 200) {
-        sendError($response['status'] . ' bad status');
-    }
-
-    if (empty($response['content'])) {
-        sendError('empty content');
-    }
-
-    return $response['content'];
+function initCache()
+{
+    $filesystemAdapter = new Local(__DIR__ . '/');
+    $filesystem = new Filesystem($filesystemAdapter);
+    $pool = new FilesystemCachePool($filesystem);
+    return $pool;
 }
 
 function sendError($message)

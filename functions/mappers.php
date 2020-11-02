@@ -1,13 +1,13 @@
 <?php
 
-function singleTrackResource($row)
+function singleTrackResource($row, $size = 500)
 {
     return [
         'id' => $row['id'],
         'title' => $row['title'],
         'image' => !empty($row['artwork_url'])
-            ? $row['artwork_url']
-            : $row['user']['avatar_url'],
+            ? largeImage($row['artwork_url'], $size)
+            : largeImage($row['user']['avatar_url'], $size),
         // 'stream_url' => $row['stream_url'] ?? null,
         'user' => $row['user']['username'],
         'link' => $row['permalink_url'],
@@ -24,7 +24,7 @@ function singleTrackResourceDetailed($row)
             ? largeImage($row['artwork_url'])
             : largeImage($row['user']['avatar_url']),
         'user' => $row['user']['username'],
-        'duration' => 'Duration: ' . number_format($row['duration'] / 60000, 2, ".", "") . ' minutes',
+        'duration' => 'Duration: ' . preg_replace('/(^00:)+/', '', gmdate("H:i:s", $row['duration'] / 1000)) . ' minutes',
         'size' => 'File size: ' . number_format($row['duration'] / 65675.2, 2, ".", "") . ' MB',
         'link' => $row['permalink_url'],
         'stream_url' => getStreamLink($row['id']),
@@ -33,10 +33,10 @@ function singleTrackResourceDetailed($row)
     ];
 }
 
-function tracksMapper($items)
+function tracksMapper($items, $size = 500)
 {
-    return array_map(function ($row) {
-        return $my_style = singleTrackResource($row);
+    return array_map(function ($row) use ($size) {
+        return $my_style = singleTrackResource($row, $size);
     }, $input_array = json_decode($items, true));
 }
 
@@ -50,7 +50,7 @@ function singlePlaylistResource($row)
             : largeImage($row['user']['avatar_url']),
         // 'stream_url' => $row['stream_url'] ?? null,
         'user' => $row['user']['username'],
-        'tracks' => tracksMapper(json_encode($row['tracks'])),
+        'tracks' => tracksMapper(json_encode($row['tracks']), 50),
     ];
 }
 
@@ -77,11 +77,11 @@ function keyMapper($items)
     }, $input_array = json_decode($items, true)['collection']);
 }
 
-function largeImage($src)
+function largeImage($src, $size = "500")
 {
     return str_replace(
         'large.jpg',
-        't500x500.jpg',
+        "t{$size}x{$size}.jpg",
         $src
     );
 }

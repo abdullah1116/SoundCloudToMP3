@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <?php
 require_once "../functions/app.php";
@@ -23,7 +24,7 @@ $_GET['details'] = true;
 // var_dump(
 $getLink = getLink()
     // )
-    // 
+    //
 ;
 
 if (!empty($getLink['tracks'])) {
@@ -31,7 +32,6 @@ if (!empty($getLink['tracks'])) {
 
     // var_dump($tracks);
 } else {
-    die;
     header('HTTP/1.1 301 Moved Permanently');
     header('Location: ../');
     exit;
@@ -71,7 +71,7 @@ if (!empty($getLink['tracks'])) {
                 "ratingValue": "6",
                 "worstRating": "1",
                 "alternateName": "Soundcloudtomp3 live",
-                "mainEntityOfPage": "http://www.soundcloudtomp3.live/",
+                "mainEntityOfPage": "https://soundcloudtomp3.live/",
                 "name": "Soundcloudtomp3"
             },
             "alternativeHeadline": "Soundcloud Playlist Downloader",
@@ -84,35 +84,29 @@ if (!empty($getLink['tracks'])) {
                 "priceCurrency": "USD",
                 "alternateName": "Soundcloudtomp3",
                 "description": "soundcloud downloader",
-                "mainEntityOfPage": "http://www.soundcloudtomp3.live/",
+                "mainEntityOfPage": "https://soundcloudtomp3.live/",
                 "name": "Soundcloudtomp3"
             },
             "alternateName": "Soundcloudtomp3 Playlist Downloader",
-            "mainEntityOfPage": "http://www.soundcloudtomp3.live/",
+            "mainEntityOfPage": "https://soundcloudtomp3.live/",
             "name": "Soundcloudtomp3"
         }
     </script>
     <link rel="icon" href="../assets/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" />
-    <link rel="stylesheet" href="../styles/index.css?7" />
-    <link rel="stylesheet" href="../styles/download.css?7" />
+    <link rel="stylesheet" href="../styles/index.css?v=3" />
+    <link rel="stylesheet" href="../styles/download.css?v=3" />
     <link rel="stylesheet" href="../styles/loader.css" />
     <link rel="stylesheet" href="../styles/bootstrap.min.css" />
-
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S361HP0XG1"></script>
-    <script src="../js/analytics.js?"></script>
-    <script src="../js/jquery.js?"></script>
 </head>
 
-<body style="overflow: overlay;">
+<body>
     <!-- navebar -->
     <?php require_once "../template/nav.php" ?>
     <div class="body-wrapper">
         <div id="header-container" style="background-color: #fdb35e">
             <!-- Search bar -->
-            <div class="searchTextCont">
+            <div class="search-text-cont">
                 <span class="title">
                     Download your favorite tracks to your personal storage
                     and enjoy them even when you are offline!
@@ -121,29 +115,29 @@ if (!empty($getLink['tracks'])) {
         </div>
 
         <!-- tracks Container -->
-        <div class="my-5 text-center align-items-center d-flex flex-column container hideOnSearch">
-            <div class="ximgContList" style="width: 350px; height: 350px">
-                <img src="<?php echo $tracks->image ?>" class="image rounded" alt="<?php echo $tracks->title ?>" />
-            </div>
-            <div class="p-3">
-                <p class="soundArtist"><?php echo $tracks->user ?></p>
-                <p class="soundTitle font-large m-0"><?php echo $tracks->title ?></p>
-                <div class="mb-3"><audio controls src="<?php echo $tracks->stream_url ?>"></audio></div>
-                <button type="button" class="btn btn-orange" onclick="FileHandler(this)" style="background-color: #f50; width: 160px">
+        <div class="container">
+            <div class="my-5 p-5 text-center align-items-center d-flex flex-column hide-on-search bg-white">
+                <p>
+                    <div class="sound-artist"><?php echo $tracks->user ?></div>
+                    <h1 class="sound-title font-large"><?php echo $tracks->title ?></h1>
+                </p>
+                <div style="max-width:500px">
+                    <img src="<?php echo $tracks->image ?>" class="image rounded" alt="<?php echo $tracks->title ?>" />
+                </div>
+                <div class="mt-3"><audio controls src="<?php echo $tracks->stream_url ?>"></audio></div>
+                <button type="button" class="btn btn-orange mt-3" onclick="FileHandler(this)" style="background-color: #f50; width: 160px">
                     <span>
-                        <span></span>
+                        <span id="download-percent"></span>
                         Download
                     </span>
-                    <img src="../assets/down.svg" class="playlistDownBtnImg" />
+                    <img src="../assets/down.svg" class="playlist-down-btn-img" alt="Download track" />
                 </button>
-                <div style="color: #0009">
-                    <span id="fileDetails">
-                        <?php echo $tracks->duration ?> |
-                        <?php echo $tracks->size ?>
-                    </span>
+                <div class="mt-3" id="fileDetails">
+                    <?php echo $tracks->duration ?> |
+                    <?php echo $tracks->size ?>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
     </div>
@@ -151,7 +145,6 @@ if (!empty($getLink['tracks'])) {
     <?php require_once "../template/footer.php" ?>
 </body>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script>
     function FileHandler(e) {
         const id = <?php echo $tracks->id ?>;
@@ -170,7 +163,7 @@ if (!empty($getLink['tracks'])) {
                     let percent =
                         (((event.loaded / event.total) * 100) | 0).toFixed() + '%';
 
-                    $(e).children('span').children('span').text(percent);
+                    document.getElementById("download-percent").innerHTML = percent
                 };
                 downXhr.onload = function(e) {
                     if (this.status == 200) {
@@ -194,6 +187,12 @@ if (!empty($getLink['tracks'])) {
         xhr.send();
     }
 </script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6" async></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S361HP0XG1"></script>
+<script async src="../js/analytics.js?v=3"></script>
+<script async src="../js/jquery.js"></script>
+<script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6" async></script>
 
 </html>

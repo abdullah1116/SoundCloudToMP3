@@ -26,7 +26,7 @@ function getBtnHandler(e, downlaod) {
                 HTMLDATA.playing.id = item.id;
                 HTMLDATA.playing.src = res;
                 player().play(e);
-                $('.audioTitle').text(item.title);
+                $('.audio-title').text(item.title);
             };
 
             FileHandler(item.id, callback);

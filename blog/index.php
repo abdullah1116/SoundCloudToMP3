@@ -1,12 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 <?php require_once "../functions/app.php" ?>
 
 <head>
-    <script src="../js/jquery.js?"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="../styles/index.css?7" />
+    <link rel="stylesheet" href="../styles/index.css?v=3" />
     <link rel="stylesheet" href="../styles/loader.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
@@ -18,7 +17,7 @@
     <title>SoundCloud To MP3</title>
 </head>
 
-<body style="overflow: overlay;">
+<body>
     <!-- navebar -->
     <?php require_once "../template/nav.php" ?>
 
@@ -79,6 +78,7 @@
 
 </body>
 
-<!-- <script src="../js/download.js?"></script> -->
+<script async src="../js/jquery.js"></script>
+<script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </html>
