@@ -6,7 +6,7 @@ function RenderContainer() {
             //playlist inner list
             list += `<a class="list-item  rounded" href="./download/?link=${
                 d.link
-            }">
+            }" target="_blank">
                 <img  src="${d.image}" class="list-sound-img rounded"
                 alt="Image Not Found"
                 />
@@ -103,7 +103,7 @@ function RenderContainer() {
 
         HTMLDATA.playlists.forEach((d, i) => {
             if (d.tracks.length != 0) {
-                HTML += `<div class="m-3 p-2 item item-link rounded">
+                HTML += `<div class="item item-link rounded">
                     <div class="img-cont">
                         <div class="list-cont custom-scroll rounded" style="background-image:url(${
                             d.image

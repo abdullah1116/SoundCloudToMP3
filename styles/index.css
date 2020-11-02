@@ -273,6 +273,7 @@ body.searching .hide-on-search {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow: hidden;
 }
 
 .container {
@@ -347,12 +348,12 @@ body.searching .hide-on-search {
 }
 
 .item {
-    background-color: #fff;
+    margin: 1rem 0.7rem;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
     width: 300px;
-    box-shadow: 0 5px 10px 0 #00000020;
-    margin: 1rem;
-    padding: 0.5rem;
     border-radius: 0.25rem !important;
+    background-color: #fff;
+    box-shadow: 0 5px 10px 0 #00000020;
 }
 
 .item-link {

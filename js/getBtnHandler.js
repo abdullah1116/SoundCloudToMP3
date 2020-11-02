@@ -1,4 +1,6 @@
 function getBtnHandler(e, downlaod) {
+    event.preventDefault();
+
     if ($(e).parent().attr('type') == 'track') {
         var item = HTMLDATA.tracks[$(e).parent().attr('index')];
     } else if ($(e).parent().attr('type') == 'playlistTrack') {
