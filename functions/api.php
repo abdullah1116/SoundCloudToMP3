@@ -37,7 +37,11 @@ function callAPI($url)
 
         $content = $response['content'];
 
-        $pool->set($key, $content);
+
+        $item = $pool->getItem($key);
+        $item->set($content);
+        $item->expiresAfter(24 * 60 * 60);
+        $pool->save($item);
     }
 
     return $content;
@@ -48,6 +52,7 @@ function initCache()
     $filesystemAdapter = new Local(__DIR__ . '/');
     $filesystem = new Filesystem($filesystemAdapter);
     $pool = new FilesystemCachePool($filesystem);
+
     return $pool;
 }
 
