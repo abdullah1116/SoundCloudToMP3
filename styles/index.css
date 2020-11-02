@@ -157,7 +157,7 @@ body.searching .hide-on-search {
 
 .btn-playing {
     background-image: none !important;
-    background-color: #343a40 !important;
+    background-color: #16161b !important;
     box-shadow: 0 0 3px 1px #f50;
     transition: all 0.5s;
 }
@@ -305,14 +305,17 @@ body.searching .hide-on-search {
 }
 
 .footer {
+    height: 80px;
     width: 100%;
+    padding: 15px 0 20px 0;
+
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     border-top: solid 2px #f50;
-    background-color: #343a40;
+    background-color: #16161b;
     box-shadow: 0 -5px 10px 0 #00000020;
-    height: 80px;
 }
 
 .modal-dialog {
@@ -473,7 +476,7 @@ body.searching .hide-on-search {
 
 .down-btn-list {
     height: 40px;
-    border: solid #343a40 2px;
+    border: solid #16161b 2px;
     padding: 0 8px;
 }
 
