@@ -51,7 +51,7 @@
 
     <!-- css -->
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles/bootstrap.min.css" />
     <link rel="stylesheet" href="./styles/index.css?v=3" />
     <link rel="stylesheet" href="./styles/loader.css" />
     <link rel="stylesheet" href="./styles/jquery-ui.css" />
@@ -174,6 +174,7 @@
 <script async src="./js/suggest.js?v=3"></script>
 <script async src="./js/HtmlRender.js?v=3"></script>
 <script async src="./js/localStorage-cache-api.js?v=3"></script>
+<script async src="./js/modal.js"></script>
 
 <script async src="./js/jquery-ui.js"></script>
 <script async src="./js/index.js?v=3"></script>
