@@ -413,6 +413,9 @@ body.searching .hide-on-search {
 }
 
 .img-cont {
+    width: 284px;
+    height: 284px;
+
     display: block;
     text-align: center;
     margin-bottom: 1rem;
@@ -422,7 +425,13 @@ body.searching .hide-on-search {
     text-align: start;
     height: 150px;
     width: 150px;
+    transition: all 0.2s ease-in;
+
     /* overflow: hidden; */
+}
+
+.playlist-item-list:hover .img-cont-list {
+    transform: scale(1.05);
 }
 
 .list-down-img {
