@@ -1,6 +1,6 @@
 <!-- footer -->
 <!-- data-toggle="modal" -->
-<div class="footer py-4">
+<div class="footer">
     <a class="links" href="<?php echo APP_URL ?>/blog" target="_blank">Blog</a>
     <div class="links links-modal" data-target="#modalPrivacy">
         Privacy policy
