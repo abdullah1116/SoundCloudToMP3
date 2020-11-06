@@ -403,6 +403,8 @@ body.searching .hide-on-search {
 }
 
 .item-list {
+    margin: .75rem 1rem;
+    padding: .5rem;
     width: -webkit-fill-available;
     position: relative;
     display: flex;

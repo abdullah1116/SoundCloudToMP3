@@ -119,7 +119,7 @@ function RenderContainer() {
         //ListView render
 
         HTMLDATA.tracks.forEach((d, i) => {
-            HTML += `<div class="mx-3 my-1 p-2 item-list  item-link Row  w-100 rounded ">
+            HTML += `<div class="item-list  item-link Row  w-100 rounded ">
 
                         <a class="img-cont-list" href="./download/?link=${
                             d.link
