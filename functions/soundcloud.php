@@ -53,7 +53,8 @@ function getLink()
                     ? singleTrackResourceDetailed($linkCallResponse)
                     : singleTrackResource($linkCallResponse))
                 : singlePlaylistResource($linkCallResponse)
-        ]
+        ],
+        "Header" => "hi"
     ];
 }
 
