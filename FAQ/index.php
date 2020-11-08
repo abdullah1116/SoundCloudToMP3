@@ -25,7 +25,7 @@
     <div class="body-wrapper">
         <div class="container">
             <div class="container pb-5">
-                <div class="m-5 text-center" id="heading">FAQs</div>
+                <div class="m-5 text-center heading">FAQs</div>
                 <p><strong>What is the best SoundCloud downloader?</strong></p>
                 <p>Among the many options available on the internet <strong>SoundCloudtoMP3.live</strong> is the best option. Because it allows not only a single-track download but also a playlist, you can select particular songs from the playlist to download.<em> No subscription, no registration</em> hence for 24 hours and seven days downloading place for free.</p>
                 <p><strong>How can I listen to SoundCloud offline without Soundcloud?</strong></p>

@@ -263,7 +263,8 @@ body.searching .hide-on-search {
     transition: all 0.05s;
 }
 
-#title {
+#title,
+.heading {
     font-size: 25px;
     font-weight: 700;
     color: #0009;
