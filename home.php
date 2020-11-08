@@ -91,7 +91,7 @@
 
         <div class="container">
             <!-- heading Container -->
-            <div class="mt-3 hide-on-search text-center" id="heading"></div>
+            <div class="mt-3 hide-on-search text-center" id="title"></div>
 
             <!-- result layout selector -->
             <div class="view-btn-cont text-right hide-on-search d-none d-md-flex">

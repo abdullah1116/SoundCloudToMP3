@@ -49,7 +49,7 @@ function searchHandler(updateHistory = true) {
         cacheFetch('results', HTMLDATA.searched.link, searchText).then(res => {
             HTMLDATA.tracks = [];
             HTMLDATA.playlists = [];
-            HTMLDATA.Header = `Searching for "${searchText}"`;
+            HTMLDATA.title = `Searching for "${searchText}"`;
             if (res) {
                 HTMLDATA = { ...HTMLDATA, ...res.content };
             }
@@ -71,7 +71,7 @@ function getTop() {
     cacheFetch('top', './sc.php?type=top', '').then(res => {
         HTMLDATA.tracks = [];
         HTMLDATA.playlists = [];
-        HTMLDATA.Header = 'Most heard tracks';
+        HTMLDATA.title = 'Most heard tracks';
         HTMLDATA = { ...HTMLDATA, ...res.content };
         // HTMLDATA.Top = `
         // <p style="

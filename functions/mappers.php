@@ -40,7 +40,7 @@ function tracksMapper($items, $size = 500)
     }, $input_array = json_decode($items, true));
 }
 
-function singlePlaylistResource($row)
+function singlePlaylistResource($row, $size = 50)
 {
     return [
         'id' => $row['id'],
@@ -50,7 +50,7 @@ function singlePlaylistResource($row)
             : largeImage($row['user']['avatar_url']),
         // 'stream_url' => $row['stream_url'] ?? null,
         'user' => $row['user']['username'],
-        'tracks' => tracksMapper(json_encode($row['tracks']), 50),
+        'tracks' => tracksMapper(json_encode($row['tracks']), $size),
     ];
 }
 
