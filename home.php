@@ -50,7 +50,7 @@
     <!-- css -->
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="./styles/index.css?v=5" />
+    <link rel="stylesheet" href="./styles/index.css?v=6" />
     <link rel="stylesheet" href="./styles/loader.css" />
     <link rel="stylesheet" href="./styles/jquery-ui.css" />
 
@@ -169,15 +169,15 @@
 
 <!-- js -->
 
-<script async src="./js/Player.js?v=5"></script>
-<script async src="./js/getBtnHandler.js?v=5"></script>
-<script async src="./js/suggest.js?v=5"></script>
-<script async src="./js/HtmlRender.js?v=5"></script>
-<script async src="./js/localStorage-cache-api.js?v=5"></script>
+<script async src="./js/Player.js?v=6"></script>
+<script async src="./js/getBtnHandler.js?v=6"></script>
+<script async src="./js/suggest.js?v=6"></script>
+<script async src="./js/HtmlRender.js?v=6"></script>
+<script async src="./js/localStorage-cache-api.js?v=6"></script>
 <script async src="./js/modal.js"></script>
 
 <script async src="./js/jquery-ui.js"></script>
-<script async src="./js/index.js?v=5"></script>
+<script async src="./js/index.js?v=6"></script>
 <script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>
 
