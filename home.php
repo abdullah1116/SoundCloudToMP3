@@ -132,6 +132,14 @@
                     </div>
                 </div>
             </div>
+            <div class="tips-cont" id="playlist-downloader">
+                <div class="tips">
+                    <span class="tips-title">FAQ</span>
+                    <div class="p-3 tip-content">
+                        <?php require_once  APP_PATH . "/content/faq.html" ?>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="p-1 col-lg-4 menu player-cont player-hide">

@@ -10,9 +10,7 @@
             <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
             <a href="#how-to-use" class="nav-link">How to Use</a>
             <a href="#contact-us" class="nav-link">Contact us</a>
-            <a href="#playlist-downloader" class="nav-link">
-                Playlist downloader
-            </a>
+            <a href="#playlist-downloader" class="nav-link">Playlist downloader</a>
         </div>
     </div>
 </nav>

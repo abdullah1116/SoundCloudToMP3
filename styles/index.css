@@ -38,6 +38,10 @@ body {
     background-color: #0001 !important;
 }
 
+.blog body {
+    background-color: #fff !important;
+}
+
 #header-container,
 .navbar {
     box-shadow: 0 5px 10px 0 #00000020;
@@ -319,9 +323,12 @@ body.searching .hide-on-search {
     margin-bottom: 0.3rem;
     padding: 0 15px;
 }
-.tip-content strong {
-    margin-bottom: 0.3rem;
+.tip-content h2 {
     padding: 0 7px;
+    margin-bottom: 0.3rem;
+
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .footer {
