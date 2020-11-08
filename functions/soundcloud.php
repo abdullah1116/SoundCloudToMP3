@@ -11,12 +11,13 @@ const API_URL = "https://api.soundcloud.com/%method%&client_id=86b6a66bb2d863f5d
 function getSearch()
 {
     if (empty($_GET['search'])) sendError('Nothing searched');
+    $searchText = $_GET['search'];
+    $urlTracks = str_replace('%method%', 'tracks?format=json', API_URL) . '&q=' . $searchText;
 
-    $urlTracks = str_replace('%method%', 'tracks?format=json', API_URL) . '&q=' . $_GET['search'];
-
-    $urlPlaylists = str_replace('%method%', 'playlists?format=json', API_URL) . '&q=' . $_GET['search'];
+    $urlPlaylists = str_replace('%method%', 'playlists?format=json', API_URL) . '&q=' . $searchText;
 
     sendResponse([
+        "title" => "Searching for \"{$searchText}\"",
         'tracks' => tracksMapper(callAPI($urlTracks)),
         'playlists' => playlistMapper(callAPI($urlPlaylists)),
     ]);
@@ -27,6 +28,7 @@ function getTop()
 
     $url = "https://api-v2.soundcloud.com/charts?kind=top&limit=12&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP";
     sendResponse([
+        "title" => "Most heard tracks",
         'tracks' => topMapper(callAPI($url)),
         'playlists' => [],
     ]);
@@ -44,16 +46,30 @@ function getLink()
     $linkCallResponse = json_decode(callAPI(callAPI($url)), true);
 
     $kind = $linkCallResponse['kind'];
+    if ($kind == 'track') {
 
+        $data = $details  == true
+            ? singleTrackResourceDetailed($linkCallResponse)
+            : singleTrackResource($linkCallResponse);
+
+        $title = "Searching for \"{$data['title']}\" by \"{$data['user']}\"";
+        $tracks = [$data];
+    } else {
+        $data = singlePlaylistResource($linkCallResponse, 500);
+
+        $count = count($data['tracks']);
+        $title = "Searching for \"{$data['title']}\" by \"{$data['user']}\" tracks \"{$count}\"";
+        $tracks = $data['tracks'];
+    }
+    // $count = count($tracks['tracks']);
+    // echo "Searching for \"{$tracks['title']}\" by \"{$tracks['user']}\" tracks \"{$count}\"";
+    // dd($tracks);
 
     return [
-        ($kind . 's') => [
-            $kind == 'track'
-                ? ($details  == true
-                    ? singleTrackResourceDetailed($linkCallResponse)
-                    : singleTrackResource($linkCallResponse))
-                : singlePlaylistResource($linkCallResponse)
-        ]
+        "title" => $title,
+        'tracks' => $tracks,
+        'playlists' => [],
+
     ];
 }
 
@@ -63,7 +79,7 @@ function getAudio()
     if (empty($_GET['id'])) sendError('Nothing played');
     $id = $_GET['id'];
 
-    echo    getStreamLink($id);
+    echo getStreamLink($id);
 }
 
 function getStreamLink($id)

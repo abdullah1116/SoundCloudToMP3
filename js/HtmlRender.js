@@ -197,5 +197,5 @@ function RenderContainer() {
     }
 
     document.getElementById('container').innerHTML = HTML;
-    document.getElementById('heading').innerHTML = HTMLDATA.Header || '';
+    document.getElementById('title').innerHTML = HTMLDATA.title || '';
 }
