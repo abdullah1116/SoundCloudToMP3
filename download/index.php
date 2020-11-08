@@ -124,7 +124,7 @@ if (!empty($getLink['tracks'])) {
                 <div style="max-width:500px">
                     <img src="<?php echo $tracks->image ?>" class="image rounded" alt="<?php echo $tracks->title ?>" />
                 </div>
-                <div class="mt-3"><audio controls src="<?php echo $tracks->stream_url ?>"></audio></div>
+                <div class="mt-3"><audio controls controlslist="nodownload" src="<?php echo $tracks->stream_url ?>"></audio></div>
                 <button type="button" class="btn btn-orange mt-3" onclick="FileHandler(this)" style="background-color: #f50; width: 160px">
                     <span>
                         <span id="download-percent"></span>
