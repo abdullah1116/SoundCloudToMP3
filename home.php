@@ -132,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tips-cont" id="playlist-downloader">
+            <div class="tips-cont" id="faq">
                 <div class="tips">
                     <span class="tips-title">FAQ</span>
                     <div class="p-3 tip-content">
