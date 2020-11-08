@@ -5,7 +5,7 @@
 <head>
 
     <link rel="stylesheet" href="../styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="../styles/index.css?v=4" />
+    <link rel="stylesheet" href="../styles/index.css?v=5" />
     <link rel="stylesheet" href="../styles/loader.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
@@ -48,4 +48,5 @@
 
 <script async src="../js/jquery.js"></script>
 <script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </html>
