@@ -125,13 +125,13 @@ if (!empty($getLink['tracks'])) {
                     <img src="<?php echo $tracks->image ?>" class="image rounded" alt="<?php echo $tracks->title ?>" />
                 </div>
                 <div class="mt-3"><audio controls controlslist="nodownload" src="<?php echo $tracks->stream_url ?>"></audio></div>
-                <button type="button" class="btn btn-orange mt-3" onclick="FileHandler(this)" style="background-color: #f50; width: 160px">
-                    <span>
-                        <span id="download-percent"></span>
-                        Download
-                    </span>
+                <a href="<?php echo $tracks->stream_url ?>" class="btn btn-orange mt-3" style="background-color: #f50; width: 160px" download="<?php echo $tracks->title ?>.mp3">
+                    <!-- <span> -->
+                    <!-- <span id="download-percent"></span> -->
+                    Download
+                    <!-- </span> -->
                     <img src="../assets/down.svg" class="playlist-down-btn-img" alt="Download track" />
-                </button>
+                </a>
                 <div class="mt-3" id="fileDetails">
                     <?php echo $tracks->duration ?> |
                     <?php echo $tracks->size ?>
