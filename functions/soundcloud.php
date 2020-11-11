@@ -79,7 +79,21 @@ function getAudio()
     if (empty($_GET['id'])) sendError('Nothing played');
     $id = $_GET['id'];
 
-    echo getStreamLink($id);
+    // echo getStreamLink($id);
+
+
+
+
+    $location =  getStreamLink($id);
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: ' . $location);
+    // header('Content-Disposition: attachment');
+    // header('Content-Description: File Transfer');
+    // // header('Content-Type: application/download');
+    // header('Content-Transfer-Encoding: binary');
+    // header('Expires: 0');
+    // header('Cache-Control: must-revalidate');
+    // header('Pragma: public');
 }
 
 function getStreamLink($id)
