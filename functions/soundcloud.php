@@ -5,8 +5,10 @@ require_once APP_PATH . '/vendor/autoload.php';
 require_once APP_PATH . '/functions/api.php';
 require_once APP_PATH . '/functions/mappers.php';
 
+// XXX const API_URL = "https://api.soundcloud.com/%method%&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP"; // soundcloud XXX
 const API_URL = "https://api.soundcloud.com/%method%&client_id=86b6a66bb2d863f5d64dd8a91cd8de94"; // youtube
-// const API_URL = "https://api.soundcloud.com/%method%&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP"; // soundcloud
+const GEN_API_URL = "https://www.genmp3.net/getStream.php?%method%&&apikey=cldvdosndmp320"; // genmp3
+const V2_API_URL = "https://api-v2.soundcloud.com/%method%&client_id=njlDi9nZVS8dM70mLDjJpD8PascrK3xJ"; // genmp3
 
 function getSearch()
 {
@@ -26,7 +28,7 @@ function getSearch()
 function getTop()
 {
 
-    $url = "https://api-v2.soundcloud.com/charts?kind=top&limit=12&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP";
+    $url = str_replace('%method%', "charts?kind=top&limit=12", V2_API_URL);
     sendResponse([
         "title" => "Most heard tracks",
         'tracks' => topMapper(callAPI($url)),
@@ -84,7 +86,9 @@ function getAudio()
 
 function getStreamLink($id)
 {
-    $url =  "https://www.genmp3.net/getStream.php?id={$id}&apikey=cldvdosndmp320";
+    if (empty($id)) return;
+
+    $url = str_replace('%method%', "id={$id}", GEN_API_URL);
     return json_decode(callAPI($url, false), true)['link'];
 }
 
@@ -94,7 +98,7 @@ function getSuggest()
 
     $key = $_GET['key'];
 
-    $url = "https://api-v2.soundcloud.com/search/queries?q={$key}&limit=10&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP";
+    $url = str_replace('%method%', "search/queries?q={$key}&limit=10", V2_API_URL);
 
     sendResponse(keyMapper(callAPI($url)));
 }
