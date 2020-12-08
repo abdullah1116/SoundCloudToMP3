@@ -5,10 +5,15 @@
 <head>
     <!-- meta -->
     <title>SoundCloud To MP3</title>
-    <meta name="description" content="Download your favorite tracks to your personal storage and enjoy them even when you are offline!" />
-    <meta name="Keywords" content="soundcloud,mp3,converter,free,online,download" />
+    <meta name="description" content="With Soundcloud to mp3 converter, get your favorite Soundcloud artist’s track, songs to Mp3. Download Soundcloud Playlist while playing your favourite tracks" />
+    <meta name="Keywords" content="Soundcloudtomp3, download soundcloud, soundcloud downloader, soundcloud to mp3 converter, soundcloud to mp3, download from soundcloud, soundcloud converter, soundcloud mp3, soundcloud playlist downloader, soundcloud downloader playlist, download playlist soundcloud, how to download from soundcloud" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-language" content="en-us" />
+    <meta name="copyright" content="soundcloudtomp3.live">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="content-type" content="text/html;UTF-8">
+    <meta http-equiv="cache-control" content="cache">
+    <meta http-equiv="content-language" content="en">
     <script type="application/ld+json">
         {
             "@context": "http://schema.org/",
