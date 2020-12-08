@@ -73,15 +73,6 @@ function getTop() {
         HTMLDATA.playlists = [];
         HTMLDATA.title = 'Most heard tracks';
         HTMLDATA = { ...HTMLDATA, ...res.content };
-        // HTMLDATA.Top = `
-        // <p style="
-        // position: absolute;
-        // margin-top: -30px;
-        // font-size: 25px;
-        // font-weight: bold;
-        // left: 60px;
-        // color: #00000085;">Most heard tracks: </p>`;
-
         RenderContainer();
     });
 }

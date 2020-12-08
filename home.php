@@ -196,11 +196,6 @@
 
             $('.view-select-img').click(selectGridView);
             $('#search-input').googleSuggest();
-
-            // if (screen.width < 1000) {
-            //     $('.view-select-img').toggleClass('view-select-img-selected');
-            //     HTMLDATA.isGridView = false;
-            // }
         }
     };
 
