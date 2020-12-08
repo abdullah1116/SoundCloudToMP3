@@ -38,10 +38,6 @@ body {
     background-color: #0001 !important;
 }
 
-.blog body {
-    background-color: #fff !important;
-}
-
 #header-container,
 .navbar {
     box-shadow: 0 5px 10px 0 #00000020;
@@ -303,6 +299,9 @@ body.searching .hide-on-search {
 .tips-title {
     font-size: x-large;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 5px 21px -17px;
 }
 .tip-content {
     padding: 1rem;

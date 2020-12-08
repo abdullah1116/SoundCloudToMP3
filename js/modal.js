@@ -23,7 +23,7 @@ $('.links-modal').click(e => {
 
     modalBody.innerHTML = '...';
 
-    fetch('content/' + modalObject.filePath)
+    fetch('../content/' + modalObject.filePath)
         .then(response => response.text())
         .then(data => {
             modalBody.innerHTML = data;
