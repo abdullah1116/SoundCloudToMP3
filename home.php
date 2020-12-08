@@ -14,6 +14,18 @@
     <meta http-equiv="content-type" content="text/html;UTF-8">
     <meta http-equiv="cache-control" content="cache">
     <meta http-equiv="content-language" content="en">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soundcloudtomp3.live/">
+    <meta property="og:title" content="SoundCloud To MP3 - SoundCloud Playlist Downloader">
+    <meta property="og:description" content="SoundCloud Playlist Downloader: With Soundcloud to mp3 converter, get your favorite Soundcloud artist’s songs & track to Mp3. The best Soundcloud playlist downloader with an option to play and download a full playlist. Step by step guide for the playlist download and selective songs.">
+    <meta property="og:image" content="https://soundcloudtomp3.live/assets/soundcloud-converter.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://soundcloudtomp3.live/">
+    <meta property="twitter:title" content="SoundCloud To MP3 - SoundCloud Playlist Downloader">
+    <meta property="twitter:description" content="SoundCloud Playlist Downloader: With Soundcloud to mp3 converter, get your favorite Soundcloud artist’s songs & track to Mp3. The best Soundcloud playlist downloader with an option to play and download a full playlist. Step by step guide for the playlist download and selective songs.">
+    <meta property="twitter:image" content="https://soundcloudtomp3.live/assets/soundcloud-converter.png">
     <script type="application/ld+json">
         {
             "@context": "http://schema.org/",
