@@ -280,6 +280,11 @@ body.searching .hide-on-search {
 .container {
     color: #333e;
 }
+.blog .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 .tips-cont {
     width: 100%;
@@ -290,6 +295,15 @@ body.searching .hide-on-search {
     box-shadow: 0 5px 10px 0 #00000020;
     border-radius: 5px;
     word-break: break-word;
+}
+.blog .tips-cont {
+    max-width: calc(50% - 30px);
+    margin: 15px !important;
+    transition: all 3s ease-in-out;
+    transition: box-shadow 0.1s;
+}
+.blog .tips-cont:hover {
+    box-shadow: none;
 }
 
 .tips p {
