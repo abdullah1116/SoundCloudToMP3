@@ -102,7 +102,7 @@ if (!empty($getLink['tracks'])) {
 
 <body>
     <!-- navebar -->
-    <?php require_once "../template/nav.php" ?>
+    <?php require_once APP_PATH ."/template/nav.php" ?>
     <div class="body-wrapper">
         <div id="header-container" style="background-color: #fdb35e">
             <!-- Search bar -->
@@ -142,7 +142,7 @@ if (!empty($getLink['tracks'])) {
     </div>
     </div>
 
-    <?php require_once "../template/footer.php" ?>
+    <?php require_once  APP_PATH ."/template/footer.php" ?>
 </body>
 
 <script>

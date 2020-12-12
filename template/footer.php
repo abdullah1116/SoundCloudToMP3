@@ -1,7 +1,7 @@
 <!-- footer -->
 <!-- data-toggle="modal" -->
 <div class="footer">
-    <a class="links" href="<?php echo APP_URL ?>/blog" target="_blank">Blog</a>
+    <a class="links" href="/blog" target="_blank">Blog</a>
     <div class="links links-modal" data-target="#modalDisclaimer">Disclaimer</div>
     <!-- <a class="links" href="<?php echo APP_URL ?>/faq" target="_blank">FAQs</a> -->
     <div class="links links-modal" data-target="#modalPrivacy">Privacy policy</div>
