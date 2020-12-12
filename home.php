@@ -128,14 +128,15 @@
                     "text": "When using Chrome or any other web page, the downloaded tracks are placed in the Download Folder. Once the audio is downloaded, you can change the location as you want. 
                     However,
                     if you have trouble finding the audio,
-                    you can either press\ "Ctrl + J\" or search it by writing in the search bar."
+                    you can either press Ctrl + J or search it by writing in the search bar.
+                    "
                 }
             }, {
                 "@type": "Question",
                 "name": "Unable to download the SoundCloud audio, reason?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "First of all, I would highly recommend you to update the browser you are using. Remember, there are two buttons one plays the track and the other one download. Check out the guide here to learn How To Use It. (add anchor link)
+                    "text": "First of all, I would highly recommend you to update the browser you are using. Remember, there are two buttons one plays the track and the other one download. Check out the guide here to learn How To Use It. https://soundcloudtomp3.live/#how-to-use
 
                     However,
                     if the song doesn 't download, it is probably the owner who hasn'
