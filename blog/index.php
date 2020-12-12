@@ -32,7 +32,7 @@
         <div class="body-wrapper">
             <div class="container">
                 <!-- Blog -->
-                <div class="tips-cont" id="how-to-use">
+                <div class="tips-cont" id="how-to-use" href="/blognumberdo">
                     <div class="tips">
                         <span class="tips-title">Blog</span>
                         <div class="p-3 tip-content">
@@ -49,164 +49,78 @@
                                 , I decided to build a tool for easy access
                                 anywhere and anytime.
                             </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog END -->
+                <!-- privacy start -->
+                <div class="tips-cont" id="how-to-use" href="/blognumberdo">
+                    <div class="tips">
+                        <span class="tips-title">Blog</span>
+                        <div class="p-3 tip-content">
+                            Privacy Policy for Soundcloud To Mp3 At Soundcloud
+                            To Mp3, accessible from soundcloudtomp3.live, one of
+                            our main priorities is the privacy of our visitors.
+                            This Privacy Policy document contains types of
+                            information that is collected and recorded by
+                            Soundcloud To Mp3 and how we use it. If you have
+                            additional questions or require more information
+                            about our Privacy Policy, do not hesitate to contact
+                            us. This Privacy Policy applies only to our online
+                            activities and is valid for visitors to our website
+                            with regards to the information that they shared
+                            and/or collect in Soundcloud To Mp3. This policy is
+                            not applicable to any information collected offline
+                            or via channels other than this website.
+                        </div>
+                    </div>
+                </div>
+                <!-- privacy end -->
+                <!-- Blog -->
+                <div class="tips-cont" id="how-to-use" href="/blognumberdo">
+                    <div class="tips">
+                        <span class="tips-title">Blog</span>
+                        <div class="p-3 tip-content">
                             <p>
-                                This
-                                <strong>SoundCloud downloader</strong>
-                                is here to help any music lover access all songs
-                                from their favorite artist or any mashup with
-                                just a click. You are provided with two options.
-                            </p>
-                            <ol>
-                                <li>To listen to the song</li>
-                                <li>To download it</li>
-                            </ol>
-                            <p>
-                                Undoubtedly, you can listen to them on
-                                SoundCloud or youtube as well; however, you have
-                                to have internet access for both. Of course, you
-                                can make the download at youtube, but then to
-                                keep the mobile on and the less storage memory
-                                puts the mood down.
-                            </p>
-                            <p>
-                                In addition to that if you are concerned about
-                                <em>
-                                    Soundcloud download for pc or Soundcloud
-                                    download for android
-                                </em>
-                                then there is not much difference.
-                            </p>
-                            <p>
-                                The song you love is just a step away with the
-                                download from SoundCloud option.
-                                <strong>Just come to</strong>
-                                <a href="http://soundcloudtomp3.live">
-                                    <strong>Soundcloudtomp3.live</strong>
+                                <a href="https://soundcloud.com/">
+                                    SoundCloud.com
                                 </a>
-                                <strong>
-                                    and the SoundCloud to mp3 converter will do
-                                    its charm.
-                                </strong>
-                            </p>
-                            <p>
-                                You are at full liberty of searching any song,
-                                music, mashups, and audios you want on this
-                                page. The search bar is for you to fill to
-                                convert SoundCloud to mp3.
-                            </p>
-                            <p>
-                                Since this web app is made out of love for
-                                music, it is free to download SoundCloud songs.
-                            </p>
-                            <p>
-                                Moreover, our SoundCloud converter does not
-                                require any registration or fee for downloading
-                                tracks. Open the next tab right now and start
-                                getting your Soundcloud mp3 songs.
-                            </p>
-                            <p>&nbsp;</p>
-                            <h2>What is new?</h2>
-                            <p>
-                                You can find plenty of SoundCloud downloader
-                                apps online, but all offer a single track
-                                downloading option. The search engine has many
-                                options to give its users, but what if you want
-                                to download a playlist right away?
-                            </p>
-                            <p>
-                                There could be instances when you are going on a
-                                trip and require plenty of songs, but it is
-                                time-consuming to download each track one by one
-                                by searching.
-                            </p>
-                            <p>
-                                With
-                                <strong>SoundCloudtomp3.live</strong>
-                                , you get a Soundcloud playlist downloader. Yes,
-                                with just the link of the playlist that you
-                                want, you can get a downloaded playlist from
-                                Soundcloud on your mobile or any electronic
-                                device. It is made extremely user-friendly to
-                                give the users the best experience and
-                                high-quality tracks at one go.
-                            </p>
-                            <p>
-                                <strong>
-                                    Hence you can find a Soundcloud downloader
-                                    playlist option at the top of the page.
-                                    Choose the link and paste it. Your playlist
-                                    is ready to download ta-da!
-                                </strong>
-                                Not just that if you do not like all the songs
-                                on the list, you can choose to form the list and
-                                use the Soundcloud download apk to get the one
-                                you prefer. With this webpage, you are not bound
-                                to get the whole list even if you do not like
-                                it.
-                            </p>
-                            <h2>Reasons to choose SoundCloud To MP3</h2>
-                            <ul>
-                                <li>
-                                    The online song is the priority for all
-                                    because it allows you to search for any song
-                                    at any time. However, it is because of
-                                    internet technology. The world has some
-                                    places where there is not a very good
-                                    internet connection; this is where
-                                    Soundcloud download audio comes to a music
-                                    lover's rescue.
-                                </li>
-                                <li>
-                                    In addition to that, one can not deny that
-                                    this download SoundCloud apk saves the
-                                    battery and storage more effectively.
-                                </li>
-                                <li>
-                                    Not just that the latest innovative feature
-                                    of downloading a playlist is another charm
-                                    of this SoundCloud downloader.
-                                </li>
-                                <li>
-                                    Furthermore, you can easily pick and choose
-                                    from the playlist and download the ones you
-                                    want
-                                </li>
-                                <li>
-                                    Easy to use page and does not require much
-                                    of an effort to make the download
-                                </li>
-                                <li>
-                                    There is no registrations fee; hence you can
-                                    get as many songs as you want without paying
-                                    a penny
-                                </li>
-                                <li>
-                                    No subscription requires; hence your emails
-                                    will not be bugged by this web app, nor will
-                                    there be an increase in the spam folder by
-                                    us
-                                </li>
-                                <li>
-                                    User-Friendly page with easy readability and
-                                    high convenience of listening and
-                                    downloading
-                                </li>
-                                <li>
-                                    Options to get songs by writing artist's
-                                    name, album, and link
-                                </li>
-                            </ul>
-                            <p>
-                                <strong>
-                                    &nbsp; &nbsp; &nbsp;Remember, all the songs
-                                    available here are the ones allowed by
-                                    Soundcloud to download.
-                                </strong>
+                                has versatile music at one place from artists
+                                around the world. However, Soundcloudtomp3.live
+                                has all the music one can even listen to
+                                offline. Ever since I came across the trouble of
+                                not listening to
+                                <strong>SoundCloud music offline</strong>
+                                , I decided to build a tool for easy access
+                                anywhere and anytime.
                             </p>
                         </div>
                     </div>
                 </div>
                 <!-- Blog END -->
+                <!-- privacy start -->
+                <div class="tips-cont" id="how-to-use" href="/blognumberdo">
+                    <div class="tips">
+                        <span class="tips-title">Blog</span>
+                        <div class="p-3 tip-content">
+                            Privacy Policy for Soundcloud To Mp3 At Soundcloud
+                            To Mp3, accessible from soundcloudtomp3.live, one of
+                            our main priorities is the privacy of our visitors.
+                            This Privacy Policy document contains types of
+                            information that is collected and recorded by
+                            Soundcloud To Mp3 and how we use it. If you have
+                            additional questions or require more information
+                            about our Privacy Policy, do not hesitate to contact
+                            us. This Privacy Policy applies only to our online
+                            activities and is valid for visitors to our website
+                            with regards to the information that they shared
+                            and/or collect in Soundcloud To Mp3. This policy is
+                            not applicable to any information collected offline
+                            or via channels other than this website.
+                        </div>
+                    </div>
+                </div>
+                <!-- privacy end -->
             </div>
         </div>
         <?php require_once "../template/footer.php" ?>
@@ -220,4 +134,5 @@
         crossorigin="anonymous"
     ></script>
     <script async src="../js/modal.js"></script>
+    <script async src="../js/linkedDiv.js"></script>
 </html>
