@@ -136,9 +136,11 @@
                 "name": "Unable to download the SoundCloud audio, reason?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "First of all, I would highly recommend you to update the browser you are using. Remember, there are two buttons one plays the track and the other one download. Check out the guide here to learn How To Use It. https://soundcloudtomp3.live/#how-to-use
+                    "text": "First of all, I would highly recommend you to update the browser you are using. Remember, there are two buttons one plays the track and the other one download. Check out the guide here to learn How To Use It. <a title="
+                    soundcloud Playlist Download " href="
+                    https: //soundcloudtomp3.live/#how-to-use" target="_blank" rel="noopener">How to Use</a>
 
-                    However,
+                        However,
                     if the song doesn 't download, it is probably the owner who hasn'
                     t been permitted to download.
                     "
