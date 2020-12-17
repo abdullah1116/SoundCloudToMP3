@@ -105,7 +105,7 @@
             <div class="tips-cont" id="how-to-use" href="/blog/soundcloud-playlist-downloader">
                 <div class="tips">
                     <span class="tips-title">
-                        SoundCloud; the hub of Underground Music
+                        Best SoundCloud Playlist To Mp3 Downloader
                     </span>
                     <div class="p-3 tip-content">
                         <p>
