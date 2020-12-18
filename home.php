@@ -3,6 +3,7 @@
     <?php require_once "./functions/app.php" ?>
 
     <head>
+	<script data-ad-client="ca-pub-6276405064486498" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- meta -->
         <title>SoundCloud To MP3 - SoundCloud Playlist Downloader</title>
         <meta
