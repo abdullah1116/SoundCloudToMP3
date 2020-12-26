@@ -187,12 +187,4 @@ if (!empty($getLink['tracks'])) {
         xhr.send();
     }
 </script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S361HP0XG1"></script>
-<script async src="../js/analytics.js?v=6"></script>
-<script async src="../js/jquery.js"></script>
-<script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6" async></script>
-
 </html>
