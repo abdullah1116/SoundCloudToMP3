@@ -10,11 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
     <script src="/js/jquery.js"></script>
 
-    <meta name="description" content="Download your favorite tracks to your personal storage and enjoy them even when you are offline!" />
-    <meta name="Keywords" content="soundcloud,mp3,converter,free,online,download" />
+    <meta name="description" content="SoundLoud blog updates where you get new information regarding new updates in tech and music industry" />
+    <meta name="Keywords" content="soundcloud download online,soundcloud download album,soundcloud download mp3
+,free,soundcloud download mp3 320,soundcloud downloader playlist
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://soundcloudtomp3.live/blog/" />
     <link rel="icon" href="/assets/favicon.ico" />
-    <title>SoundCloud To MP3</title>
+    <title>SoundLoud Blog</title>
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2HCWT0L3K"></script>
@@ -41,9 +45,7 @@
                     </span>
                     <div class="p-3 tip-content">
                         <p>
-                            <a href="https://soundcloud.com/">
-                                SoundCloud.com
-                            </a>
+                            <a href="https://soundcloud.com/" rel="nofollow">SoundCloud</a>
                             has versatile music at one place from artists
                             around the world. However, Soundcloudtomp3.live
                             has all the music one can even listen to
