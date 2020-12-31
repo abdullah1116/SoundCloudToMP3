@@ -15,15 +15,17 @@
 
         <meta
             name="description"
-            content="Download your favorite tracks to your personal storage and enjoy them even when you are offline!"
+            content="Soundcloud the most famous music platform through which people become star and anyone could be with their orignal music. Soundloud gives you place to do many things at one place"
         />
         <meta
             name="Keywords"
-            content="soundcloud,mp3,converter,free,online,download"
+            content="soundloud,soundcloud to mp3 320 kbps converter,cc converter mp3,soundcloud downloader 320,free online download music,download playlist soundcloud,soundcloud download iphone"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+	    <link rel="canonical" href="https://soundcloudtomp3.live/blog/sound-cloud-the-hub-of-underground-music/" />
         <link rel="icon" href="../../assets/favicon.ico" />
-        <title>SoundCloud To MP3</title>
+        <title>Soundcloud The Hub of Underground Music</title>
     </head>
 
     <body>
@@ -35,9 +37,9 @@
                 <!-- Blog -->
                 <div class="tips-cont" id="how-to-use">
                     <div class="tips">
-                        <span class="tips-title">
-                            SoundCloud; the hub of Underground Music
-                        </span>
+                        <h1><span class="tips-title">
+                            SoundCloud: The hub of Underground Music
+                        </span></h1>
                         <div class="p-3 tip-content">
                             <p>
                                 SoundCloud stepped in the music industry in
@@ -66,8 +68,7 @@
                                     its songs.
                                 </li>
                                 <li>
-                                    All you need to have is an account. (add
-                                    anchor link)
+                                    All you need to have is an account.
                                 </li>
                                 <li>
                                     It is free of cost to listen to music at any
@@ -137,7 +138,7 @@
                                 Either you are an android user or IOS, it is
                                 effortless to have a SoundCloud app.
                             </p>
-                            <p>For Android users</p>
+                            <h2>For Android users</h2>
                             <ul type="disc">
                                 <li>
                                     Sign in to your Google account or create it
@@ -150,7 +151,7 @@
                                     Download the official SoundCloud application
                                 </li>
                             </ul>
-                            <p>For IOS User</p>
+                            <h2>For IOS User</h2>
                             <ul type="disc">
                                 <li>
                                     Sign in to your Apple ID or create one right
