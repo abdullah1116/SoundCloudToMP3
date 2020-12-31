@@ -15,20 +15,23 @@
 ,free,soundcloud download mp3 320,soundcloud downloader playlist
 " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://soundcloudtomp3.live/blog/" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://soundcloudtomp3.live/blog/" />
     <link rel="icon" href="/assets/favicon.ico" />
     <title>SoundLoud Blog</title>
-	
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B2HCWT0L3K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-B2HCWT0L3K');
-</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2HCWT0L3K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-B2HCWT0L3K');
+    </script>
 </head>
 
 <body>
@@ -71,7 +74,7 @@
             <div class="tips-cont" id="how-to-use" href="/blog/sound-cloud-vs-spotify-much-needed-comparison">
                 <div class="tips">
                     <span class="tips-title">
-                        SoundCloud vs. Spotify; much-needed comparison
+                        SoundCloud VS Spotify much-needed comparison
                     </span>
                     <div class="p-3 tip-content">
                         <p>
