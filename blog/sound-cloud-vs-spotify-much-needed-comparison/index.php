@@ -15,15 +15,18 @@
 
         <meta
             name="description"
-            content="Download your favorite tracks to your personal storage and enjoy them even when you are offline!"
+            content="Soundcloud and spotify the largest music streams have high competition, a much needed comparison which users should know about."
         />
         <meta
             name="Keywords"
-            content="soundcloud,mp3,converter,free,online,download"
+            content="soundloud,soundcloud to mp3,soundcloud playlist downloader,soundcloud download free music,soundcloud download audio,soundcloud download android,download from soundcloud online,soundcloud to mp3 converter"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+	    <link rel="canonical" href=
+		https://soundcloudtomp3.live/blog/sound-cloud-vs-spotify-much-needed-comparison/" />
         <link rel="icon" href="../../assets/favicon.ico" />
-        <title>SoundCloud To MP3</title>
+        <title>Soundcloud Vs Spotify Comparison by SoundLoud</title>
     </head>
 
     <body>
@@ -35,9 +38,9 @@
                 <!-- Blog -->
                 <div class="tips-cont" id="how-to-use">
                     <div class="tips">
-                        <span class="tips-title">
-                            SoundCloud vs. Spotify; much-needed comparison
-                        </span>
+                        <h1><span class="tips-title">
+                            SoundCloud vs Spotify much-needed comparison
+                        </span></h1>
                         <div class="p-3 tip-content">
                             <p>
                                 These are two main music streams which are
@@ -160,7 +163,7 @@
                                     work
                                 </li>
                             </ol>
-                            <p>Conclusion</p>
+                            <h2>Conclusion:</h2>
                             <p>
                                 Although both of the platforms, SoundCloud and
                                 Spotify, are ideal for the music industry.
