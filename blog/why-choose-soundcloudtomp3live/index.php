@@ -15,15 +15,17 @@
 
         <meta
             name="description"
-            content="Download your favorite tracks to your personal storage and enjoy them even when you are offline!"
+            content="Reasons why you should choose SoundLoud the best soundcloud converter for getting offline tracks into your personal list"
         />
         <meta
             name="Keywords"
-            content="soundcloud,mp3,converter,free,online,download"
+            content="soundloud,mp3 converter soundcloud,320kbps mp3,soundcloud to mp3 online,converter soundcloud"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+	    <link rel="canonical" href="https://soundcloudtomp3.live/blog/why-choose-soundcloudtomp3live/" />
         <link rel="icon" href="../../assets/favicon.ico" />
-        <title>SoundCloud To MP3</title>
+        <title>Why Choose Soundcloudoud to Mp3</title>
     </head>
 
     <body>
@@ -35,14 +37,12 @@
                 <!-- Blog -->
                 <div class="tips-cont" id="how-to-use">
                     <div class="tips">
-                        <span class="tips-title">
+                        <h1><span class="tips-title">
                             Why choose soundcloudtomp3live
-                        </span>
+                        </span></h1>
                         <div class="p-3 tip-content">
                             <p>
-                                <a href="https://soundcloud.com/">
-                                    SoundCloud.com
-                                </a>
+                                <a href="https://soundcloud.com/" rel="nofollow">SoundCloud</a>
                                 has versatile music at one place from artists
                                 around the world. However, Soundcloudtomp3.live
                                 has all the music one can even listen to
