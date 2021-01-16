@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-light def-color">
     <a class="navbar-brand font-weight-bold ml-5" href="<?php echo APP_URL ?>">
-        SoundLoud
+        SoundLoud - SoundCloud To MP3
     </a>
     <button class="navbar-toggler nav-links-hide" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
