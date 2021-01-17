@@ -281,6 +281,8 @@
 
         gtag('config', 'G-B2HCWT0L3K');
     </script>
+    <meta name="google-site-verification" content="GlVyLGzxDvIhyZg2IrAxSIoelagrew6dY_TW8HvFLHo" />
+
 </head>
 
 <body>
