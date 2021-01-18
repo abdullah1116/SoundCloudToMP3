@@ -95,7 +95,7 @@
             <div class="tips-cont" id="how-to-use" href="/blog/sound-cloud-the-hub-of-underground-music">
                 <div class="tips">
                     <span class="tips-title">
-                        SoundCloud; the hub of Underground Music
+                        SoundCloud: the hub of Underground Music
                     </span>
                     <div class="p-3 tip-content">
                         <p>
@@ -124,11 +124,11 @@
                     </span>
                     <div class="p-3 tip-content">
                         <p>
-                            <p>With Soundcloud playlist downloader you can save you time and money. With the help of a good provider, you can quickly download any song or audio on the Internet. You can also burn copies of the songs to disc if you have a CD burner installed and the internet connection is fast enough to transfer large files&nbsp;</p>
+                        <p>With Soundcloud playlist downloader you can save you time and money. With the help of a good provider, you can quickly download any song or audio on the Internet. You can also burn copies of the songs to disc if you have a CD burner installed and the internet connection is fast enough to transfer large files&nbsp;</p>
 
-                            <a href="/blog/soundcloud-playlist-downloader">
-                                Read more
-                            </a>
+                        <a href="/blog/soundcloud-playlist-downloader">
+                            Read more
+                        </a>
                     </div>
                 </div>
             </div>

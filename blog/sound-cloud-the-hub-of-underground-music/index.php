@@ -17,6 +17,20 @@
     <link rel="canonical" href="https://soundcloudtomp3.live/blog/sound-cloud-the-hub-of-underground-music/" />
     <link rel="icon" href="../../assets/favicon.ico" />
     <title>Soundcloud The Hub of Underground Music</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2HCWT0L3K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-B2HCWT0L3K');
+    </script>
+
 </head>
 
 <body>
