@@ -15,8 +15,6 @@ function callAPI($url, $cache = true)
     } else {
         $response = Mervick\CurlHelper::factory($url)->exec();
 
-        // die(print_r($response)); // for testing
-
         if (!$response) sendError('api response error');
 
         if (empty($response['status'])) {

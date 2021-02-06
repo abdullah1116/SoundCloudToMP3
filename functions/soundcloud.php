@@ -6,9 +6,10 @@ require_once APP_PATH . '/functions/api.php';
 require_once APP_PATH . '/functions/mappers.php';
 
 // const API_URL = "https://api.soundcloud.com/%method%&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP"; // soundcloud XXX
-const API_URL = "https://api.soundcloud.com/%method%&client_id=86b6a66bb2d863f5d64dd8a91cd8de94"; // youtube
-const GEN_API_URL = "https://www.genmp3.net/getStream.php?%method%&&apikey=cldvdosndmp320"; // genmp3
-const V2_API_URL = "https://api-v2.soundcloud.com/%method%&client_id=NpVHurnc1OKS80l6zlXrEVN4VEXrbZG4"; // genmp3
+
+const API_URL = "https://api.soundcloud.com/%method%&client_id=" .  KEY_V1; // youtube
+const GEN_API_URL = "https://www.genmp3.net/getStream.php?%method%&&apikey=" .KEY_GEN; // genmp3
+const V2_API_URL = "https://api-v2.soundcloud.com/%method%&client_id=" . KEY_V2; // genmp3
 
 function getSearch()
 {
