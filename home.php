@@ -409,7 +409,6 @@
 <script async src="./js/suggest.js?v=6"></script>
 <script async src="./js/HtmlRender.js?v=6"></script>
 <script async src="./js/localStorage-cache-api.js?v=6"></script>
-<script async src="./js/modal.js"></script>
 
 <script async src="./js/jquery-ui.js"></script>
 <script async src="./js/index.js?v=6"></script>
@@ -429,11 +428,6 @@
 
             $('.view-select-img').click(selectGridView);
             $('#search-input').googleSuggest();
-
-            // if (screen.width < 1000) {
-            //     $('.view-select-img').toggleClass('view-select-img-selected');
-            //     HTMLDATA.isGridView = false;
-            // }
         }
     };
 </script>
