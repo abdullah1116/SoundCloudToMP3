@@ -8,7 +8,7 @@ require_once APP_PATH . '/functions/mappers.php';
 // const API_URL = "https://api.soundcloud.com/%method%&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP"; // soundcloud XXX
 
 const API_URL = "https://api.soundcloud.com/%method%&client_id=" .  KEY_V1; // youtube
-const GEN_API_URL = "https://www.genmp3.net/getStream.php?%method%&&apikey=" .KEY_GEN; // genmp3
+const GEN_API_URL = "https://www.genmp3.net/getStream.php?%method%&&apikey=" . KEY_GEN; // genmp3
 const V2_API_URL = "https://api-v2.soundcloud.com/%method%&client_id=" . KEY_V2; // genmp3
 
 function getSearch()
@@ -40,11 +40,11 @@ function getTop()
 function getLink()
 {
     //https://api.soundcloud.com/resolve?format=json&client_id=86b6a66bb2d863f5d64dd8a91cd8de94&url=https://soundcloud.com/asif-zaman-1/sets/jamiattaranay
-    if (empty($_GET['link'])) sendError('Nothing searched');
+    if (empty(parse_url($_GET['link'])['path'])) sendError('Nothing searched');
 
-    $link = $_GET['link'];
+    $link = parse_url($_GET['link'])['path'];
     $details = !empty($_GET['details']) && $_GET['details'] == 'true';
-    $url = str_replace('%method%', "resolve?format=json&url={$link}", API_URL);
+    $url = str_replace('%method%', "resolve?format=json&url=https://soundcloud.com{$link}", API_URL);
 
     $linkCallResponse = json_decode(callAPI(callAPI($url)), true);
 

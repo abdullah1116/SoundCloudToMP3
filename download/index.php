@@ -5,13 +5,9 @@ require_once "../functions/app.php";
 
 require_once APP_PATH . "/functions/soundcloud.php";
 
-
-// var_dump(parse_url($_GET['link']));
-// die;
 if (
     empty($_GET['link']) ||
-    empty(parse_url($_GET['link'])['host']) ||
-    parse_url($_GET['link'])['host'] != 'soundcloud.com'
+    empty(parse_url($_GET['link'])['path'])
 ) {
     header('HTTP/1.1 301 Moved Permanently');
     header('Location: ../');
@@ -21,22 +17,18 @@ if (
 $_GET['type'] = 'link';
 $_GET['details'] = true;
 
-// var_dump(
-$getLink = getLink()
-    // )
-    //
-;
+$getLink = getLink();
 
 if (!empty($getLink['tracks'])) {
     $tracks = (object)$getLink['tracks'][0];
-
-    // var_dump($tracks);
 } else {
     header('HTTP/1.1 301 Moved Permanently');
     header('Location: ../');
     exit;
 }
 
+
+$tracks->link = str_replace('soundcloud.com/',   "{$_SERVER['HTTP_HOST']}/download/?link=/", $tracks->link);
 ?>
 
 <head>
@@ -50,7 +42,7 @@ if (!empty($getLink['tracks'])) {
     <meta property="og:title" content="<?php echo $tracks->title ?> | <?php echo APP_NAME ?>">
     <meta property="og:description" content="Download <?php echo $tracks->title ?> your personal storage and enjoy it even when you are offline!">
     <meta property="og:image" content="<?php echo $tracks->image ?>">
-    <meta property="og:url" content="https://soundcloudtomp3.live/download/?link=<?php echo $tracks->link ?>">
+    <meta property="og:url" content="<?php echo $tracks->link ?>">
     <meta name="twitter:card" content="<?php echo $tracks->image ?>">
     <meta property="og:site_name" content="<?php echo APP_NAME ?>">
 
@@ -102,7 +94,7 @@ if (!empty($getLink['tracks'])) {
 
 <body>
     <!-- navebar -->
-    <?php require_once APP_PATH ."/template/nav.php" ?>
+    <?php require_once APP_PATH . "/template/nav.php" ?>
     <div class="body-wrapper">
         <div id="header-container" style="background-color: #fdb35e">
             <!-- Search bar -->
@@ -118,8 +110,8 @@ if (!empty($getLink['tracks'])) {
         <div class="container">
             <div class="my-5 p-5 text-center align-items-center d-flex flex-column hide-on-search bg-white">
                 <p>
-                    <div class="sound-artist"><?php echo $tracks->user ?></div>
-                    <h1 class="sound-title font-large"><?php echo $tracks->title ?></h1>
+                <div class="sound-artist"><?php echo $tracks->user ?></div>
+                <h1 class="sound-title font-large"><?php echo $tracks->title ?></h1>
                 </p>
                 <div style="max-width:500px">
                     <img src="<?php echo $tracks->image ?>" class="image rounded" alt="<?php echo $tracks->title ?>" />
@@ -142,7 +134,7 @@ if (!empty($getLink['tracks'])) {
     </div>
     </div>
 
-    <?php require_once  APP_PATH ."/template/footer.php" ?>
+    <?php require_once  APP_PATH . "/template/footer.php" ?>
 </body>
 
 <script>
@@ -187,4 +179,6 @@ if (!empty($getLink['tracks'])) {
         xhr.send();
     }
 </script>
+<script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>
+
 </html>

@@ -4,9 +4,9 @@ function RenderContainer() {
         let list = '';
         d.tracks.forEach((d, i) => {
             //playlist inner list
-            list += `<a class="list-item  rounded" href="./download/?link=${
-                d.link
-            }" target="_blank">
+            list += `<a class="list-item  rounded" href="${downloadLink(
+                d.link,
+            )}" target="_blank">
                 <img  src="${d.image}" class="list-sound-img rounded"
                 alt="Image Not Found"
                 />
@@ -83,9 +83,9 @@ function RenderContainer() {
                         </button>
                     </span>
                 </span>
-                <a class="item-link" href="./download/?link=${
-                    d.link
-                }" target="_blank">
+                <a class="item-link" href="${downloadLink(
+                    d.link,
+                )}" target="_blank">
                     <span class="img-cont">
                         <img
                             src="${d.image}"
@@ -121,9 +121,7 @@ function RenderContainer() {
         HTMLDATA.tracks.forEach((d, i) => {
             HTML += `<div class="item-list  item-link Row  w-100 rounded ">
 
-                        <a class="img-cont-list" href="./download/?link=${
-                            d.link
-                        }">
+                        <a class="img-cont-list" href="${downloadLink(d.link)}">
                             <img src="${d.image}"
                             class="sound-back-img-list rounded" alt="Image Not Found"
                             />

@@ -1,12 +1,12 @@
 <?php
-function getCurrentPath($dir){
-    return str_replace(APP_PATH,'',realpath($dir ));
+function getCurrentPath($dir)
+{
+    return str_replace(APP_PATH, '', realpath($dir));
 }
 
 
 function dd($data)
 {
-    var_dump($data);
-    // print_r($data);
+    print_r(json_encode($data));
     die;
 }

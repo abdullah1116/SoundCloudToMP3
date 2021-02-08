@@ -92,30 +92,6 @@ function selectGridView(e) {
     }
 }
 
-// $('.tips-links').click(e => {
-//     let div;
-
-//     switch (e.currentTarget.textContent) {
-//         case 'How to Use':
-//             div = 'howtouse';
-//             break;
-
-//         case 'Contact us':
-//             div = 'contactus';
-//             break;
-
-//         case 'Playlist downloader':
-//             div = 'playlist-downloader';
-//             break;
-//         default:
-//             return;
-//             break;
-//     }
-
-//     $('html, body').animate(
-//         {
-//             scrollTop: $('#' + div).offset().top - 70,
-//         },
-//         500,
-//     );
-// });
+function downloadLink(text) {
+    return text.replace('https://soundcloud.com/', './download/?link=/');
+}

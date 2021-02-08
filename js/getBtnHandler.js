@@ -11,7 +11,7 @@ function getBtnHandler(e, downlaod) {
     }
 
     if (downlaod) {
-        window.open('./download/?link=' + item.link, '_blank');
+        window.open(downloadLink(item.link), '_blank');
     } else {
         if (HTMLDATA.playing.id == item.id) {
             if (HTMLDATA.playing.state == true) {
