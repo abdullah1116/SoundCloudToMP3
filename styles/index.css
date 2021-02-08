@@ -333,6 +333,7 @@ body.searching .hide-on-search {
 .tip-content {
     padding: 1rem;
     color: #000c;
+    text-align: justify !important;
 }
 
 .tip-content h1 {
