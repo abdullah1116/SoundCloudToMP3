@@ -561,6 +561,7 @@ body.searching .hide-on-search {
     display: grid;
     grid-template-columns: 20px auto 40px;
     transition: all 0.2s;
+    overflow: hidden;
 }
 .list-item img {
     height: auto;
