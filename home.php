@@ -415,6 +415,7 @@
 <script async src="./js/index.js?v=6"></script>
 <script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>
+<script async src="/js/linkedDiv.js"></script>
 
 <script>
     document.onreadystatechange = function() {

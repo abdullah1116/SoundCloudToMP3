@@ -23,7 +23,7 @@ function player() {
             player().removeclass();
 
             $(e).addClass('btn-playing');
-            $('.btn-playing').children('img').attr('src', 'assets/play.svg');
+            $('.btn-playing').children('img').attr('src', 'assets/pause.svg');
             $('.btn-playing').children('span').text('Pause');
 
             audioPlayer.play();

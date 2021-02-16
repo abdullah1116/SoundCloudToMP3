@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="blog-page">
+<html lang="en" >
 <?php require_once "../../functions/app.php" ?>
 
 <head>

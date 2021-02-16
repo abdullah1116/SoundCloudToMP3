@@ -1,16 +1,12 @@
-function getBtnHandler(e, downlaod) {
+function getBtnHandler(e, download, id = undefined, parentId = undefined) {
     event.preventDefault();
-
-    if ($(e).parent().attr('type') == 'track') {
-        var item = HTMLDATA.tracks[$(e).parent().attr('index')];
-    } else if ($(e).parent().attr('type') == 'playlistTrack') {
-        var item =
-            HTMLDATA.playlists[$(e).parent().attr('listIndex')].tracks[
-                $(e).parent().attr('index')
-            ];
+    if (parentId != undefined) {
+        var item = HTMLDATA.playlists[parentId].tracks[id];
+    } else if (id != undefined) {
+        var item = HTMLDATA.tracks[id];
     }
 
-    if (downlaod) {
+    if (download) {
         window.open('./download/?link=' + item.link, '_blank');
     } else {
         if (HTMLDATA.playing.id == item.id) {
