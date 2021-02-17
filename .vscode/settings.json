@@ -3,5 +3,6 @@
     "tslint.autoFixOnSave": true,
 
     "editor.formatOnSave": true,
-    "phpserver.port": 3333
+    "phpserver.port": 3333,
+    "liveServer.settings.port": 5501
 }

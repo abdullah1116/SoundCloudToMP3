@@ -248,6 +248,7 @@
     <link rel="stylesheet" href="./styles/index.css?v=6" />
     <link rel="stylesheet" href="./styles/loader.css" />
     <link rel="stylesheet" href="./styles/jquery-ui.css" />
+    <link rel="stylesheet" href="./styles/jquery-ui.theme.min.css" />
     <link rel="icon" href="./assets/favicon.ico" />
 
     <!-- Google Tag Manager -->
@@ -293,10 +294,6 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- navebar -->
-    <!-- <nav class="navbar navbar-dark font-weight-bold shadow def-color">
-            <a class="navbar-brand" href="./">SoundCloud To MP3</a>
-        </nav> -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
     <?php require_once APP_PATH . "/template/nav.php" ?>
     <div class="body-wrapper">
         <div id="header-container" style="background-color: #fdb35e">
@@ -417,20 +414,22 @@
 <script async src="/js/linkedDiv.js"></script>
 
 <script>
-    document.onreadystatechange = function() {
-        if (document.readyState === 'complete') {
-            loadSearchParams();
+    setTimeout(() => {
+        document.onreadystatechange = function() {
+            if (document.readyState === 'complete') {
+                loadSearchParams();
 
-            window.addEventListener('popstate', loadSearchParams);
+                window.addEventListener('popstate', loadSearchParams);
 
-            document
-                .getElementById('search-input')
-                .addEventListener('keyup', openSuggestions);
+                document
+                    .getElementById('search-input')
+                    .addEventListener('keyup', openSuggestions);
 
-            $('.view-select-img').click(selectGridView);
-            $('#search-input').googleSuggest();
-        }
-    };
+                $('.view-select-img').click(selectGridView);
+                $('#search-input').googleSuggest();
+            }
+        };
+    }, 200);
 </script>
 
 </html>
