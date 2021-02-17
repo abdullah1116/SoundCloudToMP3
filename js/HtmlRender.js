@@ -7,85 +7,64 @@ function RenderContainer() {
             list += `<a class="list-item  rounded" href="${downloadLink(
                 d.link,
             )}" target="_blank">
-                <img  src="${d.image}" class="list-sound-img rounded"
-                alt="Image Not Found"
-                />
-                <p class="playlist-track-title">${d.title}</p>
-                <div type="playlistTrack" class="btn-group listdown-btn-cont def-color" listIndex="${listIndex}" index="${i}" class="btn-group">
-                    <button
-                        type="button"
-                        class="btn btn-orange  listdown-btn"
-                        onclick="getBtnHandler(this,true)">
-                        <img src="./assets/down.svg"
-                        alt="Download track"
-                        />
-                    </button>
-                    <button
-                        type="button"
-                        class="btn ${
-                            HTMLDATA.playing.state
-                                ? HTMLDATA.playing.id == d.id
-                                    ? 'btn-playing'
-                                    : ''
+                <img  src="${d.image}" alt="Image Not Found"/>
+                <p class="playlist-track-title">${d.title}</p>                
+                <button
+                    type="button"
+                    class="btn def-color ${
+                        HTMLDATA.playing.state
+                            ? HTMLDATA.playing.id == d.id
+                                ? 'btn-playing'
                                 : ''
-                        } btn-orange listdown-btn"
-                        onclick="getBtnHandler(this,false)">
-                        <img src="./assets/${
+                            : ''
+                    } btn-orange listdown-btn"
+                    onclick="getBtnHandler(this,false,${i},${listIndex})">
+                    <img src="./assets/${
+                        HTMLDATA.playing.state && HTMLDATA.playing.id == d.id
+                            ? 'pause'
+                            : 'play'
+                    }.svg"
+                    alt="Play track"
+                    />
+                </button>
+            </a>`;
+        });
+        return list;
+    };
+
+    // Grid track
+    if (HTMLDATA.isGridView) {
+        HTMLDATA.tracks.forEach((d, i) => {
+            HTML += `
+            <div class="item"  href="./download/?link=${
+                d.link
+            }" target="_blank">
+                <button
+                    type="button"
+                    class="btn def-color ${
+                        HTMLDATA.playing.state
+                            ? HTMLDATA.playing.id == d.id
+                                ? 'btn-playing '
+                                : ''
+                            : ''
+                    } btn-orange down-btn"
+                    onclick="getBtnHandler(this,false,${i})"
+                >
+                <span>${
+                    HTMLDATA.playing.state && HTMLDATA.playing.id == d.id
+                        ? 'Pause'
+                        : 'Play'
+                }</span>
+                    <img
+                        src="./assets/${
                             HTMLDATA.playing.state &&
                             HTMLDATA.playing.id == d.id
                                 ? 'pause'
                                 : 'play'
                         }.svg"
                         alt="Play track"
-                        />
-                    </button>
-                </div>
-            </a>`;
-        });
-        return list;
-    };
-
-    if (HTMLDATA.isGridView) {
-        HTMLDATA.tracks.forEach((d, i) => {
-            HTML += `
-            <div class="item">
-                <span class="shadow down-btn-cont def-color">
-                    <span type="track" index="${i}" class="btn-group">
-                        <button
-                            type="button"
-                            class="btn btn-orange down-btn"
-                            onclick="getBtnHandler(this,true)"
-                        >
-                            <img src="./assets/down.svg"
-                            alt="Download track"
-                            />
-                        </button>
-                        <button
-                            type="button"
-                            class="btn ${
-                                HTMLDATA.playing.state
-                                    ? HTMLDATA.playing.id == d.id
-                                        ? 'btn-playing '
-                                        : ''
-                                    : ''
-                            } btn-orange down-btn"
-                            onclick="getBtnHandler(this,false)"
-                        >
-                            <img
-                                src="./assets/${
-                                    HTMLDATA.playing.state &&
-                                    HTMLDATA.playing.id == d.id
-                                        ? 'pause'
-                                        : 'play'
-                                }.svg"
-                                alt="Play track"
-                            />
-                        </button>
-                    </span>
-                </span>
-                <a class="item-link" href="${downloadLink(
-                    d.link,
-                )}" target="_blank">
+                    />
+                </button>               
                     <span class="img-cont">
                         <img
                             src="${d.image}"
@@ -95,10 +74,7 @@ function RenderContainer() {
                     </span>
                     <p class="sound-artist">${d.user}</p>
                     <p class="sound-title">${d.title}</p>
-                </a>
-            </div>
-
-                `;
+            </div>`;
         });
 
         HTMLDATA.playlists.forEach((d, i) => {
@@ -117,49 +93,39 @@ function RenderContainer() {
         });
     } else {
         //ListView render
-
         HTMLDATA.tracks.forEach((d, i) => {
-            HTML += `<div class="item-list  item-link Row  w-100 rounded ">
-
-                        <a class="img-cont-list" href="${downloadLink(d.link)}">
+            HTML += `<div class="item-list item-link Row w-100 rounded" href="./download/?link=${downloadLink(
+                d.link,
+            )}" target="_black">
+                        <div class="img-cont-list" >
                             <img src="${d.image}"
                             class="sound-back-img-list rounded" alt="Image Not Found"
                             />
-                        </a>
+                        </div>
                         <div class="col p-3">
                                 <p class="sound-artist">${d.user}</p>
                                 <p class="sound-title">${d.title}</p>
-                        </div>
-                        <div class="shadow playlist-down-btn-cont def-color">
-                        <div type="track" index="${i}" class="btn-group">
-                            <button type="button" class="btn btn-orange playlist-down-btn" onclick="getBtnHandler(this,true)">
-                                <span class="playlist-down-btn-text">Download</span>
-                                <img src="./assets/down.svg" class="playlist-down-btn-img"
-                                alt="Download track"
-                                />
-                            </button>
-                            <button type="button" class="btn ${
+                        </div>                        
+                        <button type="button" class="btn ${
+                            HTMLDATA.playing.state &&
+                            HTMLDATA.playing.id == d.id
+                                ? 'btn-playing'
+                                : ''
+                        } btn-orange def-color down-btn playlist-down-btn" onclick="getBtnHandler(this,false,${i})">
+                            <span>${
                                 HTMLDATA.playing.state &&
                                 HTMLDATA.playing.id == d.id
-                                    ? 'btn-playing'
-                                    : ''
-                            } btn-orange playlist-down-btn" onclick="getBtnHandler(this,false)">
-                                <span class="playlist-down-btn-text">${
-                                    HTMLDATA.playing.state &&
-                                    HTMLDATA.playing.id == d.id
-                                        ? 'Pause'
-                                        : 'Play'
-                                }</span>
-                                <img src="./assets/${
-                                    HTMLDATA.playing.state &&
-                                    HTMLDATA.playing.id == d.id
-                                        ? 'pause'
-                                        : 'play'
-                                }.svg" class="playlist-down-btn-img"
-                                    alt="Play track"
-                                    />
-                            </button>
-                        </div>
+                                    ? 'Pause'
+                                    : 'Play'
+                            }</span>
+                            <img src="./assets/${
+                                HTMLDATA.playing.state &&
+                                HTMLDATA.playing.id == d.id
+                                    ? 'pause'
+                                    : 'play'
+                            }.svg" alt="Play track"
+                                />
+                        </button>
                         </div>
                     </div>`;
         });
@@ -196,4 +162,6 @@ function RenderContainer() {
 
     document.getElementById('container').innerHTML = HTML;
     document.getElementById('title').innerHTML = HTMLDATA.title || '';
+
+    typeof linkedDiv == 'function' && linkedDiv();
 }

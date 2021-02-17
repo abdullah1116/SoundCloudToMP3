@@ -136,7 +136,7 @@ p {
 
 img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .show-on-search {
@@ -508,15 +508,11 @@ body.searching .hide-on-search {
 }
 
 .down-btn {
-    height: 30px;
-    width: 30px;
-    padding: 9px;
+    width: 70px;
+    height: 35px;
+    padding: 0px;
     border-radius: 10px !important;
     border: 0;
-    background: 0 0;
-}
-
-.down-btn-cont {
     margin: 5px;
     border-radius: 10px;
     overflow: hidden;
@@ -525,11 +521,7 @@ body.searching .hide-on-search {
     z-index: 20;
 }
 
-.down-btn-cont button {
-    padding: 0;
-}
-
-.down-btn-cont img {
+.down-btn img {
     width: 12px;
     height: 12px;
 }
@@ -561,17 +553,18 @@ body.searching .hide-on-search {
 }
 
 .list-item {
-    font-size: 12px;
-    color: #ffffffaa;
-    background-color: #222b;
     height: 20px;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    text-align: initial;
+    color: #ffffffaa;
     border: solid 1px #0000000f;
+    background-color: #222b;
     cursor: pointer;
+    display: grid;
+    grid-template-columns: 20px auto 40px;
     transition: all 0.2s;
+    overflow: hidden;
+}
+.list-item img {
+    height: auto;
 }
 
 .list-item:hover {
@@ -579,30 +572,13 @@ body.searching .hide-on-search {
     text-decoration: none;
 }
 
-.list-sound-img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-}
-
-.listdown-btn-cont {
-    width: auto;
-    margin-right: 0;
-    margin-left: auto;
-    text-align: end;
+.listdown-btn {
+    height: inherit;
+    padding: 3px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    border-radius: 5px;
 }
-
-.listdown-btn button {
-    padding: 0;
-}
-
-/* JUGAR */
 .listdown-btn img {
-    margin-top: -15px;
+    height: 100%;
 }
 
 .playlist-item-list {
@@ -622,38 +598,14 @@ body.searching .hide-on-search {
     background-color: #000000aa;
 }
 
-.playlist-down-btn-cont {
-    margin: 5px;
-    right: 0;
-    border-radius: 10px;
-    position: absolute;
-    overflow: hidden;
-    /* background: 0 0; */
-}
-
 .playlist-down-btn {
-    height: 30px;
-    padding: 3px 7px 3px 10px;
-    border-radius: 10px !important;
-    border: 0;
-    background: 0 0;
-}
-
-.playlist-down-btn-img {
-    width: 15px;
+    right: 10px;
 }
 
 .playlist-track-title {
     word-break: break-all;
     color: #fff;
     font-size: 13.5px;
-}
-
-.listdown-btn {
-    height: 18px;
-    width: 20px;
-    padding: 3px;
-    background: 0 0;
 }
 
 #fileDetails {
@@ -765,10 +717,6 @@ body.searching .hide-on-search {
         padding-bottom: 100px !important;
     }
 
-    .playlist-down-btn-text {
-        display: none;
-    }
-
     .player-hide .player-btn {
         height: 40px;
     }
@@ -781,5 +729,13 @@ body.searching .hide-on-search {
     } */
     .blog .tips-cont {
         max-width: 100%;
+    }
+
+    .list-item {
+        height: 25px;
+    }
+
+    .tips-cont {
+        font-size: 110%;
     }
 }
