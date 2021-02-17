@@ -1,4 +1,4 @@
-setInterval(() => {
+setTimeout(() => {
     $.fn.googleSuggest = function (opts) {
         opts = $.extend(opts);
         opts.delay = 300;

@@ -1,4 +1,4 @@
-setInterval(() => {
+setTimeout(() => {
     const linkedDiv = () => {
         let allEle = document.getElementsByTagName('div');
         for (var i = 0, elLength = allEle.length - 1; i < elLength; i++) {

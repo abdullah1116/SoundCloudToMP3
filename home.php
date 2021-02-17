@@ -413,7 +413,7 @@
 <script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>
 
 <script>
-    setInterval(() => {
+    setTimeout(() => {
         document.onreadystatechange = function() {
             if (document.readyState === 'complete') {
                 loadSearchParams();
