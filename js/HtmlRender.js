@@ -123,8 +123,7 @@ function RenderContainer() {
                                 HTMLDATA.playing.id == d.id
                                     ? 'pause'
                                     : 'play'
-                            }.svg" class="playlist-down-btn-img"
-                                alt="Play track"
+                            }.svg" alt="Play track"
                                 />
                         </button>
                         </div>

@@ -28,7 +28,7 @@ if (!empty($getLink['tracks'])) {
 }
 
 
-$tracks->link = str_replace('soundcloud.com/',   "{$_SERVER['HTTP_HOST']}/download/?link=/", $tracks->link);
+$tracks->link = str_replace('soundcloud.com/', "{$_SERVER['HTTP_HOST']}/download/?link=/", $tracks->link);
 ?>
 
 <head>
@@ -122,7 +122,7 @@ $tracks->link = str_replace('soundcloud.com/',   "{$_SERVER['HTTP_HOST']}/downlo
                         <span id="download-percent"></span>
                         Download
                     </span>
-                    <img src="../assets/down.svg" class="playlist-down-btn-img" alt="Download track" />
+                    <img src="../assets/down.svg" alt="Download track" style="width:20px"/>
                 </button>
                 <div class="mt-3" id="fileDetails">
                     <?php echo $tracks->duration ?> |
