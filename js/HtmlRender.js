@@ -13,14 +13,14 @@ function RenderContainer() {
                     type="button"
                     class="btn def-color ${
                         HTMLDATA.playing.state
-                            ? HTMLDATA.playing.id == d.id
+                            ? isPlaying(i, listIndex)
                                 ? 'btn-playing'
                                 : ''
                             : ''
                     } btn-orange listdown-btn"
-                    onclick="getBtnHandler(this,false,${i},${listIndex})">
+                    onclick="player.playTrack(${i},${listIndex})">
                     <img src="./assets/${
-                        HTMLDATA.playing.state && HTMLDATA.playing.id == d.id
+                        HTMLDATA.playing.state && isPlaying(i, listIndex)
                             ? 'pause'
                             : 'play'
                     }.svg"
@@ -42,23 +42,18 @@ function RenderContainer() {
                 <button
                     type="button"
                     class="btn def-color ${
-                        HTMLDATA.playing.state
-                            ? HTMLDATA.playing.id == d.id
-                                ? 'btn-playing '
-                                : ''
+                        HTMLDATA.playing.state && isPlaying(i)
+                            ? 'btn-playing '
                             : ''
                     } btn-orange down-btn"
-                    onclick="getBtnHandler(this,false,${i})"
+                    onclick="player.playTrack(${i})"
                 >
                 <span>${
-                    HTMLDATA.playing.state && HTMLDATA.playing.id == d.id
-                        ? 'Pause'
-                        : 'Play'
+                    HTMLDATA.playing.state && isPlaying(i) ? 'Pause' : 'Play'
                 }</span>
                     <img
                         src="./assets/${
-                            HTMLDATA.playing.state &&
-                            HTMLDATA.playing.id == d.id
+                            HTMLDATA.playing.state && isPlaying(i)
                                 ? 'pause'
                                 : 'play'
                         }.svg"
@@ -107,20 +102,17 @@ function RenderContainer() {
                                 <p class="sound-title">${d.title}</p>
                         </div>                        
                         <button type="button" class="btn ${
-                            HTMLDATA.playing.state &&
-                            HTMLDATA.playing.id == d.id
+                            HTMLDATA.playing.state && isPlaying(i)
                                 ? 'btn-playing'
                                 : ''
-                        } btn-orange def-color down-btn playlist-down-btn" onclick="getBtnHandler(this,false,${i})">
+                        } btn-orange def-color down-btn playlist-down-btn" onclick="player.playTrack(${i})">
                             <span>${
-                                HTMLDATA.playing.state &&
-                                HTMLDATA.playing.id == d.id
+                                HTMLDATA.playing.state && isPlaying(i)
                                     ? 'Pause'
                                     : 'Play'
                             }</span>
                             <img src="./assets/${
-                                HTMLDATA.playing.state &&
-                                HTMLDATA.playing.id == d.id
+                                HTMLDATA.playing.state && isPlaying(i)
                                     ? 'pause'
                                     : 'play'
                             }.svg" alt="Play track"

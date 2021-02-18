@@ -86,8 +86,8 @@ $tracks->link = str_replace('soundcloud.com/', "{$_SERVER['HTTP_HOST']}/download
     </script>
     <link rel="icon" href="../assets/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" />
-    <link rel="stylesheet" href="../styles/index.css?v=6" />
-    <link rel="stylesheet" href="../styles/download.css?v=6" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/download.css" />
     <link rel="stylesheet" href="../styles/loader.css" />
     <link rel="stylesheet" href="../styles/bootstrap.min.css" />
 </head>

@@ -5,6 +5,8 @@ HTMLDATA = {
         id: '',
         src: '',
         state: false,
+        autoplay: false,
+        target: {},
     },
     searched: {},
     isGridView: true,
@@ -20,14 +22,10 @@ function loadSearchParams() {
     }
 }
 
-function showHandler() {
-    player().show();
-}
-
 function searchHandler(updateHistory = true) {
     searchText = document.getElementById('search-input').value;
 
-    if (searchText != undefined && searchText != '') {
+    if (def(searchText) && searchText != '') {
         window.document.title = `${searchText} | SoundCloud To MP3`;
 
         if (updateHistory) {
@@ -94,4 +92,11 @@ function selectGridView(e) {
 
 function downloadLink(text) {
     return text.replace('https://soundcloud.com/', './download/?link=/');
+}
+
+function isPlaying(trackId, playlistId = undefined) {
+    return (
+        HTMLDATA.playing.target.trackId == trackId &&
+        HTMLDATA.playing.target.playlistId == playlistId
+    );
 }

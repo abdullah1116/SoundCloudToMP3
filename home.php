@@ -245,7 +245,7 @@
     <!-- css -->
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="./styles/index.css?v=6" />
+    <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/loader.css" />
     <link rel="stylesheet" href="./styles/jquery-ui.css" />
     <link rel="stylesheet" href="./styles/jquery-ui.theme.min.css" />
@@ -376,12 +376,15 @@
 
         <div class="p-1 col-lg-4 menu player-cont player-hide">
             <div class="player-btn">
-                <img src="./assets/UpArrow.svg" onclick="showHandler()" alt="Show player" />
+                <img src="./assets/UpArrow.svg" onclick="player.show()" alt="Show player" />
             </div>
             <div class="audioPanelCont">
-                <p class="audio-title"></p>
+                <p id="audioTitle"></p>
             </div>
-            <audio noDownload controls id="audio-controls" controlsList="nodownload"></audio>
+            <div class="audio-controls-cont">
+                <img id="autoplay" src="./assets/autoplay.svg" enable="true"/>
+                <audio noDownload controls id="audio-controls" controlsList="nodownload"></audio>
+            </div>
             <div class="download"></div>
             <span class="playerSpace"></span>
         </div>
@@ -401,17 +404,18 @@
 
 <!-- js -->
 
-<script async src="./js/Player.js?v=6"></script>
-<script async src="./js/getBtnHandler.js?v=6"></script>
-<script async src="./js/suggest.js?v=6"></script>
-<script async src="./js/HtmlRender.js?v=6"></script>
-<script async src="./js/localStorage-cache-api.js?v=6"></script>
+<script async src="./js/isdefine.js"></script>
+<script async src="./js/suggest.js"></script>
+<script async src="./js/HtmlRender.js"></script>
+<script async src="./js/localStorage-cache-api.js"></script>
 
 <script async src="./js/jquery-ui.js"></script>
-<script async src="./js/index.js?v=6"></script>
+<script async src="./js/index.js"></script>
+<script async src="./js/Player.js"></script>
 <script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8b58e0488054c6"></script>
-<script async src="/js/linkedDiv.js"></script>
+<script async src="./js/linkedDiv.js"></script>
+<script async src="./js/useids.js"></script>
 
 <script>
     setTimeout(() => {
