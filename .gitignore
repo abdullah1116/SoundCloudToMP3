@@ -2,3 +2,4 @@
 functions/cache/
 *.zip
 debug.log
+functions/test.php
