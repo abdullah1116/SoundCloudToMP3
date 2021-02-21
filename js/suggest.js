@@ -21,7 +21,6 @@ setTimeout(() => {
             searchHandler();
         };
         opts.position.my = 'left+0 top+8';
-        console.log(opts.position);
 
         return this.each(function () {
             $(this).autocomplete(opts);
