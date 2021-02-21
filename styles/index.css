@@ -27,6 +27,14 @@
     }
 }
 
+.ui-widget.ui-widget-content {
+    border: none !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(100px);
+}
 * {
     font-family: 'Varela Round', sans-serif;
     font-weight: 500;
