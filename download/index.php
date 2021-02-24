@@ -33,6 +33,7 @@ $tracks->link = str_replace('soundcloud.com/', "{$_SERVER['HTTP_HOST']}/download
 
 <head>
     <!-- meta -->
+    <script src="./js/siteVersion.js.php"></script>
     <title>Download <?php echo $tracks->title ?> | <?php echo APP_NAME ?></title>
     <meta name="description" content="Download <?php echo $tracks->title ?> your personal storage and enjoy it even when you are offline!" />
     <meta name="keywords" content="soundcloud,mp3,converter,free,online,download,<?php echo $tracks->title ?>" />
@@ -49,7 +50,7 @@ $tracks->link = str_replace('soundcloud.com/', "{$_SERVER['HTTP_HOST']}/download
 
 
 
-    <script type="application/ld+json">
+    <??? type="application/ld+json">
         {
             "@context": "http://schema.org/",
             "@type": "SoftwareApplication",
@@ -83,7 +84,7 @@ $tracks->link = str_replace('soundcloud.com/', "{$_SERVER['HTTP_HOST']}/download
             "mainEntityOfPage": "https://soundcloudtomp3.live/",
             "name": "Soundcloudtomp3"
         }
-    </script>
+    </???>
     <link rel="icon" href="../assets/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" />
     <link rel="stylesheet" href="../styles/index.css" />
@@ -122,7 +123,7 @@ $tracks->link = str_replace('soundcloud.com/', "{$_SERVER['HTTP_HOST']}/download
                         <span id="download-percent"></span>
                         Download
                     </span>
-                    <img src="../assets/down.svg" alt="Download track" style="width:20px"/>
+                    <img src="../assets/down.svg" alt="Download track" style="width:20px" />
                 </button>
                 <div class="mt-3" id="fileDetails">
                     <?php echo $tracks->duration ?> |

@@ -5,6 +5,7 @@
 <head>
 
     <!-- meta -->
+    <script src="./js/siteVersion.js.php"></script>
     <title>SoundCloud To MP3 - SoundCloud Playlist Downloader</title>
     <meta name="description" content="SoundCloud Playlist Downloader: With Soundcloud to mp3 converter, get your favorite Soundcloud artist’s songs & track to Mp3. The best Soundcloud playlist downloader with an option to play and download a full playlist. Step by step guide for the playlist download and selective songs." />
     <meta name="Keywords" content="download soundcloud,soundcloud downloader,soundcloud to mp3 converter,soundcloud playlist downloader,how to download from soundcloud" />
@@ -382,7 +383,7 @@
                 <p id="audioTitle"></p>
             </div>
             <div class="audio-controls-cont">
-                <img id="autoplay" src="./assets/autoplay.svg" enable="true"/>
+                <img id="autoplay" src="./assets/autoplay.svg" enable="true" />
                 <audio noDownload controls id="audio-controls" controlsList="nodownload"></audio>
             </div>
             <div class="download"></div>
