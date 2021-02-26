@@ -64,9 +64,6 @@ function getLink()
         $title = "Searching for \"{$data['title']}\" by \"{$data['user']}\" tracks \"{$count}\"";
         $tracks = $data['tracks'];
     }
-    // $count = count($tracks['tracks']);
-    // echo "Searching for \"{$tracks['title']}\" by \"{$tracks['user']}\" tracks \"{$count}\"";
-    // dd($tracks);
 
     return [
         "title" => $title,
