@@ -4,7 +4,13 @@ error_reporting(E_ERROR | E_PARSE);
 function get_current_git_commit($branch = 'master')
 {
     try {
-        return file_get_contents(sprintf(APP_PATH . '/.git/refs/heads/%s', $branch)) . "1231";
+        return substr(
+            file_get_contents(
+                sprintf(APP_PATH . '/.git/refs/heads/%s', $branch)
+            ),
+            0,
+            7
+        );
     } catch (ErrorException  $error) {
         return false;
     }
