@@ -4,6 +4,7 @@ require_once 'app.php';
 require_once APP_PATH . '/vendor/autoload.php';
 require_once APP_PATH . '/functions/api.php';
 require_once APP_PATH . '/functions/mappers.php';
+require_once APP_PATH . '/functions/db.php';
 
 // const API_URL = "https://api.soundcloud.com/%method%&client_id=BVTnmQP4X7xo1VXiYwZTNAM9swaZthcP"; // soundcloud XXX
 

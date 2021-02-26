@@ -21,6 +21,7 @@ switch ($type) {
 
     case 'audio':
         getAudio();
+        addLog('play', json_encode($_GET));
         break;
 
     case 'link':

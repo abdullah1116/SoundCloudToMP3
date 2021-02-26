@@ -27,6 +27,7 @@ if (!empty($getLink['tracks'])) {
     exit;
 }
 
+addLog('download', json_encode($tracks));
 
 $tracks->link = str_replace('soundcloud.com/', "{$_SERVER['HTTP_HOST']}/download/?link=/", $tracks->link);
 ?>
