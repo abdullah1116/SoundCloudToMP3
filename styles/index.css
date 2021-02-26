@@ -151,6 +151,21 @@ img {
     display: none;
 }
 
+.a_nostyle {
+    text-decoration: none !important;
+    color: #000;
+}
+span[href] {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+span[href]:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
 body.searching .show-on-search {
     display: initial;
 }
@@ -291,7 +306,7 @@ body.searching .hide-on-search {
 }
 
 .container {
-    color: #333e;
+    color: #333e!;
 }
 
 .blog .container {

@@ -4,9 +4,8 @@ function RenderContainer() {
         let list = '';
         d.tracks.forEach((d, i) => {
             //playlist inner list
-            list += `<a class="list-item  rounded" href="${downloadLink(
-                d.link,
-            )}" target="_blank">
+            list += `<a href="${downloadLink(d.link)}"
+            class="a_nostyle list-item rounded" target="_blank">
                 <img  src="${d.image}" alt="Image Not Found"/>
                 <p class="playlist-track-title">${d.title}</p>                
                 <button
@@ -36,9 +35,8 @@ function RenderContainer() {
     if (HTMLDATA.isGridView) {
         HTMLDATA.tracks.forEach((d, i) => {
             HTML += `
-            <div class="item"  href="./download/?link=${
-                d.link
-            }" target="_blank">
+            <a href="${downloadLink(d.link)}"
+             class="a_nostyle item" target="_blank">
                 <button
                     type="button"
                     class="btn def-color ${
@@ -69,16 +67,16 @@ function RenderContainer() {
                     </span>
                     <p class="sound-artist">${d.user}</p>
                     <p class="sound-title">${d.title}</p>
-            </div>`;
+            </a>`;
         });
 
         HTMLDATA.playlists.forEach((d, i) => {
             if (d.tracks.length != 0) {
                 HTML += `<div class="item item-link rounded">
                     <div class="img-cont">
-                        <div class="list-cont custom-scroll rounded" style="background-image:url(${
-                            d.image
-                        })">${rendList(d, i)}
+                        <div class="list-cont custom-scroll rounded" 
+                            style="background-image:url(${d.image})">
+                            ${rendList(d, i)}
                         </div>
                     </div>
                     <p class="sound-artist">${d.user}</p>
@@ -89,9 +87,8 @@ function RenderContainer() {
     } else {
         //ListView render
         HTMLDATA.tracks.forEach((d, i) => {
-            HTML += `<div class="item-list item-link Row w-100 rounded" href="./download/?link=${downloadLink(
-                d.link,
-            )}" target="_black">
+            HTML += `<a href="${downloadLink(d.link)}"
+                        class="a_nostyle item-list item-link Row w-100 rounded" target="_black">
                         <div class="img-cont-list" >
                             <img src="${d.image}"
                             class="sound-back-img-list rounded" alt="Image Not Found"
@@ -118,8 +115,7 @@ function RenderContainer() {
                             }.svg" alt="Play track"
                                 />
                         </button>
-                        </div>
-                    </div>`;
+                        </a>`;
         });
 
         HTMLDATA.playlists.forEach((d, i) => {

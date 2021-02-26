@@ -1,6 +1,6 @@
 setTimeout(() => {
-    this.linkedDiv = () => {
-        let allEle = document.getElementsByTagName('div');
+    this.linkedSpan = () => {
+        let allEle = document.getElementsByTagName('span');
         for (var i = 0, elLength = allEle.length - 1; i < elLength; i++) {
             let ele = allEle[i];
             let href = ele.getAttribute('href');
@@ -21,6 +21,6 @@ setTimeout(() => {
                 ele.style.cursor = 'pointer';
             }
         }
-        window.addEventListener('load', () => linkedDiv());
+        window.addEventListener('load', () => linkedSpan());
     };
 });
