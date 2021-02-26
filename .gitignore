@@ -1,4 +1,5 @@
 .idea
 functions/cache/
+functions/test/
 *.zip
 debug.log
